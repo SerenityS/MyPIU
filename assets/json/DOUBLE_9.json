@@ -1,0 +1,96 @@
+{
+    "level": 9,
+    "type": "DOUBLE",
+    "songs": [
+        {
+            "title": "뷰티플라이어",
+            "artist": "몬스타엑스",
+            "jacketFileName": "e0557c689f268968b27b48aa6c70a0d8.png"
+        },
+        {
+            "title": "또다른 진심",
+            "artist": "노바소닉",
+            "jacketFileName": "6e9e509af134c67b5d26ccd13db67a61.png"
+        },
+        {
+            "title": "라크리모사",
+            "artist": "Fiverwater",
+            "jacketFileName": "56fbd3887c1f170ff0bab5fd5bac7320.png"
+        },
+        {
+            "title": "슬램",
+            "artist": "노바소닉",
+            "jacketFileName": "6c015264351d8c74bc84257bb4bad895.png"
+        },
+        {
+            "title": "서든 로맨스 [PIU Edit]",
+            "artist": "void",
+            "jacketFileName": "86d39cb7c937642663fccd5aec0877c2.png"
+        },
+        {
+            "title": "매드 사이언스",
+            "artist": "폴 바주카",
+            "jacketFileName": "b89582358750bf456ece55c8d917a5d2.png"
+        },
+        {
+            "title": "라그나로크",
+            "artist": "SynthWulf",
+            "jacketFileName": "8f68503d1f4d0a971f1878657386936f.png"
+        },
+        {
+            "title": "크리스마스의 기억",
+            "artist": "와락",
+            "jacketFileName": "1792bd555efbbbfcb14088f2208d0428.png"
+        },
+        {
+            "title": "퍼센트 엑스",
+            "artist": "포리",
+            "jacketFileName": "8f26809e182d6eb9719a61749baec84e.png"
+        },
+        {
+            "title": "스마일 다이어리",
+            "artist": "you",
+            "jacketFileName": "e53ffebb889fba8647191794136e24a9.png"
+        },
+        {
+            "title": "건 락",
+            "artist": "반야 프로덕션",
+            "jacketFileName": "a99628699414126f01156a2eff9c4509.png"
+        },
+        {
+            "title": "탑 시티",
+            "artist": "반야",
+            "jacketFileName": "f5bebb469d701e9f18ad7149d4618391.png"
+        },
+        {
+            "title": "갓 모드 feat. Skizzo",
+            "artist": "나토",
+            "jacketFileName": "b38900d06ba8d8e1d203691c9ada94d8.png"
+        },
+        {
+            "title": "어웨이크닝",
+            "artist": "typeMARS",
+            "jacketFileName": "4fd85c9ac5726a4dda88c2a75d1f548f.png"
+        },
+        {
+            "title": "브링 백 더 비트",
+            "artist": "루나틱 사운즈",
+            "jacketFileName": "c062a6493e93e5bce2f3796714729d06.png"
+        },
+        {
+            "title": "메테오라이즈",
+            "artist": "폴 바주카",
+            "jacketFileName": "3e8b43107e33ed1f14d0f9a5cd0a67d8.png"
+        },
+        {
+            "title": "디 갱",
+            "artist": "반야",
+            "jacketFileName": "5cbd47e5e110c4e51d13c0cfd3d730ed.png"
+        },
+        {
+            "title": "펌핑 점핑",
+            "artist": "반야 프로덕션",
+            "jacketFileName": "c8dd5ba64a3a6459a77086155f1780be.png"
+        }
+    ]
+}

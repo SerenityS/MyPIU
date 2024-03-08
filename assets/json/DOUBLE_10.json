@@ -1,0 +1,171 @@
+{
+    "level": 10,
+    "type": "DOUBLE",
+    "songs": [
+        {
+            "title": "팔로우 미",
+            "artist": "SHK",
+            "jacketFileName": "795f341eafa8948265ed3627b0a73160.png"
+        },
+        {
+            "title": "스위트로닉",
+            "artist": "SHK",
+            "jacketFileName": "010799598a2f9cfd8e969edb6ac863f8.png"
+        },
+        {
+            "title": "유포리아닉",
+            "artist": "SHK",
+            "jacketFileName": "7e1af52be6d8b4e147d2a0ebbf54ef98.png"
+        },
+        {
+            "title": "여래아",
+            "artist": "시드사운드",
+            "jacketFileName": "1fbb103bbc7d1a94d6e994b27c2e6b9a.png"
+        },
+        {
+            "title": "날아올라",
+            "artist": "드림캐쳐",
+            "jacketFileName": "d35d8bf23ed86a5011b5f524fe9d6ed1.png"
+        },
+        {
+            "title": "틸 디 엔드 오브 타임",
+            "artist": "반야",
+            "jacketFileName": "a23e6e40c666b2652fc2bbe0d9aa8ee5.png"
+        },
+        {
+            "title": "라 그랑 블루",
+            "artist": "KIEN",
+            "jacketFileName": "51a18cfbe11adc98b9cc58758a8d0b38.png"
+        },
+        {
+            "title": "배니쉬",
+            "artist": "애플소다",
+            "jacketFileName": "f0fb91b69e6f6e88bd53b7a7a3826932.png"
+        },
+        {
+            "title": "트위스트 오브 페이트 (feat. Ruriling)",
+            "artist": "Jehezukiel",
+            "jacketFileName": "39179bd228825e7b84d0004ae9058c2b.png"
+        },
+        {
+            "title": "스콜피온 킹",
+            "artist": "r300k",
+            "jacketFileName": "2d8d5d9f38d10d9b8510159a9f1b3191.png"
+        },
+        {
+            "title": "헬파이어",
+            "artist": "맴매",
+            "jacketFileName": "d6b7df162464f8e926cb984462d61f0c.png"
+        },
+        {
+            "title": "아르카나 포스",
+            "artist": "mzet:-P",
+            "jacketFileName": "069ce59bbca7f929cd0a2b6c80ea791c.png"
+        },
+        {
+            "title": "유어 마인드",
+            "artist": "Roy Mikelate",
+            "jacketFileName": "cb6ef748fd4bb7ef98dd181d77085bb8.png"
+        },
+        {
+            "title": "인피니티",
+            "artist": "루나틱 사운즈",
+            "jacketFileName": "614525bb9b1e6f28a8415ce51d9534bd.png"
+        },
+        {
+            "title": "V3",
+            "artist": "뷰티풀데이",
+            "jacketFileName": "71b20bf74fcf632d8c10e39614243015.png"
+        },
+        {
+            "title": "업 앤 업 (Produced by AWAL)",
+            "artist": "Skizzo",
+            "jacketFileName": "6ebee454d88c863cacf04f8f7dd8b8c3.png"
+        },
+        {
+            "title": "슈퍼 스타일린",
+            "artist": "와락",
+            "jacketFileName": "d73903b1c8e826d1f60d67d622affaf9.png"
+        },
+        {
+            "title": "킬 뎀!",
+            "artist": "Archefluxx",
+            "jacketFileName": "7e9eada7dba14841d75e27806eeb1499.png"
+        },
+        {
+            "title": "데인저 & 데인저",
+            "artist": "Cranky",
+            "jacketFileName": "1234e492a6a6edd6278007705181d137.png"
+        },
+        {
+            "title": "트라이브 어택커",
+            "artist": "Hi-G",
+            "jacketFileName": "4669bfb9682c12e24b3b7ad032166b69.png"
+        },
+        {
+            "title": "타임 어택 <블루>",
+            "artist": "r300k",
+            "jacketFileName": "8213db997c49bbfd1977d1115b6441b3.png"
+        },
+        {
+            "title": "트리튬",
+            "artist": "맴매",
+            "jacketFileName": "bfaea6d897aedd93f584c1f28bb1bae7.png"
+        },
+        {
+            "title": "하트 어택",
+            "artist": "DJ Counterforce",
+            "jacketFileName": "bbe9961fab6c7bbe7a10f7fc69f8f90f.png"
+        },
+        {
+            "title": "겟 유어 그루브 온",
+            "artist": "반야",
+            "jacketFileName": "19a3e292727ee8aeac5aae5e2b6b4ff6.png"
+        },
+        {
+            "title": "앵귀시드 언메이킹",
+            "artist": "void",
+            "jacketFileName": "8973c7077606b39a0caf896a5dd0c935.png"
+        },
+        {
+            "title": "레퀴엠",
+            "artist": "맥스",
+            "jacketFileName": "81adb87dd9e7243103ac0ee70a98e739.png"
+        },
+        {
+            "title": "오블리터레이션",
+            "artist": "ATAS ",
+            "jacketFileName": "54480f352a3f0efb13d92bdf6cce022a.png"
+        },
+        {
+            "title": "아마이 유우와쿠 데인저러스",
+            "artist": "바쿠스테 소토칸다 잇쵸메",
+            "jacketFileName": "944b44536234a97d16db0c83a1f2bf4f.png"
+        },
+        {
+            "title": "ㅁㄴㅇㄹ",
+            "artist": "도인",
+            "jacketFileName": "ae2b0870e056afa7b20b0387d781736d.png"
+        },
+        {
+            "title": "엘리시움",
+            "artist": "와락",
+            "jacketFileName": "f3ff5527f6e4218071d52d93b831fd53.png"
+        },
+        {
+            "title": "패싱 라이더",
+            "artist": "mzet:-P",
+            "jacketFileName": "f3003ac39eb07597a42edd57dff46462.png"
+        },
+        {
+            "title": "무혼",
+            "artist": "반야",
+            "jacketFileName": "c07fdf7ae417843cacfde0fca25ed157.png"
+        },
+        {
+            "title": "헤이 유",
+            "artist": "MAZO",
+            "jacketFileName": "326e0c8257a962e63e604a93e5f69d92.png"
+        }
+    ]
+}

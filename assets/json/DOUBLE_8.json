@@ -1,0 +1,101 @@
+{
+    "level": 8,
+    "type": "DOUBLE",
+    "songs": [
+        {
+            "title": "누드",
+            "artist": "(여자)아이들",
+            "jacketFileName": "01c8c790b7233abcb0633362378439db.png"
+        },
+        {
+            "title": "비행기",
+            "artist": "타이푼",
+            "jacketFileName": "2b68ab56a7ed2f08faccf852ffad7d90.png"
+        },
+        {
+            "title": "파이렛",
+            "artist": "에버글로우",
+            "jacketFileName": "a563e0cec403d9e1a26e759dfc16b530.png"
+        },
+        {
+            "title": "라스트 리버스",
+            "artist": "SHK",
+            "jacketFileName": "43a6081c37d09f8334e3e8d155795b2d.png"
+        },
+        {
+            "title": "스톰",
+            "artist": "코요태",
+            "jacketFileName": "e81d18d7bc33737828c35f33d75b79ef.png"
+        },
+        {
+            "title": "스프레이",
+            "artist": "위아이",
+            "jacketFileName": "977331fa500070fca6c5d72644df3e27.png"
+        },
+        {
+            "title": "브레인 파워",
+            "artist": "NOMA",
+            "jacketFileName": "dfc1225d137e799d048a3f5a9906e134.png"
+        },
+        {
+            "title": "버터플라이",
+            "artist": "맥스 & Rorychesell\n(시드사운드)",
+            "jacketFileName": "7cbdd1bf58895fef006dc66f71bc77e0.png"
+        },
+        {
+            "title": "하우스플랜",
+            "artist": "하우스플랜",
+            "jacketFileName": "ae87cac425d722b861faa8cf8ab2eefd.png"
+        },
+        {
+            "title": "포세이돈",
+            "artist": "큐리",
+            "jacketFileName": "de96638880924993fd3617fc5b5d2d8a.png"
+        },
+        {
+            "title": "사람들은 몰랐다네",
+            "artist": "반야 프로덕션",
+            "jacketFileName": "b5beafaf692bb3cd6049f491b0a65038.png"
+        },
+        {
+            "title": "실버 비트 feat. ChisaUezono",
+            "artist": "Tatsh",
+            "jacketFileName": "c4b69bc29223fecd215299e13986bb08.png"
+        },
+        {
+            "title": "라라",
+            "artist": "야시 프레스먼",
+            "jacketFileName": "9dccb5b56aff18745238b883d32a4863.png"
+        },
+        {
+            "title": "아스테리오스 -리엔트리-",
+            "artist": "ATAS ",
+            "jacketFileName": "0dc58227912960f525b0de185ab43eb1.png"
+        },
+        {
+            "title": "야근",
+            "artist": "A.V.",
+            "jacketFileName": "0a20adcd20b664ab3dda36ee2ebbc7b3.png"
+        },
+        {
+            "title": "히글디 피글디",
+            "artist": "반야 프로덕션",
+            "jacketFileName": "3eda55e20c4c47e4f52bbaa001de7dcd.png"
+        },
+        {
+            "title": "오버블로우2",
+            "artist": "맥스",
+            "jacketFileName": "74f9476994a46831b01fe5f541a09ae3.png"
+        },
+        {
+            "title": "올 아이 원트 포 크리스마스",
+            "artist": "반야",
+            "jacketFileName": "c4d160485b1e9ff216e0c45879d4356e.png"
+        },
+        {
+            "title": "몽키 핑거즈 2",
+            "artist": "반야 프로덕션",
+            "jacketFileName": "96998dae2671abc97f62fb04b1d5089a.png"
+        }
+    ]
+}

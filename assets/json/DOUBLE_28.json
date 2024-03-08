@@ -1,0 +1,16 @@
+{
+    "level": 28,
+    "type": "DOUBLE",
+    "songs": [
+        {
+            "title": "1949",
+            "artist": "슬램",
+            "jacketFileName": "27b9c3cc4f8d3c476205f2d4e6bbd9a5.png"
+        },
+        {
+            "title": "패러독스",
+            "artist": "슬램 & 나토",
+            "jacketFileName": "2da8be03841200479a4c23e8b60aeb70.png"
+        }
+    ]
+}

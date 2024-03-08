@@ -1,0 +1,86 @@
+{
+    "level": 6,
+    "type": "DOUBLE",
+    "songs": [
+        {
+            "title": "판도라",
+            "artist": "메이브",
+            "jacketFileName": "fb3c26fc1004eb33d79ec9315fc52c76.png"
+        },
+        {
+            "title": "얼론",
+            "artist": "하이라이트",
+            "jacketFileName": "3b2ade8e4cd4ba29e8c151a0c7db6df9.png"
+        },
+        {
+            "title": "키티 캣",
+            "artist": "Coconut",
+            "jacketFileName": "15e31c739f5afd63b119c3622231df17.png"
+        },
+        {
+            "title": "굿 나이트",
+            "artist": "드림캐쳐",
+            "jacketFileName": "231cc165b79c0638db39210af649467c.png"
+        },
+        {
+            "title": "블루이쉬 로즈",
+            "artist": "WyvernP",
+            "jacketFileName": "03b6b88c054909e454b57dd7b7dfb831.png"
+        },
+        {
+            "title": "알테일",
+            "artist": "sakuzyo",
+            "jacketFileName": "3aed0157e26dfa040bf84ae1167a22d5.png"
+        },
+        {
+            "title": "트로피카닉",
+            "artist": "SHK",
+            "jacketFileName": "7599c6b45fc18dacacbd7fa710e1fbbe.png"
+        },
+        {
+            "title": "리얼리티",
+            "artist": "SHK",
+            "jacketFileName": "a2c8a74650ac15de9f85570e013cff72.png"
+        },
+        {
+            "title": "필 마이 해피니스",
+            "artist": "3R2",
+            "jacketFileName": "70863cab2c4dde4b17a9efe9c124cc30.png"
+        },
+        {
+            "title": "아이 원트 유",
+            "artist": "맥스",
+            "jacketFileName": "d56f4754be78f6287098ec4f3c71f593.png"
+        },
+        {
+            "title": "유 어게인 마이 러브",
+            "artist": "CYO Style & Henohenomoheji",
+            "jacketFileName": "9ce34fa1e500db4be8577c4f445a7843.png"
+        },
+        {
+            "title": "리무버블 디스코",
+            "artist": "도인",
+            "jacketFileName": "6a1c65426df892f8e33f80b22756c313.png"
+        },
+        {
+            "title": "돌리 키스",
+            "artist": "시드사운드",
+            "jacketFileName": "67f1a29eee0674f3bbae81bc83574cb3.png"
+        },
+        {
+            "title": "아마이 유우와쿠 데인저러스",
+            "artist": "바쿠스테 소토칸다 잇쵸메",
+            "jacketFileName": "944b44536234a97d16db0c83a1f2bf4f.png"
+        },
+        {
+            "title": "웨딩 크래셔 - SHORT CUT -",
+            "artist": "SHK",
+            "jacketFileName": "69082c45f8bed5d3bc6a8ce0623f3f19.png"
+        },
+        {
+            "title": "사람들은 펌핑업을 몰랐다네",
+            "artist": "반야 프로덕션",
+            "jacketFileName": "bf2d4dc2448e8bc06eb550199cb541df.png"
+        }
+    ]
+}

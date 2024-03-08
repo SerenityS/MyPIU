@@ -1,0 +1,91 @@
+{
+    "level": 3,
+    "type": "CO-OP",
+    "songs": [
+        {
+            "title": "요! 세이!! 페어리!!!",
+            "artist": "MYUKKE.",
+            "jacketFileName": "1afce79a91b11aacedfadb6f8f0c360c.png"
+        },
+        {
+            "title": "웨딩 크래셔",
+            "artist": "SHK",
+            "jacketFileName": "a916721935bb9c8c55800fbbe556ae90.png"
+        },
+        {
+            "title": "어콰이어",
+            "artist": "ryhki",
+            "jacketFileName": "b41eaa298c4c19f0dedc11e75271e353.png"
+        },
+        {
+            "title": "탄탄멘",
+            "artist": "맴매",
+            "jacketFileName": "ba1cf709de84af438c6697c1587528b3.png"
+        },
+        {
+            "title": "아발란치",
+            "artist": "맴매",
+            "jacketFileName": "c55b5035aa594ffa59dd1a99aef918c8.png"
+        },
+        {
+            "title": "알레그로 퓨리오소",
+            "artist": "DM ashura",
+            "jacketFileName": "e8c609ca4151ca2df88a1d78a762db84.png"
+        },
+        {
+            "title": "제로아이즈",
+            "artist": "FE",
+            "jacketFileName": "50c4cc1811cead8b175df061b10e6307.png"
+        },
+        {
+            "title": "요그 소토스",
+            "artist": "나토",
+            "jacketFileName": "bc54e47a51c88d61e1132c40cce0f714.png"
+        },
+        {
+            "title": "테이크 아웃",
+            "artist": "SHK",
+            "jacketFileName": "8eb6a7d9798400553892511bf913409a.png"
+        },
+        {
+            "title": "클레마티스 랩소디아",
+            "artist": "Jehezukiel",
+            "jacketFileName": "bacaf08069b985635db3eebb443d133e.png"
+        },
+        {
+            "title": "인피니티",
+            "artist": "루나틱 사운즈",
+            "jacketFileName": "614525bb9b1e6f28a8415ce51d9534bd.png"
+        },
+        {
+            "title": "디스트릭트 1",
+            "artist": "맥스",
+            "jacketFileName": "177b37fa13e76d6d517397c992862ea2.png"
+        },
+        {
+            "title": "레드라인",
+            "artist": "Archefluxx",
+            "jacketFileName": "e4b9307656a5ecd491868c2d9eef1a42.png"
+        },
+        {
+            "title": "일 더하기 일은 귀요미",
+            "artist": "맴매",
+            "jacketFileName": "407e597c70954fc0925b41cd905ca913.png"
+        },
+        {
+            "title": "차이니즈 레스토랑",
+            "artist": "맴매",
+            "jacketFileName": "03770c96fbed570ae8b855c094c0c774.png"
+        },
+        {
+            "title": "에프 에프 에프",
+            "artist": "도인",
+            "jacketFileName": "bc8046f59a10309e3fba7b77672cf2d2.png"
+        },
+        {
+            "title": "위 갓 투 노우",
+            "artist": "맥스",
+            "jacketFileName": "0b75dc7c2243277815afefc46a62a135.png"
+        }
+    ]
+}

@@ -1,0 +1,311 @@
+{
+    "level": 24,
+    "type": "DOUBLE",
+    "songs": [
+        {
+            "title": "베토벤 바이러스",
+            "artist": "반야",
+            "jacketFileName": "077896b70925311177fe41d49abfa71b.png"
+        },
+        {
+            "title": "소서리스 엘리제",
+            "artist": "이 얍",
+            "jacketFileName": "d1adf67c62182095df53a3172835d167.png"
+        },
+        {
+            "title": "굿 나이트",
+            "artist": "드림캐쳐",
+            "jacketFileName": "231cc165b79c0638db39210af649467c.png"
+        },
+        {
+            "title": "사라반드",
+            "artist": "맥스",
+            "jacketFileName": "837cb369af8cad06f2cf576c5b5b22c8.png"
+        },
+        {
+            "title": "이렐리아",
+            "artist": "HyuN",
+            "jacketFileName": "282c1e3e7427966fe98c2fb2accfa9d6.png"
+        },
+        {
+            "title": "네오 카타르시스",
+            "artist": "TAG underground overlay",
+            "jacketFileName": "14cd5d7a3df1f12b82bccec2faea2705.png"
+        },
+        {
+            "title": "큐리아서티 오버드라이브",
+            "artist": "t+pazolite",
+            "jacketFileName": "2cf6b048170d3446cbb27e722a1d805f.png"
+        },
+        {
+            "title": "모페모페",
+            "artist": "LeaF",
+            "jacketFileName": "f720e52b1bb6625bd869df634102c20b.png"
+        },
+        {
+            "title": "벡터",
+            "artist": "Zekk",
+            "jacketFileName": "ab914c8ca7030b776ec3cd3ad7dad3e9.png"
+        },
+        {
+            "title": "유 앤 아이",
+            "artist": "드림캐쳐",
+            "jacketFileName": "348076ff6d242d366c6d8240e538b454.png"
+        },
+        {
+            "title": "머독",
+            "artist": "WONDERTRAVELER Project",
+            "jacketFileName": "8eb8a3021756670ce067a3ef7cfb9f2a.png"
+        },
+        {
+            "title": "R.I.P",
+            "artist": "eicateve",
+            "jacketFileName": "1fdba3fa2fd7fc9c3fef0593fb67897d.png"
+        },
+        {
+            "title": "할시온",
+            "artist": "xi",
+            "jacketFileName": "51fcd45896e9b9925e3e1f0a77556e24.png"
+        },
+        {
+            "title": "브레인 파워",
+            "artist": "NOMA",
+            "jacketFileName": "dfc1225d137e799d048a3f5a9906e134.png"
+        },
+        {
+            "title": "굿텍",
+            "artist": "EBIMAYO",
+            "jacketFileName": "08a55debe196a4c44b2041868a5c2070.png"
+        },
+        {
+            "title": "풀 문",
+            "artist": "드림캐쳐",
+            "jacketFileName": "992c331c091355947214279619c2a366.png"
+        },
+        {
+            "title": "디그니티",
+            "artist": "크래쉬",
+            "jacketFileName": "f1cb86385e1dcac7b5dd87da181ed2f2.png"
+        },
+        {
+            "title": "배틀 넘버원",
+            "artist": "TANO*C Sound Team",
+            "jacketFileName": "12452411f0fddba3caf2382c9bf033f4.png"
+        },
+        {
+            "title": "아라가미",
+            "artist": "xi",
+            "jacketFileName": "268d0e5526dc475ccf8ca90a60fcae68.png"
+        },
+        {
+            "title": "디멘트 ~에프터 레전드~",
+            "artist": "루나틱 사운즈",
+            "jacketFileName": "fd482baf3748bc4b5e74b4d5cd800819.png"
+        },
+        {
+            "title": "카오스 어게인",
+            "artist": "NAOKI underground -Ω-",
+            "jacketFileName": "df2bb22858f58b4cf088ce1866854f2d.png"
+        },
+        {
+            "title": "어 사이트 데 라 루",
+            "artist": "STREME REVERIE",
+            "jacketFileName": "51eaabb15ba725bda3133a0546a2974b.png"
+        },
+        {
+            "title": "갤럭시 컬랩스",
+            "artist": "Kurokotei",
+            "jacketFileName": "f89ff0cf996937d690d7ebb7502e6c1e.png"
+        },
+        {
+            "title": "탄탄멘",
+            "artist": "맴매",
+            "jacketFileName": "ba1cf709de84af438c6697c1587528b3.png"
+        },
+        {
+            "title": "팔랑크스 \"RS2018 edit\"",
+            "artist": "Cranky",
+            "jacketFileName": "67d5f6eb534fb64e4488c0be06321192.png"
+        },
+        {
+            "title": "크로스 소울",
+            "artist": "HyuN feat. Syepias",
+            "jacketFileName": "9a7a0e282cbd94c9c94f605979be9cc2.png"
+        },
+        {
+            "title": "배니쉬",
+            "artist": "애플소다",
+            "jacketFileName": "f0fb91b69e6f6e88bd53b7a7a3826932.png"
+        },
+        {
+            "title": "슬램",
+            "artist": "노바소닉",
+            "jacketFileName": "6c015264351d8c74bc84257bb4bad895.png"
+        },
+        {
+            "title": "임프린팅",
+            "artist": "Sakuzyo",
+            "jacketFileName": "32c419f173c4eeb2b9f9f92308c60996.png"
+        },
+        {
+            "title": "아클루오이아스",
+            "artist": "D_AAN",
+            "jacketFileName": "08b06c0759e9193b9cb7cfb9ee2a67a6.png"
+        },
+        {
+            "title": "다람쥐 헌 쳇바퀴에 타고파",
+            "artist": "도인",
+            "jacketFileName": "13ee583d7eb125353c9594c54e8af8ee.png"
+        },
+        {
+            "title": "우라늄",
+            "artist": "맴매",
+            "jacketFileName": "33fa299e6f4e94b8360c39d815339549.png"
+        },
+        {
+            "title": "러브 이즈 어 데인저 존 pt.2",
+            "artist": "반야",
+            "jacketFileName": "596f4c25fb4c17443b799fb997846dc5.png"
+        },
+        {
+            "title": "페이브 가든",
+            "artist": "Ginkiha",
+            "jacketFileName": "33f0fe34b6e0c8a57a9fe2c4581e2a7b.png"
+        },
+        {
+            "title": "어나이얼레이터 메소드",
+            "artist": "DM Ashura",
+            "jacketFileName": "3e793e858d8ccd6adc2e5302d13efb8f.png"
+        },
+        {
+            "title": "아마겟돈",
+            "artist": "HyuN vs lixound",
+            "jacketFileName": "18c413bbfa40cc13fdc9ea1e3b2aa3c6.png"
+        },
+        {
+            "title": "펌프 미 아마데우스",
+            "artist": "반야",
+            "jacketFileName": "9416d4af818b73beae72ba5e73e58aa1.png"
+        },
+        {
+            "title": "요그 소토스",
+            "artist": "나토",
+            "jacketFileName": "bc54e47a51c88d61e1132c40cce0f714.png"
+        },
+        {
+            "title": "파파 곤잘레스",
+            "artist": "반야",
+            "jacketFileName": "e0f7b4f846ef9fc53a51ca6f869fceab.png"
+        },
+        {
+            "title": "가장신자",
+            "artist": "맥스",
+            "jacketFileName": "29b6ff6beda3f488e7f64c6f9d5d3ecd.png"
+        },
+        {
+            "title": "파이널 오디션 에피소드 2-X",
+            "artist": "이 얍",
+            "jacketFileName": "5b0e6ecc1d2e50f73a354bea2626c78d.png"
+        },
+        {
+            "title": "로봇 배틀",
+            "artist": "CYO Style",
+            "jacketFileName": "a268caa8a79c490bc1f27da6169ceaeb.png"
+        },
+        {
+            "title": "아이올라이트 스카이",
+            "artist": "도인",
+            "jacketFileName": "f31f845bdc8584adce799fe78a775fdb.png"
+        },
+        {
+            "title": "HTTP",
+            "artist": "Quree",
+            "jacketFileName": "a33e5f54f2789ce8eacfab76da16e2fd.png"
+        },
+        {
+            "title": "V3",
+            "artist": "뷰티풀데이",
+            "jacketFileName": "71b20bf74fcf632d8c10e39614243015.png"
+        },
+        {
+            "title": "베들램",
+            "artist": "SANY-ON",
+            "jacketFileName": "2ba16d33a1fcdb8f809904ef5a921f3d.png"
+        },
+        {
+            "title": "건 락",
+            "artist": "반야 프로덕션",
+            "jacketFileName": "a99628699414126f01156a2eff9c4509.png"
+        },
+        {
+            "title": "에러코드: 0",
+            "artist": "도인 && SUNNY",
+            "jacketFileName": "f376da01e82ef98a2020800e9072fe78.png"
+        },
+        {
+            "title": "히아신스",
+            "artist": "이 얍",
+            "jacketFileName": "d4bb20e7de499f9e5c8f10e491d3d618.png"
+        },
+        {
+            "title": "니알라토텝 - SHORT CUT -",
+            "artist": "나토",
+            "jacketFileName": "57c6118e5de911d06742118f5f477517.png"
+        },
+        {
+            "title": "파이널 오디션 에피소드 2-2",
+            "artist": "이 얍",
+            "jacketFileName": "586259955404d31e77555357b9d421ee.png"
+        },
+        {
+            "title": "위엑닥바",
+            "artist": "이 얍",
+            "jacketFileName": "559e26e1da569c22852e62b4d3f0d2e2.png"
+        },
+        {
+            "title": "비트 오브 더 워",
+            "artist": "반야",
+            "jacketFileName": "c7d2356bba6475cdc7027c7655bd0bb4.png"
+        },
+        {
+            "title": "비",
+            "artist": "반야",
+            "jacketFileName": "53bdf8102ac3b575019a2b42c743d92e.png"
+        },
+        {
+            "title": "풀 문 - FULL SONG -",
+            "artist": "드림캐쳐",
+            "jacketFileName": "a4301ac7ec04d6e1c032bc981b82aba2.png"
+        },
+        {
+            "title": "에프 에프 에프",
+            "artist": "도인",
+            "jacketFileName": "bc8046f59a10309e3fba7b77672cf2d2.png"
+        },
+        {
+            "title": "불카누스",
+            "artist": "맴매",
+            "jacketFileName": "1b136c94ccb3f8f5ea24009313aa71d1.png"
+        },
+        {
+            "title": "캐논 디 - FULL SONG -",
+            "artist": "반야",
+            "jacketFileName": "50229e66d03afb963174eb74b5c451a6.png"
+        },
+        {
+            "title": "하늘다람쥐",
+            "artist": "도인",
+            "jacketFileName": "7abbf7a6be02f94ec16598a3b841a139.png"
+        },
+        {
+            "title": "멘탈 라이더",
+            "artist": "SQUAR",
+            "jacketFileName": "1ebb047f3cf0901df3bdf4731a8db7d4.png"
+        },
+        {
+            "title": "반야-P 기타 리믹스",
+            "artist": "반야 프로덕션",
+            "jacketFileName": "9a1bdf2d0037182f23e312e469221324.png"
+        }
+    ]
+}

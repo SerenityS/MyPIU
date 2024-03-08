@@ -1,0 +1,26 @@
+{
+    "level": 4,
+    "type": "CO-OP",
+    "songs": [
+        {
+            "title": "하트 래빗 코스터",
+            "artist": "나토",
+            "jacketFileName": "21f8ea50ea39ae9649ef630448e5a2d4.png"
+        },
+        {
+            "title": "배드 애플!! feat. Nomico - FULL SONG -",
+            "artist": "Masayoshi Minoshima",
+            "jacketFileName": "a5d367b72dbe7ef734cf5d250d3000d5.png"
+        },
+        {
+            "title": "트라이브 어택커",
+            "artist": "Hi-G",
+            "jacketFileName": "4669bfb9682c12e24b3b7ad032166b69.png"
+        },
+        {
+            "title": "멘탈 라이더",
+            "artist": "SQUAR",
+            "jacketFileName": "1ebb047f3cf0901df3bdf4731a8db7d4.png"
+        }
+    ]
+}

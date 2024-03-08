@@ -15,6 +15,7 @@ dependencies:
   flutter_secure_storage: ^9.0.0
   freezed_annotation: ^2.4.1
   get: ^4.6.6
+  html: ^0.15.4
   json_annotation: ^4.8.1
 
 dev_dependencies:
@@ -27,3 +28,7 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/jacket/
+    - assets/json/

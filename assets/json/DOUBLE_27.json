@@ -1,0 +1,36 @@
+{
+    "level": 27,
+    "type": "DOUBLE",
+    "songs": [
+        {
+            "title": "네오 카타르시스",
+            "artist": "TAG underground overlay",
+            "jacketFileName": "14cd5d7a3df1f12b82bccec2faea2705.png"
+        },
+        {
+            "title": "꼭두각시",
+            "artist": "onoken",
+            "jacketFileName": "6b61fae3e35139975deb1199f1ad550a.png"
+        },
+        {
+            "title": "얼티메이텀",
+            "artist": "코스모그래프",
+            "jacketFileName": "54a6474ee494e9b1748e1edd3affee0b.png"
+        },
+        {
+            "title": "1950",
+            "artist": "슬램",
+            "jacketFileName": "fba81856a34b5447cd12dc4aaf87d37a.png"
+        },
+        {
+            "title": "에러코드: 0",
+            "artist": "도인 && SUNNY",
+            "jacketFileName": "f376da01e82ef98a2020800e9072fe78.png"
+        },
+        {
+            "title": "슈브 소토스",
+            "artist": "나토 & EXC",
+            "jacketFileName": "8228790cbf25eafb814aa724adabd93e.png"
+        }
+    ]
+}
