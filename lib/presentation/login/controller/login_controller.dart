@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:piu_util/app/config/routes/route_path.dart';
 import 'package:piu_util/domain/entities/login_entity.dart';
 import 'package:piu_util/domain/usecases/auth_usecases.dart';
 
@@ -16,6 +17,7 @@ class LoginController extends GetxController {
 
     if (result) {
       Get.snackbar('Success', 'Login Success');
+      Get.offAllNamed(RoutePath.playData);
     } else {
       Get.snackbar('Error', 'Login Failed');
     }
