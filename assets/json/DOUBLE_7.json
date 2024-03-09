@@ -1,81 +1,107 @@
-{
-    "level": 7,
-    "type": "DOUBLE",
-    "songs": [
-        {
-            "title": "애프터 라이크",
-            "artist": "아이브",
-            "jacketFileName": "3d23c9edaa07db47061f65521a4217f9.png"
-        },
-        {
-            "title": "테디베어",
-            "artist": "스테이씨",
-            "jacketFileName": "43786a2f256fd83655300ac1b65e35ec.png"
-        },
-        {
-            "title": "설탕음모론",
-            "artist": "맥스",
-            "jacketFileName": "5c597482986398f97fd91d5890727258.png"
-        },
-        {
-            "title": "조깅",
-            "artist": "루시",
-            "jacketFileName": "b66dfbbf583c610a886a55e7ec322ba5.png"
-        },
-        {
-            "title": "여래아",
-            "artist": "시드사운드",
-            "jacketFileName": "1fbb103bbc7d1a94d6e994b27c2e6b9a.png"
-        },
-        {
-            "title": "웨딩 크래셔",
-            "artist": "SHK",
-            "jacketFileName": "a916721935bb9c8c55800fbbe556ae90.png"
-        },
-        {
-            "title": "디 엔드 오브 더 월드 ft. Skizzo",
-            "artist": "MonstDeath",
-            "jacketFileName": "2ac7c8a9c0c3f4d9039c5389a5909f1a.png"
-        },
-        {
-            "title": "마타도르",
-            "artist": "Cranky",
-            "jacketFileName": "2e57f224899a9644cda9632c7795f915.png"
-        },
-        {
-            "title": "사월",
-            "artist": "SHK",
-            "jacketFileName": "96f3949597bf4514833e1408efed0ad5.png"
-        },
-        {
-            "title": "트란사칼리아",
-            "artist": "ATAS ",
-            "jacketFileName": "6ab64a47eb8f394982c46a09a416c160.png"
-        },
-        {
-            "title": "까랴위사따",
-            "artist": "Vesuvia x REDSHiFT",
-            "jacketFileName": "f947459c1bbe1598870853502bf147d6.png"
-        },
-        {
-            "title": "매지컬 베케이션",
-            "artist": "시드사운드",
-            "jacketFileName": "fe8814659b155fa6a9d534fceee56b2c.png"
-        },
-        {
-            "title": "위 갓 투 노우",
-            "artist": "맥스",
-            "jacketFileName": "0b75dc7c2243277815afefc46a62a135.png"
-        },
-        {
-            "title": "허쉬",
-            "artist": "야시 프레스먼 & 나딘 러스트레",
-            "jacketFileName": "f0db8344e5cfa41269abdfb892d1d2b6.png"
-        },
-        {
-            "title": "포인트 브레이크",
-            "artist": "반야",
-            "jacketFileName": "46bde033426573b8606e09e834705941.png"
-        }
-    ]
-}
+[
+    {
+        "title": "애프터 라이크",
+        "level": 7,
+        "artist": "아이브",
+        "chartType": "DOUBLE",
+        "jacketFileName": "3d23c9edaa07db47061f65521a4217f9.png"
+    },
+    {
+        "title": "테디베어",
+        "level": 7,
+        "artist": "스테이씨",
+        "chartType": "DOUBLE",
+        "jacketFileName": "43786a2f256fd83655300ac1b65e35ec.png"
+    },
+    {
+        "title": "설탕음모론",
+        "level": 7,
+        "artist": "맥스",
+        "chartType": "DOUBLE",
+        "jacketFileName": "5c597482986398f97fd91d5890727258.png"
+    },
+    {
+        "title": "조깅",
+        "level": 7,
+        "artist": "루시",
+        "chartType": "DOUBLE",
+        "jacketFileName": "b66dfbbf583c610a886a55e7ec322ba5.png"
+    },
+    {
+        "title": "여래아",
+        "level": 7,
+        "artist": "시드사운드",
+        "chartType": "DOUBLE",
+        "jacketFileName": "1fbb103bbc7d1a94d6e994b27c2e6b9a.png"
+    },
+    {
+        "title": "웨딩 크래셔",
+        "level": 7,
+        "artist": "SHK",
+        "chartType": "DOUBLE",
+        "jacketFileName": "a916721935bb9c8c55800fbbe556ae90.png"
+    },
+    {
+        "title": "디 엔드 오브 더 월드 ft. Skizzo",
+        "level": 7,
+        "artist": "MonstDeath",
+        "chartType": "DOUBLE",
+        "jacketFileName": "2ac7c8a9c0c3f4d9039c5389a5909f1a.png"
+    },
+    {
+        "title": "마타도르",
+        "level": 7,
+        "artist": "Cranky",
+        "chartType": "DOUBLE",
+        "jacketFileName": "2e57f224899a9644cda9632c7795f915.png"
+    },
+    {
+        "title": "사월",
+        "level": 7,
+        "artist": "SHK",
+        "chartType": "DOUBLE",
+        "jacketFileName": "96f3949597bf4514833e1408efed0ad5.png"
+    },
+    {
+        "title": "트란사칼리아",
+        "level": 7,
+        "artist": "ATAS ",
+        "chartType": "DOUBLE",
+        "jacketFileName": "6ab64a47eb8f394982c46a09a416c160.png"
+    },
+    {
+        "title": "까랴위사따",
+        "level": 7,
+        "artist": "Vesuvia x REDSHiFT",
+        "chartType": "DOUBLE",
+        "jacketFileName": "f947459c1bbe1598870853502bf147d6.png"
+    },
+    {
+        "title": "매지컬 베케이션",
+        "level": 7,
+        "artist": "시드사운드",
+        "chartType": "DOUBLE",
+        "jacketFileName": "fe8814659b155fa6a9d534fceee56b2c.png"
+    },
+    {
+        "title": "위 갓 투 노우",
+        "level": 7,
+        "artist": "맥스",
+        "chartType": "DOUBLE",
+        "jacketFileName": "0b75dc7c2243277815afefc46a62a135.png"
+    },
+    {
+        "title": "허쉬",
+        "level": 7,
+        "artist": "야시 프레스먼 & 나딘 러스트레",
+        "chartType": "DOUBLE",
+        "jacketFileName": "f0db8344e5cfa41269abdfb892d1d2b6.png"
+    },
+    {
+        "title": "포인트 브레이크",
+        "level": 7,
+        "artist": "반야",
+        "chartType": "DOUBLE",
+        "jacketFileName": "46bde033426573b8606e09e834705941.png"
+    }
+]

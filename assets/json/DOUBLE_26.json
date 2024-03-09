@@ -1,111 +1,149 @@
-{
-    "level": 26,
-    "type": "DOUBLE",
-    "songs": [
-        {
-            "title": "이렐리아",
-            "artist": "HyuN",
-            "jacketFileName": "282c1e3e7427966fe98c2fb2accfa9d6.png"
-        },
-        {
-            "title": "디그니티",
-            "artist": "크래쉬",
-            "jacketFileName": "f1cb86385e1dcac7b5dd87da181ed2f2.png"
-        },
-        {
-            "title": "아라가미",
-            "artist": "xi",
-            "jacketFileName": "268d0e5526dc475ccf8ca90a60fcae68.png"
-        },
-        {
-            "title": "디멘트 ~에프터 레전드~",
-            "artist": "루나틱 사운즈",
-            "jacketFileName": "fd482baf3748bc4b5e74b4d5cd800819.png"
-        },
-        {
-            "title": "카오스 어게인",
-            "artist": "NAOKI underground -Ω-",
-            "jacketFileName": "df2bb22858f58b4cf088ce1866854f2d.png"
-        },
-        {
-            "title": "시간의 회랑 라비린스",
-            "artist": "A:llha (ANE + 2riA)",
-            "jacketFileName": "e6f6dc0021c7ff7a8a5bfbbf1d1795f6.png"
-        },
-        {
-            "title": "키메라",
-            "artist": "이 얍",
-            "jacketFileName": "29515cbcd2bb2db30c23ed5228cdf93d.png"
-        },
-        {
-            "title": "이스케이프",
-            "artist": "D_AAN",
-            "jacketFileName": "057e2df0bf02e2fcb287bb24644d0cb4.png"
-        },
-        {
-            "title": "아클루오이아스",
-            "artist": "D_AAN",
-            "jacketFileName": "08b06c0759e9193b9cb7cfb9ee2a67a6.png"
-        },
-        {
-            "title": "슈브 니구라스",
-            "artist": "나토",
-            "jacketFileName": "1f724c66b21c31dd9c8999b2cdd04f6d.png"
-        },
-        {
-            "title": "1949",
-            "artist": "슬램",
-            "jacketFileName": "27b9c3cc4f8d3c476205f2d4e6bbd9a5.png"
-        },
-        {
-            "title": "리펜턴스",
-            "artist": "Abel",
-            "jacketFileName": "93d5647e7b2b3cdb2b3a04d06f996851.png"
-        },
-        {
-            "title": "패러독스 - SHORT CUT -",
-            "artist": "슬램 & 나토",
-            "jacketFileName": "2975834a1fbb299395252e9f1691851c.png"
-        },
-        {
-            "title": "클리너",
-            "artist": "도인",
-            "jacketFileName": "e6ac757c38d1d589c25b3461bb8438d5.png"
-        },
-        {
-            "title": "굿 나이트 - FULL SONG -",
-            "artist": "드림캐쳐",
-            "jacketFileName": "adaa2f4a9c9e0b2a87ed9882d615622c.png"
-        },
-        {
-            "title": "텔링 포츈 플라워",
-            "artist": "Koharu feat. Renyata",
-            "jacketFileName": "212d24f35ebb3de53f5deb6cd6625d31.png"
-        },
-        {
-            "title": "프라임 타임",
-            "artist": "Cashew",
-            "jacketFileName": "6a9b52dad811828ecba1f4f5d3e6abfe.png"
-        },
-        {
-            "title": "비메라",
-            "artist": "이 얍",
-            "jacketFileName": "d47a7126d4fdb1969c576f377b8fb480.png"
-        },
-        {
-            "title": "진공 청소기",
-            "artist": "도인",
-            "jacketFileName": "5bd3e6508c6ef691a52d8e12149c4b93.png"
-        },
-        {
-            "title": "하늘다람쥐",
-            "artist": "도인",
-            "jacketFileName": "7abbf7a6be02f94ec16598a3b841a139.png"
-        },
-        {
-            "title": "리더",
-            "artist": "도인",
-            "jacketFileName": "7a7a1b221de07d92d694b1ccd2bb69e0.png"
-        }
-    ]
-}
+[
+    {
+        "title": "이렐리아",
+        "level": 26,
+        "artist": "HyuN",
+        "chartType": "DOUBLE",
+        "jacketFileName": "282c1e3e7427966fe98c2fb2accfa9d6.png"
+    },
+    {
+        "title": "디그니티",
+        "level": 26,
+        "artist": "크래쉬",
+        "chartType": "DOUBLE",
+        "jacketFileName": "f1cb86385e1dcac7b5dd87da181ed2f2.png"
+    },
+    {
+        "title": "아라가미",
+        "level": 26,
+        "artist": "xi",
+        "chartType": "DOUBLE",
+        "jacketFileName": "268d0e5526dc475ccf8ca90a60fcae68.png"
+    },
+    {
+        "title": "디멘트 ~에프터 레전드~",
+        "level": 26,
+        "artist": "루나틱 사운즈",
+        "chartType": "DOUBLE",
+        "jacketFileName": "fd482baf3748bc4b5e74b4d5cd800819.png"
+    },
+    {
+        "title": "카오스 어게인",
+        "level": 26,
+        "artist": "NAOKI underground -Ω-",
+        "chartType": "DOUBLE",
+        "jacketFileName": "df2bb22858f58b4cf088ce1866854f2d.png"
+    },
+    {
+        "title": "시간의 회랑 라비린스",
+        "level": 26,
+        "artist": "A:llha (ANE + 2riA)",
+        "chartType": "DOUBLE",
+        "jacketFileName": "e6f6dc0021c7ff7a8a5bfbbf1d1795f6.png"
+    },
+    {
+        "title": "키메라",
+        "level": 26,
+        "artist": "이 얍",
+        "chartType": "DOUBLE",
+        "jacketFileName": "29515cbcd2bb2db30c23ed5228cdf93d.png"
+    },
+    {
+        "title": "이스케이프",
+        "level": 26,
+        "artist": "D_AAN",
+        "chartType": "DOUBLE",
+        "jacketFileName": "057e2df0bf02e2fcb287bb24644d0cb4.png"
+    },
+    {
+        "title": "아클루오이아스",
+        "level": 26,
+        "artist": "D_AAN",
+        "chartType": "DOUBLE",
+        "jacketFileName": "08b06c0759e9193b9cb7cfb9ee2a67a6.png"
+    },
+    {
+        "title": "슈브 니구라스",
+        "level": 26,
+        "artist": "나토",
+        "chartType": "DOUBLE",
+        "jacketFileName": "1f724c66b21c31dd9c8999b2cdd04f6d.png"
+    },
+    {
+        "title": "1949",
+        "level": 26,
+        "artist": "슬램",
+        "chartType": "DOUBLE",
+        "jacketFileName": "27b9c3cc4f8d3c476205f2d4e6bbd9a5.png"
+    },
+    {
+        "title": "리펜턴스",
+        "level": 26,
+        "artist": "Abel",
+        "chartType": "DOUBLE",
+        "jacketFileName": "93d5647e7b2b3cdb2b3a04d06f996851.png"
+    },
+    {
+        "title": "패러독스 - SHORT CUT -",
+        "level": 26,
+        "artist": "슬램 & 나토",
+        "chartType": "DOUBLE",
+        "jacketFileName": "2975834a1fbb299395252e9f1691851c.png"
+    },
+    {
+        "title": "클리너",
+        "level": 26,
+        "artist": "도인",
+        "chartType": "DOUBLE",
+        "jacketFileName": "e6ac757c38d1d589c25b3461bb8438d5.png"
+    },
+    {
+        "title": "굿 나이트 - FULL SONG -",
+        "level": 26,
+        "artist": "드림캐쳐",
+        "chartType": "DOUBLE",
+        "jacketFileName": "adaa2f4a9c9e0b2a87ed9882d615622c.png"
+    },
+    {
+        "title": "텔링 포츈 플라워",
+        "level": 26,
+        "artist": "Koharu feat. Renyata",
+        "chartType": "DOUBLE",
+        "jacketFileName": "212d24f35ebb3de53f5deb6cd6625d31.png"
+    },
+    {
+        "title": "프라임 타임",
+        "level": 26,
+        "artist": "Cashew",
+        "chartType": "DOUBLE",
+        "jacketFileName": "6a9b52dad811828ecba1f4f5d3e6abfe.png"
+    },
+    {
+        "title": "비메라",
+        "level": 26,
+        "artist": "이 얍",
+        "chartType": "DOUBLE",
+        "jacketFileName": "d47a7126d4fdb1969c576f377b8fb480.png"
+    },
+    {
+        "title": "진공 청소기",
+        "level": 26,
+        "artist": "도인",
+        "chartType": "DOUBLE",
+        "jacketFileName": "5bd3e6508c6ef691a52d8e12149c4b93.png"
+    },
+    {
+        "title": "하늘다람쥐",
+        "level": 26,
+        "artist": "도인",
+        "chartType": "DOUBLE",
+        "jacketFileName": "7abbf7a6be02f94ec16598a3b841a139.png"
+    },
+    {
+        "title": "리더",
+        "level": 26,
+        "artist": "도인",
+        "chartType": "DOUBLE",
+        "jacketFileName": "7a7a1b221de07d92d694b1ccd2bb69e0.png"
+    }
+]

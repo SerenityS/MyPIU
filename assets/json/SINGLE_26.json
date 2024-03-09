@@ -1,11 +1,9 @@
-{
-    "level": 26,
-    "type": "SINGLE",
-    "songs": [
-        {
-            "title": "패러독스",
-            "artist": "슬램 & 나토",
-            "jacketFileName": "2da8be03841200479a4c23e8b60aeb70.png"
-        }
-    ]
-}
+[
+    {
+        "title": "패러독스",
+        "level": 26,
+        "artist": "슬램 & 나토",
+        "chartType": "SINGLE",
+        "jacketFileName": "2da8be03841200479a4c23e8b60aeb70.png"
+    }
+]

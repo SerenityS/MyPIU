@@ -1,96 +1,128 @@
-{
-    "level": 1,
-    "type": "SINGLE",
-    "songs": [
-        {
-            "title": "애프터 라이크",
-            "artist": "아이브",
-            "jacketFileName": "3d23c9edaa07db47061f65521a4217f9.png"
-        },
-        {
-            "title": "얼론",
-            "artist": "하이라이트",
-            "jacketFileName": "3b2ade8e4cd4ba29e8c151a0c7db6df9.png"
-        },
-        {
-            "title": "비행기",
-            "artist": "타이푼",
-            "jacketFileName": "2b68ab56a7ed2f08faccf852ffad7d90.png"
-        },
-        {
-            "title": "배드 애플!! feat. Nomico",
-            "artist": "Masayoshi Minoshima",
-            "jacketFileName": "1b9bf0daa47f8400f9781d6dcadd8fe1.png"
-        },
-        {
-            "title": "설탕음모론",
-            "artist": "맥스",
-            "jacketFileName": "5c597482986398f97fd91d5890727258.png"
-        },
-        {
-            "title": "키티 캣",
-            "artist": "Coconut",
-            "jacketFileName": "15e31c739f5afd63b119c3622231df17.png"
-        },
-        {
-            "title": "레이디버그",
-            "artist": "Coconut",
-            "jacketFileName": "a643f4d4a57a5de83e10b93b2cde79df.png"
-        },
-        {
-            "title": "여래아",
-            "artist": "시드사운드",
-            "jacketFileName": "1fbb103bbc7d1a94d6e994b27c2e6b9a.png"
-        },
-        {
-            "title": "유 앤 아이",
-            "artist": "드림캐쳐",
-            "jacketFileName": "348076ff6d242d366c6d8240e538b454.png"
-        },
-        {
-            "title": "날아올라",
-            "artist": "드림캐쳐",
-            "jacketFileName": "d35d8bf23ed86a5011b5f524fe9d6ed1.png"
-        },
-        {
-            "title": "스타드림 (feat. Romelon)",
-            "artist": "Cashew",
-            "jacketFileName": "0a5705bb58882d059fcdbd5aea9b9cce.png"
-        },
-        {
-            "title": "유 어게인 마이 러브",
-            "artist": "CYO Style & Henohenomoheji",
-            "jacketFileName": "9ce34fa1e500db4be8577c4f445a7843.png"
-        },
-        {
-            "title": "미토츠다이라",
-            "artist": "ETIA.",
-            "jacketFileName": "ecf79c1e42b93ee432951987eb08b108.png"
-        },
-        {
-            "title": "라라",
-            "artist": "야시 프레스먼",
-            "jacketFileName": "9dccb5b56aff18745238b883d32a4863.png"
-        },
-        {
-            "title": "아마이 유우와쿠 데인저러스",
-            "artist": "바쿠스테 소토칸다 잇쵸메",
-            "jacketFileName": "944b44536234a97d16db0c83a1f2bf4f.png"
-        },
-        {
-            "title": "위 갓 투 노우",
-            "artist": "맥스",
-            "jacketFileName": "0b75dc7c2243277815afefc46a62a135.png"
-        },
-        {
-            "title": "케이.오.에이 : 엘리스 인 원더월드",
-            "artist": "반야 프로덕션",
-            "jacketFileName": "a874f7b05f1a86fa3b80ec45f304c50c.png"
-        },
-        {
-            "title": "사랑가",
-            "artist": "반야",
-            "jacketFileName": "f370805212bd54111e4443c8759ab0e2.png"
-        }
-    ]
-}
+[
+    {
+        "title": "애프터 라이크",
+        "level": 1,
+        "artist": "아이브",
+        "chartType": "SINGLE",
+        "jacketFileName": "3d23c9edaa07db47061f65521a4217f9.png"
+    },
+    {
+        "title": "얼론",
+        "level": 1,
+        "artist": "하이라이트",
+        "chartType": "SINGLE",
+        "jacketFileName": "3b2ade8e4cd4ba29e8c151a0c7db6df9.png"
+    },
+    {
+        "title": "비행기",
+        "level": 1,
+        "artist": "타이푼",
+        "chartType": "SINGLE",
+        "jacketFileName": "2b68ab56a7ed2f08faccf852ffad7d90.png"
+    },
+    {
+        "title": "배드 애플!! feat. Nomico",
+        "level": 1,
+        "artist": "Masayoshi Minoshima",
+        "chartType": "SINGLE",
+        "jacketFileName": "1b9bf0daa47f8400f9781d6dcadd8fe1.png"
+    },
+    {
+        "title": "설탕음모론",
+        "level": 1,
+        "artist": "맥스",
+        "chartType": "SINGLE",
+        "jacketFileName": "5c597482986398f97fd91d5890727258.png"
+    },
+    {
+        "title": "키티 캣",
+        "level": 1,
+        "artist": "Coconut",
+        "chartType": "SINGLE",
+        "jacketFileName": "15e31c739f5afd63b119c3622231df17.png"
+    },
+    {
+        "title": "레이디버그",
+        "level": 1,
+        "artist": "Coconut",
+        "chartType": "SINGLE",
+        "jacketFileName": "a643f4d4a57a5de83e10b93b2cde79df.png"
+    },
+    {
+        "title": "여래아",
+        "level": 1,
+        "artist": "시드사운드",
+        "chartType": "SINGLE",
+        "jacketFileName": "1fbb103bbc7d1a94d6e994b27c2e6b9a.png"
+    },
+    {
+        "title": "유 앤 아이",
+        "level": 1,
+        "artist": "드림캐쳐",
+        "chartType": "SINGLE",
+        "jacketFileName": "348076ff6d242d366c6d8240e538b454.png"
+    },
+    {
+        "title": "날아올라",
+        "level": 1,
+        "artist": "드림캐쳐",
+        "chartType": "SINGLE",
+        "jacketFileName": "d35d8bf23ed86a5011b5f524fe9d6ed1.png"
+    },
+    {
+        "title": "스타드림 (feat. Romelon)",
+        "level": 1,
+        "artist": "Cashew",
+        "chartType": "SINGLE",
+        "jacketFileName": "0a5705bb58882d059fcdbd5aea9b9cce.png"
+    },
+    {
+        "title": "유 어게인 마이 러브",
+        "level": 1,
+        "artist": "CYO Style & Henohenomoheji",
+        "chartType": "SINGLE",
+        "jacketFileName": "9ce34fa1e500db4be8577c4f445a7843.png"
+    },
+    {
+        "title": "미토츠다이라",
+        "level": 1,
+        "artist": "ETIA.",
+        "chartType": "SINGLE",
+        "jacketFileName": "ecf79c1e42b93ee432951987eb08b108.png"
+    },
+    {
+        "title": "라라",
+        "level": 1,
+        "artist": "야시 프레스먼",
+        "chartType": "SINGLE",
+        "jacketFileName": "9dccb5b56aff18745238b883d32a4863.png"
+    },
+    {
+        "title": "아마이 유우와쿠 데인저러스",
+        "level": 1,
+        "artist": "바쿠스테 소토칸다 잇쵸메",
+        "chartType": "SINGLE",
+        "jacketFileName": "944b44536234a97d16db0c83a1f2bf4f.png"
+    },
+    {
+        "title": "위 갓 투 노우",
+        "level": 1,
+        "artist": "맥스",
+        "chartType": "SINGLE",
+        "jacketFileName": "0b75dc7c2243277815afefc46a62a135.png"
+    },
+    {
+        "title": "케이.오.에이 : 엘리스 인 원더월드",
+        "level": 1,
+        "artist": "반야 프로덕션",
+        "chartType": "SINGLE",
+        "jacketFileName": "a874f7b05f1a86fa3b80ec45f304c50c.png"
+    },
+    {
+        "title": "사랑가",
+        "level": 1,
+        "artist": "반야",
+        "chartType": "SINGLE",
+        "jacketFileName": "f370805212bd54111e4443c8759ab0e2.png"
+    }
+]

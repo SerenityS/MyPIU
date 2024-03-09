@@ -1,51 +1,65 @@
-{
-    "level": 5,
-    "type": "DOUBLE",
-    "songs": [
-        {
-            "title": "일레븐",
-            "artist": "아이브",
-            "jacketFileName": "9dd85a37a95d4e05f0c2c86e4471d8af.png"
-        },
-        {
-            "title": "스타더스트 오버드라이브",
-            "artist": "typeMARS",
-            "jacketFileName": "b9be99d658d2ab83f12a236a1b3246bb.png"
-        },
-        {
-            "title": "포가튼 뱀파이어",
-            "artist": "WyvernP",
-            "jacketFileName": "07eef7f1a5338abedaeb031a0d8ee876.png"
-        },
-        {
-            "title": "유 갓 미 락킹",
-            "artist": "맥스",
-            "jacketFileName": "91fa9215b387af5e20b5384200c591b5.png"
-        },
-        {
-            "title": "요로피쿠 피쿠요로 !",
-            "artist": "바쿠스테 소토칸다 잇쵸메",
-            "jacketFileName": "a3f59503b1c4eae7f27fe2ba8ca405af.png"
-        },
-        {
-            "title": "롤링 크리스마스",
-            "artist": "반야",
-            "jacketFileName": "744e973eeccd43765eb616bb0cad04e6.png"
-        },
-        {
-            "title": "유 갓 미 크레이지",
-            "artist": "맥스",
-            "jacketFileName": "e8badaf7cb0e179bb555c5db98dc5abb.png"
-        },
-        {
-            "title": "브레이크 잇 다운",
-            "artist": "MAZO",
-            "jacketFileName": "f4690ef2656e96e8f37386b19177e115.png"
-        },
-        {
-            "title": "블레이즈 이모션 (Band version)",
-            "artist": "이 얍",
-            "jacketFileName": "784f0386b87ff0d1e1f6fc80fd8c98c1.png"
-        }
-    ]
-}
+[
+    {
+        "title": "일레븐",
+        "level": 5,
+        "artist": "아이브",
+        "chartType": "DOUBLE",
+        "jacketFileName": "9dd85a37a95d4e05f0c2c86e4471d8af.png"
+    },
+    {
+        "title": "스타더스트 오버드라이브",
+        "level": 5,
+        "artist": "typeMARS",
+        "chartType": "DOUBLE",
+        "jacketFileName": "b9be99d658d2ab83f12a236a1b3246bb.png"
+    },
+    {
+        "title": "포가튼 뱀파이어",
+        "level": 5,
+        "artist": "WyvernP",
+        "chartType": "DOUBLE",
+        "jacketFileName": "07eef7f1a5338abedaeb031a0d8ee876.png"
+    },
+    {
+        "title": "유 갓 미 락킹",
+        "level": 5,
+        "artist": "맥스",
+        "chartType": "DOUBLE",
+        "jacketFileName": "91fa9215b387af5e20b5384200c591b5.png"
+    },
+    {
+        "title": "요로피쿠 피쿠요로 !",
+        "level": 5,
+        "artist": "바쿠스테 소토칸다 잇쵸메",
+        "chartType": "DOUBLE",
+        "jacketFileName": "a3f59503b1c4eae7f27fe2ba8ca405af.png"
+    },
+    {
+        "title": "롤링 크리스마스",
+        "level": 5,
+        "artist": "반야",
+        "chartType": "DOUBLE",
+        "jacketFileName": "744e973eeccd43765eb616bb0cad04e6.png"
+    },
+    {
+        "title": "유 갓 미 크레이지",
+        "level": 5,
+        "artist": "맥스",
+        "chartType": "DOUBLE",
+        "jacketFileName": "e8badaf7cb0e179bb555c5db98dc5abb.png"
+    },
+    {
+        "title": "브레이크 잇 다운",
+        "level": 5,
+        "artist": "MAZO",
+        "chartType": "DOUBLE",
+        "jacketFileName": "f4690ef2656e96e8f37386b19177e115.png"
+    },
+    {
+        "title": "블레이즈 이모션 (Band version)",
+        "level": 5,
+        "artist": "이 얍",
+        "chartType": "DOUBLE",
+        "jacketFileName": "784f0386b87ff0d1e1f6fc80fd8c98c1.png"
+    }
+]

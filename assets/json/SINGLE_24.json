@@ -1,71 +1,93 @@
-{
-    "level": 24,
-    "type": "SINGLE",
-    "songs": [
-        {
-            "title": "이렐리아",
-            "artist": "HyuN",
-            "jacketFileName": "282c1e3e7427966fe98c2fb2accfa9d6.png"
-        },
-        {
-            "title": "아라가미",
-            "artist": "xi",
-            "jacketFileName": "268d0e5526dc475ccf8ca90a60fcae68.png"
-        },
-        {
-            "title": "카오스 어게인",
-            "artist": "NAOKI underground -Ω-",
-            "jacketFileName": "df2bb22858f58b4cf088ce1866854f2d.png"
-        },
-        {
-            "title": "이스케이프",
-            "artist": "D_AAN",
-            "jacketFileName": "057e2df0bf02e2fcb287bb24644d0cb4.png"
-        },
-        {
-            "title": "스켑틱",
-            "artist": "도인",
-            "jacketFileName": "cfd902c46c5004527c92d5e229edcc42.png"
-        },
-        {
-            "title": "아클루오이아스",
-            "artist": "D_AAN",
-            "jacketFileName": "08b06c0759e9193b9cb7cfb9ee2a67a6.png"
-        },
-        {
-            "title": "슈브 니구라스",
-            "artist": "나토",
-            "jacketFileName": "1f724c66b21c31dd9c8999b2cdd04f6d.png"
-        },
-        {
-            "title": "퍼더",
-            "artist": "도인",
-            "jacketFileName": "1f171915dd8d2dabd558f070fa77f419.png"
-        },
-        {
-            "title": "제로아이즈",
-            "artist": "FE",
-            "jacketFileName": "50c4cc1811cead8b175df061b10e6307.png"
-        },
-        {
-            "title": "패러독스 - SHORT CUT -",
-            "artist": "슬램 & 나토",
-            "jacketFileName": "2975834a1fbb299395252e9f1691851c.png"
-        },
-        {
-            "title": "굿 나이트 - FULL SONG -",
-            "artist": "드림캐쳐",
-            "jacketFileName": "adaa2f4a9c9e0b2a87ed9882d615622c.png"
-        },
-        {
-            "title": "비메라",
-            "artist": "이 얍",
-            "jacketFileName": "d47a7126d4fdb1969c576f377b8fb480.png"
-        },
-        {
-            "title": "리더",
-            "artist": "도인",
-            "jacketFileName": "7a7a1b221de07d92d694b1ccd2bb69e0.png"
-        }
-    ]
-}
+[
+    {
+        "title": "이렐리아",
+        "level": 24,
+        "artist": "HyuN",
+        "chartType": "SINGLE",
+        "jacketFileName": "282c1e3e7427966fe98c2fb2accfa9d6.png"
+    },
+    {
+        "title": "아라가미",
+        "level": 24,
+        "artist": "xi",
+        "chartType": "SINGLE",
+        "jacketFileName": "268d0e5526dc475ccf8ca90a60fcae68.png"
+    },
+    {
+        "title": "카오스 어게인",
+        "level": 24,
+        "artist": "NAOKI underground -Ω-",
+        "chartType": "SINGLE",
+        "jacketFileName": "df2bb22858f58b4cf088ce1866854f2d.png"
+    },
+    {
+        "title": "이스케이프",
+        "level": 24,
+        "artist": "D_AAN",
+        "chartType": "SINGLE",
+        "jacketFileName": "057e2df0bf02e2fcb287bb24644d0cb4.png"
+    },
+    {
+        "title": "스켑틱",
+        "level": 24,
+        "artist": "도인",
+        "chartType": "SINGLE",
+        "jacketFileName": "cfd902c46c5004527c92d5e229edcc42.png"
+    },
+    {
+        "title": "아클루오이아스",
+        "level": 24,
+        "artist": "D_AAN",
+        "chartType": "SINGLE",
+        "jacketFileName": "08b06c0759e9193b9cb7cfb9ee2a67a6.png"
+    },
+    {
+        "title": "슈브 니구라스",
+        "level": 24,
+        "artist": "나토",
+        "chartType": "SINGLE",
+        "jacketFileName": "1f724c66b21c31dd9c8999b2cdd04f6d.png"
+    },
+    {
+        "title": "퍼더",
+        "level": 24,
+        "artist": "도인",
+        "chartType": "SINGLE",
+        "jacketFileName": "1f171915dd8d2dabd558f070fa77f419.png"
+    },
+    {
+        "title": "제로아이즈",
+        "level": 24,
+        "artist": "FE",
+        "chartType": "SINGLE",
+        "jacketFileName": "50c4cc1811cead8b175df061b10e6307.png"
+    },
+    {
+        "title": "패러독스 - SHORT CUT -",
+        "level": 24,
+        "artist": "슬램 & 나토",
+        "chartType": "SINGLE",
+        "jacketFileName": "2975834a1fbb299395252e9f1691851c.png"
+    },
+    {
+        "title": "굿 나이트 - FULL SONG -",
+        "level": 24,
+        "artist": "드림캐쳐",
+        "chartType": "SINGLE",
+        "jacketFileName": "adaa2f4a9c9e0b2a87ed9882d615622c.png"
+    },
+    {
+        "title": "비메라",
+        "level": 24,
+        "artist": "이 얍",
+        "chartType": "SINGLE",
+        "jacketFileName": "d47a7126d4fdb1969c576f377b8fb480.png"
+    },
+    {
+        "title": "리더",
+        "level": 24,
+        "artist": "도인",
+        "chartType": "SINGLE",
+        "jacketFileName": "7a7a1b221de07d92d694b1ccd2bb69e0.png"
+    }
+]
