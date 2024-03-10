@@ -5,8 +5,8 @@ import 'package:piu_util/domain/enum/chart_type.dart';
 
 import '../controller/play_data_controller.dart';
 
-class PlayDataPage extends GetView<PlayDataController> {
-  const PlayDataPage({super.key});
+class PlayDataView extends GetView<PlayDataController> {
+  const PlayDataView({super.key});
 
   @override
   Widget build(BuildContext context) {

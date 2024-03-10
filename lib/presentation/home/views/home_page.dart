@@ -23,8 +23,8 @@ class HomePage extends GetView<HomeController> {
       ),
       body: Obx(() => SafeArea(child: controller.drawerPage)),
       drawer: Drawer(
-        backgroundColor: AppColor.cardPrimary,
         child: ListView(
+          physics: const ClampingScrollPhysics(),
           children: [
             ListTile(
               title: const Text('My Profile'),
@@ -37,6 +37,13 @@ class HomePage extends GetView<HomeController> {
               title: const Text('Title'),
               onTap: () {
                 controller.drawerIndex = 1;
+                Get.back();
+              },
+            ),
+            ListTile(
+              title: const Text('Score Checker'),
+              onTap: () {
+                controller.drawerIndex = 2;
                 Get.back();
               },
             ),

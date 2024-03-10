@@ -4,7 +4,7 @@ import 'package:piu_util/presentation/home/views/home_page.dart';
 import 'package:piu_util/presentation/login/controller/login_binding.dart';
 import 'package:piu_util/presentation/login/views/login_page.dart';
 import 'package:piu_util/presentation/play_data/controller/play_data_binding.dart';
-import 'package:piu_util/presentation/play_data/views/play_data_page.dart';
+import 'package:piu_util/presentation/play_data/views/play_data_view.dart';
 import 'package:piu_util/presentation/title/controller/title_binding.dart';
 import 'package:piu_util/presentation/title/views/title_view.dart';
 
@@ -29,7 +29,7 @@ class Routes {
     // PlayData
     GetPage(
       name: RoutePath.playData,
-      page: () => const PlayDataPage(),
+      page: () => const PlayDataView(),
     ),
 
     // Title
