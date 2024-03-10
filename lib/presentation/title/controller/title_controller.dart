@@ -3,7 +3,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:piu_util/domain/entities/title_data.dart';
 import 'package:piu_util/domain/usecases/my_data_usecases.dart';
-import 'package:piu_util/presentation/home/controller/home_controller.dart';
+import 'package:piu_util/presentation/home/controller/my_data_controller.dart';
 
 class TitleController extends GetxController {
   final MyDataUseCases _useCases = Get.find<MyDataUseCases>();
@@ -49,7 +49,7 @@ class TitleController extends GetxController {
     bool result = await _useCases.setTitle.execute(title.id!);
 
     if (result) {
-      Get.find<HomeController>().setTitle(title);
+      Get.find<MyDataController>().setTitle(title);
 
       List<TitleData> updatedTitleDataList = titleDataList.map((e) {
         if (e.titleText == title.titleText) {

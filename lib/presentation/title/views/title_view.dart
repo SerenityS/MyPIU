@@ -3,12 +3,12 @@ import 'package:get/get.dart';
 import 'package:piu_util/app/config/app_color.dart';
 import 'package:piu_util/domain/entities/title_data.dart';
 import 'package:piu_util/presentation/common/widgets/title_text.dart';
-import 'package:piu_util/presentation/home/views/player_info_card.dart';
+import 'package:piu_util/presentation/home/widgets/player_info_card.dart';
 
 import '../controller/title_controller.dart';
 
-class TitlePage extends GetView<TitleController> {
-  const TitlePage({super.key});
+class TitleView extends GetView<TitleController> {
+  const TitleView({super.key});
 
   @override
   Widget build(BuildContext context) {

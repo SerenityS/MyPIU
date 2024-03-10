@@ -4,9 +4,9 @@ import 'package:get/get.dart';
 import 'package:piu_util/app/config/app_typeface.dart';
 import 'package:piu_util/presentation/common/widgets/title_text.dart';
 
-import '../controller/home_controller.dart';
+import '../controller/my_data_controller.dart';
 
-class PlayerInfoCard extends GetView<HomeController> {
+class PlayerInfoCard extends GetView<MyDataController> {
   const PlayerInfoCard({super.key});
 
   @override
