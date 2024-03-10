@@ -3,14 +3,13 @@ import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:piu_util/app/config/app_color.dart';
 
-import 'package:piu_util/app/config/app_typeface.dart';
 import 'package:piu_util/domain/entities/chart_data.dart';
 import 'package:piu_util/domain/enum/chart_type.dart';
 import 'package:piu_util/domain/enum/plate_type.dart';
-import 'package:piu_util/presentation/common/widgets/title_text.dart';
 import 'package:piu_util/presentation/play_data/controller/play_data_controller.dart';
 
 import '../controller/home_controller.dart';
+import 'player_info_card.dart';
 
 class HomePage extends GetView<HomeController> {
   const HomePage({super.key});
@@ -23,57 +22,12 @@ class HomePage extends GetView<HomeController> {
           physics: ClampingScrollPhysics(),
           child: Column(
             children: [
-              _PlayerInfoCard(),
+              PlayerInfoCard(),
               _PlayerPlateCard(),
             ],
           ),
         ),
       ),
-    );
-  }
-}
-
-class _PlayerInfoCard extends GetView<HomeController> {
-  const _PlayerInfoCard();
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: double.maxFinite,
-      margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
-        image: const DecorationImage(image: AssetImage("assets/image/bg1.png"), fit: BoxFit.cover),
-      ),
-      child: Obx(() {
-        if (controller.isLoading.value) {
-          return const Center(child: Padding(padding: EdgeInsets.all(8.0), child: CircularProgressIndicator()));
-        }
-
-        return Column(
-          children: [
-            Row(
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(8),
-                  child: Image.asset('assets/avatar/${controller.myData.avatar}', width: 80),
-                ),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      FittedBox(child: TitleText(controller.myData.titleText, controller.myData.titleType)),
-                      FittedBox(child: Text(controller.myData.nickname, style: AppTypeFace.nickname)),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ],
-        );
-      }),
     );
   }
 }

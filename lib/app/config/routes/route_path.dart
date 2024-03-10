@@ -7,4 +7,7 @@ class RoutePath {
 
   // PlayData
   static const String playData = '/playData';
+
+  // Title
+  static const String title = '/title';
 }

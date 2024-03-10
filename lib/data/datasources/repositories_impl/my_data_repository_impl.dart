@@ -6,6 +6,7 @@ import 'package:piu_util/app/config/app_url.dart';
 import 'package:piu_util/app/config/extension/get_file_name_extension.dart';
 import 'package:piu_util/app/network/builder/dio_builder.dart';
 import 'package:piu_util/domain/entities/my_data.dart';
+import 'package:piu_util/domain/entities/title_data.dart';
 import 'package:piu_util/domain/enum/title_type.dart';
 import 'package:piu_util/domain/repositories/my_data_repository.dart';
 
@@ -17,6 +18,23 @@ class MyDataRepositoryImpl extends MyDataRepository {
     var response = await _dio.get(AppUrl.playDataUrl);
 
     return parseMyData(response.data);
+  }
+
+  @override
+  Future<List<TitleData>> getTitleData() async {
+    var response = await _dio.get(AppUrl.getTitleUrl);
+
+    return parseTitleData(response.data);
+  }
+
+  @override
+  Future<bool> setTitle(String id) async {
+    try {
+      await _dio.post(AppUrl.setTitleUrl, data: {"no": id});
+      return true;
+    } catch (e) {
+      return false;
+    }
   }
 }
 
@@ -56,4 +74,33 @@ List<MyData> parseMyData(String html) {
   }
 
   return myDataList;
+}
+
+List<TitleData> parseTitleData(String html) {
+  List<TitleData> titleDataList = [];
+
+  var document = parse(html);
+  var parsedTitleData = document.getElementsByClassName("data_titleList2 flex wrap");
+
+  for (var titleData in parsedTitleData.first.getElementsByTagName("li")) {
+    String id = titleData.getElementsByTagName("input").firstOrNull?.attributes["value"] ?? '';
+    String title = titleData.getElementsByClassName("txt").first.text;
+    String titleType = titleData.getElementsByTagName("p").first.attributes["class"] ?? 'col5';
+    String description = titleData.getElementsByClassName("txt").last.text;
+    bool hasTitle = titleData.attributes["class"]!.contains("have") ? true : false;
+    bool isEnable = titleData.getElementsByTagName("button").first.attributes["class"]!.contains("bg2") ? true : false;
+
+    titleDataList.add(
+      TitleData(
+        id: id,
+        titleText: title,
+        titleType: TitleType.fromString(titleType),
+        description: description,
+        hasTitle: hasTitle,
+        isEnable: isEnable,
+      ),
+    );
+  }
+
+  return titleDataList;
 }

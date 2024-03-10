@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:piu_util/domain/entities/my_data.dart';
+import 'package:piu_util/domain/entities/title_data.dart';
 import 'package:piu_util/domain/usecases/my_data_usecases.dart';
 
 class HomeController extends GetxController {
@@ -10,6 +11,10 @@ class HomeController extends GetxController {
   final RxList<MyData> _myDataList = <MyData>[].obs;
 
   MyData get myData => _myDataList[_userIdx.value];
+
+  void setTitle(TitleData titleData) {
+    _myDataList[_userIdx.value] = _myDataList[_userIdx.value].copyWith(titleText: titleData.titleText, titleType: titleData.titleType);
+  }
 
   @override
   onInit() async {

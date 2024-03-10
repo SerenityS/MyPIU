@@ -5,6 +5,8 @@ import 'package:piu_util/presentation/login/controller/login_binding.dart';
 import 'package:piu_util/presentation/login/views/login_page.dart';
 import 'package:piu_util/presentation/play_data/controller/play_data_binding.dart';
 import 'package:piu_util/presentation/play_data/views/play_data_page.dart';
+import 'package:piu_util/presentation/title/controller/title_binding.dart';
+import 'package:piu_util/presentation/title/views/title_page.dart';
 
 import 'route_path.dart';
 
@@ -28,6 +30,13 @@ class Routes {
     GetPage(
       name: RoutePath.playData,
       page: () => const PlayDataPage(),
+    ),
+
+    // Title
+    GetPage(
+      name: RoutePath.title,
+      page: () => const TitlePage(),
+      binding: TitleBinding(),
     ),
   ];
 }
