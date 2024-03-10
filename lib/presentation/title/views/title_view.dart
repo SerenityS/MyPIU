@@ -14,22 +14,18 @@ class TitleView extends GetView<TitleController> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: SingleChildScrollView(
-          physics: const ClampingScrollPhysics(),
-          child: Column(
-            children: [
-              const PlayerInfoCard(),
-              const _TitleFilter(),
-              Obx(() {
+        child: Column(
+          children: [
+            const PlayerInfoCard(),
+            const _TitleFilter(),
+            Expanded(
+              child: Obx(() {
                 if (controller.isLoading.value) {
-                  return Padding(
-                    padding: EdgeInsets.only(top: Get.width * 0.1),
-                    child: const CircularProgressIndicator(),
-                  );
+                  return const Center(child: CircularProgressIndicator());
                 }
 
                 return ListView.builder(
-                  physics: const NeverScrollableScrollPhysics(),
+                  physics: const ClampingScrollPhysics(),
                   shrinkWrap: true,
                   itemCount: controller.filteredTitleDataList.length,
                   itemBuilder: (BuildContext context, int index) {
@@ -37,8 +33,8 @@ class TitleView extends GetView<TitleController> {
                   },
                 );
               }),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
@@ -55,7 +51,7 @@ class _TitleFilter extends GetView<TitleController> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+      padding: const EdgeInsets.fromLTRB(12, 0, 12, 8),
       child: SizedBox(
         height: 40,
         child: Row(
