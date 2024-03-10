@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/src/simple/get_view.dart';
+import 'package:get/get.dart';
 
 import '../controller/login_controller.dart';
 
@@ -10,19 +10,34 @@ class LoginPage extends GetView<LoginController> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          children: [
-            TextField(
-              controller: controller.emailController,
-              decoration: const InputDecoration(labelText: 'Email'),
-            ),
-            TextField(
-              controller: controller.passwordController,
-              decoration: const InputDecoration(labelText: 'Password'),
-            ),
-            ElevatedButton(onPressed: () async => await controller.login(), child: const Text('Login')),
-          ],
-        ),
+        child: Obx(() {
+          if (controller.isLoading.value) {
+            return const Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Center(child: CircularProgressIndicator()),
+                SizedBox(height: 8),
+                Text("로그인 중..."),
+              ],
+            );
+          }
+
+          return Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextField(
+                controller: controller.emailController,
+                decoration: const InputDecoration(labelText: 'Email'),
+              ),
+              TextField(
+                controller: controller.passwordController,
+                decoration: const InputDecoration(labelText: 'Password'),
+                obscureText: true,
+              ),
+              ElevatedButton(onPressed: () async => await controller.login(), child: const Text('Login')),
+            ],
+          );
+        }),
       ),
     );
   }
