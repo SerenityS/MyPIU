@@ -31,18 +31,24 @@ class PlayDataPage extends GetView<PlayDataController> {
                   ),
                   const Text("Double"),
                   const Spacer(),
+                  Expanded(
+                    child: TextField(
+                      controller: TextEditingController(text: controller.currentLevel.value.toString()),
+                      onChanged: (value) => controller.currentLevel.value = int.parse(value),
+                    ),
+                  ),
+                  const Spacer(),
                   ElevatedButton(
                     onPressed: () async {
-                      await controller.getClearData();
+                      await controller.getBestScoreData();
+                      controller.generateClearData();
                     },
                     child: const Text("Update Data"),
                   ),
                 ],
               ),
               Obx(() {
-                if (controller.clearDataList.isEmpty) {
-                  return const CircularProgressIndicator();
-                }
+                if (controller.clearDataList.isEmpty) return const CircularProgressIndicator();
 
                 return GridView.builder(
                   shrinkWrap: true,

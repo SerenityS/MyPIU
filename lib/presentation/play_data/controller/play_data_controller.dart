@@ -15,51 +15,52 @@ class PlayDataController extends GetxController {
   RxInt currentLevel = 24.obs;
 
   RxList<ChartData> clearDataList = <ChartData>[].obs;
+  RxList<ChartData> bestScoreDataList = <ChartData>[].obs;
+  RxList<ChartData> levelDataList = <ChartData>[].obs;
+
   RxList<PlayData> playDataList = <PlayData>[].obs;
 
   @override
   void onInit() async {
     super.onInit();
 
-    await getLevelData();
-    await getClearData();
+    await getBestScoreData();
+    await generateClearData();
 
     ever(currentLevel, (_) async {
-      await getClearData();
+      await generateClearData();
     });
 
     ever(currentChartType, (_) async {
-      await getClearData();
+      await generateClearData();
     });
   }
 
   Future<void> getLevelData() async {
     // Get Chart Data from JSON
     var jsonString = await rootBundle.loadString('assets/json/${currentChartType.value.name}_$currentLevel.json');
-    clearDataList.assignAll((json.decode(jsonString) as List).map((e) => ChartData.fromJson(e)).toList());
+    levelDataList.assignAll((json.decode(jsonString) as List).map((e) => ChartData.fromJson(e)).toList());
   }
 
-  Future<void> getClearData() async {
-    if (isLoading.value) return;
-    isLoading.value = true;
+  Future<void> getBestScoreData() async {
+    // Get Best Score Data from web
+    bestScoreDataList.assignAll(await _useCases.getBestScore.execute());
+  }
 
-    // Get Chart Data from JSON
-    var jsonString = await rootBundle.loadString('assets/json/${currentChartType.value.name}_$currentLevel.json');
-    List<ChartData> chartDataList = (json.decode(jsonString) as List).map((e) => ChartData.fromJson(e)).toList();
-
-    // Get Best Score Data
-    List<ChartData> scoreDataList = await _useCases.getBestScore.execute(currentLevel.value);
+  Future<void> generateClearData() async {
+    await getLevelData();
 
     // Generate Clear Data
-    List<ChartData> generatedList = [];
+    List<ChartData> generatedData = [];
 
-    for (var chartData in chartDataList) {
-      var matchingData = scoreDataList.firstWhereOrNull(
-        (clearData) => clearData.title == chartData.title && clearData.chartType == chartData.chartType,
+    for (var chartData in levelDataList) {
+      var matchingData = bestScoreDataList.firstWhereOrNull(
+        (clearData) =>
+            clearData.title == chartData.title && clearData.level == chartData.level && clearData.chartType == chartData.chartType,
       );
 
       if (matchingData != null) {
-        generatedList.add(
+        generatedData.add(
           ChartData(
             title: chartData.title,
             level: matchingData.level,
@@ -71,14 +72,12 @@ class PlayDataController extends GetxController {
           ),
         );
       } else {
-        generatedList.add(chartData);
+        generatedData.add(chartData);
       }
     }
 
-    generatedList.sort((a, b) => b.score.compareTo(a.score));
-    clearDataList.assignAll(generatedList);
-
-    isLoading.value = false;
+    generatedData.sort((a, b) => b.score.compareTo(a.score));
+    clearDataList.assignAll(generatedData);
   }
 
   Future<void> getPlayData() async {

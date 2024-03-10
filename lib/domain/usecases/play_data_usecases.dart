@@ -15,8 +15,8 @@ class GetBestScore {
   final PlayDataRepository _repository;
   GetBestScore(this._repository);
 
-  Future<List<ChartData>> execute(int level) async {
-    return await _repository.getMyBestScore(level);
+  Future<List<ChartData>> execute() async {
+    return await _repository.getBestScore();
   }
 }
 
