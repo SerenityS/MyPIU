@@ -8,4 +8,10 @@ class AppTypeFace {
     color: Colors.white,
     letterSpacing: 0.6,
   );
+  static const TextStyle nickname = TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeight.w900,
+    fontFamily: 'Oxanium',
+    color: Colors.white,
+  );
 }

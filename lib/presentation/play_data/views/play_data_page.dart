@@ -59,6 +59,7 @@ class _LevelSelectHeader extends GetView<PlayDataController> {
         ElevatedButton(
           onPressed: () async {
             await controller.getBestScoreData();
+            await controller.generateClearData();
           },
           child: const Text("정보 갱신"),
         ),

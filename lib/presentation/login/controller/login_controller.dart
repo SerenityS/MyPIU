@@ -57,7 +57,7 @@ class LoginController extends GetxController {
 
     if (result) {
       await _saveCredential();
-      Get.offAllNamed(RoutePath.playData);
+      Get.offAllNamed(RoutePath.home);
     } else {
       Get.snackbar('Error', 'Login Failed');
       await _deleteCredential();
