@@ -41,6 +41,10 @@ class TitleView extends GetView<TitleController> {
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async => await controller.getTitleData(),
+        child: const Icon(Icons.refresh),
+      ),
     );
   }
 }

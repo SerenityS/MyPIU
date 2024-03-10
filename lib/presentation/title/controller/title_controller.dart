@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
+import 'package:piu_util/data/datasources/local/title_local_data_source.dart';
 import 'package:piu_util/domain/entities/title_data.dart';
 import 'package:piu_util/domain/usecases/my_data_usecases.dart';
 import 'package:piu_util/presentation/home/controller/my_data_controller.dart';
 
 class TitleController extends GetxController {
   final MyDataUseCases _useCases = Get.find<MyDataUseCases>();
+  final TitleLocalDataSource _titleLocalDataSource = TitleLocalDataSource();
   RxBool isLoading = true.obs;
 
   final RxList<TitleData> titleDataList = <TitleData>[].obs;
@@ -19,7 +21,19 @@ class TitleController extends GetxController {
   void onInit() async {
     super.onInit();
 
-    await getTitleData();
+    List<TitleData>? savedTitleDataList = _titleLocalDataSource.getTitleData();
+    if (savedTitleDataList != null) {
+      titleDataList.assignAll(savedTitleDataList);
+      filteredTitleDataList.assignAll(titleDataList);
+
+      if (Get.find<MyDataController>().myData.titleText != titleDataList.firstWhere((element) => element.isEnable).titleText) {
+        await getTitleData();
+      }
+
+      isLoading.value = false;
+    } else {
+      await getTitleData();
+    }
   }
 
   void filterTitleData() {
@@ -40,8 +54,12 @@ class TitleController extends GetxController {
   }
 
   Future<void> getTitleData() async {
+    isLoading.value = true;
+
     titleDataList.assignAll(await _useCases.getTitleData.execute());
+    _titleLocalDataSource.saveTitleData(titleDataList);
     filteredTitleDataList.assignAll(titleDataList);
+
     isLoading.value = false;
   }
 
@@ -61,6 +79,7 @@ class TitleController extends GetxController {
       }).toList();
 
       titleDataList.assignAll(updatedTitleDataList);
+      _titleLocalDataSource.saveTitleData(titleDataList);
       filterTitleData();
 
       Fluttertoast.showToast(msg: "칭호가 변경되었습니다.");
