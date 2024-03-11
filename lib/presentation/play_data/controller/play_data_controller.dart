@@ -1,7 +1,11 @@
 import 'dart:convert';
+import 'dart:ui' as ui;
 
+import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:piu_util/data/datasources/local/play_data_local_data_source.dart';
 import 'package:piu_util/domain/entities/chart_data.dart';
 import 'package:piu_util/domain/entities/play_data.dart';
@@ -12,16 +16,18 @@ class PlayDataController extends GetxController {
   final PlayDataUseCases _useCases = Get.find<PlayDataUseCases>();
   final PlayDataLocalDataSource _playDataSource = PlayDataLocalDataSource();
 
-  RxBool isLoading = true.obs;
+  final RxBool isLoading = true.obs;
 
-  Rx<ChartType> currentChartType = ChartType.DOUBLE.obs;
-  RxInt currentLevel = 24.obs;
+  final Rx<ChartType> currentChartType = ChartType.DOUBLE.obs;
+  final RxInt currentLevel = 24.obs;
 
-  RxList<ChartData> clearDataList = <ChartData>[].obs;
-  RxList<ChartData> bestScoreDataList = <ChartData>[].obs;
-  RxList<ChartData> levelDataList = <ChartData>[].obs;
+  final RxList<ChartData> clearDataList = <ChartData>[].obs;
+  final RxList<ChartData> bestScoreDataList = <ChartData>[].obs;
+  final RxList<ChartData> levelDataList = <ChartData>[].obs;
 
-  RxList<PlayData> playDataList = <PlayData>[].obs;
+  final RxList<PlayData> playDataList = <PlayData>[].obs;
+
+  final GlobalKey scoreWidgetKey = GlobalKey();
 
   @override
   void onInit() async {
@@ -99,5 +105,19 @@ class PlayDataController extends GetxController {
 
   Future<void> getPlayData() async {
     playDataList.assignAll(await _useCases.getPlayData.execute(currentLevel.value));
+  }
+
+  Future<void> takeScreenshot() async {
+    RenderRepaintBoundary boundary = scoreWidgetKey.currentContext!.findRenderObject() as RenderRepaintBoundary;
+    ui.Image image = await boundary.toImage(pixelRatio: 3);
+    ByteData? byteData = await image.toByteData(format: ui.ImageByteFormat.png);
+    Uint8List pngBytes = byteData!.buffer.asUint8List();
+    var result = await ImageGallerySaver.saveImage(
+      Uint8List.fromList(pngBytes),
+      name:
+          "score_check_${DateTime.now().year}-${DateTime.now().month}-${DateTime.now().day}-${DateTime.now().hour}-${DateTime.now().minute}-${DateTime.now().second}",
+    );
+
+    print(result);
   }
 }

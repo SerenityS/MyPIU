@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:piu_util/app/config/app_color.dart';
 import 'package:piu_util/domain/enum/chart_type.dart';
+import 'package:piu_util/presentation/home/controller/my_data_controller.dart';
 
 import '../controller/play_data_controller.dart';
 
@@ -10,14 +11,18 @@ class PlayDataView extends GetView<PlayDataController> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: SafeArea(
+    return Scaffold(
+      body: const SafeArea(
         child: Column(
           children: [
             _LevelSelectHeader(),
             _BestScoreBody(),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async => await controller.takeScreenshot(),
+        child: const Icon(Icons.photo_camera_outlined),
       ),
     );
   }
@@ -88,51 +93,91 @@ class _BestScoreBody extends GetView<PlayDataController> {
           return const Text("정보가 없습니다.");
         }
 
-        return GridView.builder(
-          shrinkWrap: true,
-          itemCount: controller.clearDataList.length,
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 5),
-          itemBuilder: (context, index) {
-            return Container(
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("assets/jacket/${controller.clearDataList[index].jacketFileName}"),
-                  fit: BoxFit.cover,
+        return const _BestScoreGridView();
+      }),
+    );
+  }
+}
+
+class _BestScoreGridView extends GetView<PlayDataController> {
+  const _BestScoreGridView();
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      physics: const ClampingScrollPhysics(),
+      child: Column(
+        children: [
+          RepaintBoundary(
+            key: controller.scoreWidgetKey,
+            child: SingleChildScrollView(
+              physics: const ClampingScrollPhysics(),
+              child: Container(
+                color: AppColor.bg,
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: [
+                          Text("PIU Phoenix ${controller.currentChartType.value.name} ${controller.currentLevel.value} Score List",
+                              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, fontFamily: 'Oxanium')),
+                          Text("Player: ${Get.find<MyDataController>().myData.nickname}",
+                              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, fontFamily: 'Oxanium')),
+                        ],
+                      ),
+                    ),
+                    Wrap(
+                      children: [
+                        for (int i = 0; i < controller.clearDataList.length; i++)
+                          Container(
+                            width: Get.width / 5,
+                            height: Get.width / 7,
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage("assets/jacket/${controller.clearDataList[i].jacketFileName}"),
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            child: Stack(
+                              children: [
+                                Text(
+                                  (controller.clearDataList[i].score / 10000).toStringAsFixed(1) == "0.0"
+                                      ? ""
+                                      : (controller.clearDataList[i].score / 10000).toStringAsFixed(1),
+                                  style: TextStyle(
+                                      fontSize: 30,
+                                      fontWeight: FontWeight.bold,
+                                      foreground: Paint()
+                                        ..style = PaintingStyle.stroke
+                                        ..strokeWidth = 3
+                                        ..color = Colors.white,
+                                      fontFamily: 'Oxanium'),
+                                ),
+                                Text(
+                                  (controller.clearDataList[i].score / 10000).toStringAsFixed(1) == "0.0"
+                                      ? ""
+                                      : (controller.clearDataList[i].score / 10000).toStringAsFixed(1),
+                                  style: const TextStyle(
+                                    fontSize: 30,
+                                    color: Colors.red,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'Oxanium',
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
-              child: Stack(
-                children: [
-                  Text(
-                    (controller.clearDataList[index].score / 10000).toStringAsFixed(1) == "0.0"
-                        ? ""
-                        : (controller.clearDataList[index].score / 10000).toStringAsFixed(1),
-                    style: TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold,
-                        foreground: Paint()
-                          ..style = PaintingStyle.stroke
-                          ..strokeWidth = 3
-                          ..color = Colors.white,
-                        fontFamily: 'Oxanium'),
-                  ),
-                  Text(
-                    (controller.clearDataList[index].score / 10000).toStringAsFixed(1) == "0.0"
-                        ? ""
-                        : (controller.clearDataList[index].score / 10000).toStringAsFixed(1),
-                    style: const TextStyle(
-                      fontSize: 30,
-                      color: Colors.red,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Oxanium',
-                    ),
-                  ),
-                ],
-              ),
-            );
-          },
-        );
-      }),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
