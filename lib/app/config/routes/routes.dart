@@ -2,12 +2,12 @@ import 'package:get/route_manager.dart';
 import 'package:piu_util/presentation/avatar/controller/avatar_binding.dart';
 import 'package:piu_util/presentation/home/controller/home_binding.dart';
 import 'package:piu_util/presentation/home/views/home_page.dart';
+import 'package:piu_util/presentation/home/views/setting_page.dart';
+import 'package:piu_util/presentation/home/views/term_page.dart';
 import 'package:piu_util/presentation/login/controller/login_binding.dart';
 import 'package:piu_util/presentation/login/views/login_page.dart';
 import 'package:piu_util/presentation/play_data/controller/play_data_binding.dart';
-import 'package:piu_util/presentation/play_data/views/play_data_view.dart';
 import 'package:piu_util/presentation/title/controller/title_binding.dart';
-import 'package:piu_util/presentation/title/views/title_view.dart';
 
 import 'route_path.dart';
 
@@ -32,16 +32,14 @@ class Routes {
       ],
     ),
 
-    // PlayData
+    // Setting
     GetPage(
-      name: RoutePath.playData,
-      page: () => const PlayDataView(),
+      name: RoutePath.setting,
+      page: () => const SettingPage(),
     ),
-
-    // Title
     GetPage(
-      name: RoutePath.title,
-      page: () => const TitleView(),
+      name: RoutePath.term,
+      page: () => TermPage(),
     ),
   ];
 }

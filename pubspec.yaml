@@ -12,6 +12,7 @@ dependencies:
   dio_cookie_manager: ^3.1.1
   flutter:
     sdk: flutter
+  flutter_markdown: ^0.6.21
   flutter_secure_storage: ^9.0.0
   flutter_svg: ^2.0.10+1
   fluttertoast: ^8.2.4
@@ -43,6 +44,7 @@ flutter:
     - assets/json/
     - assets/plate/
     - assets/step_ball/
+    - assets/term/
 
   fonts:
     - family: Pretendard

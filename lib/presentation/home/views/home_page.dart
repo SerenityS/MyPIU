@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:piu_util/app/config/routes/route_path.dart';
 
 import 'package:piu_util/presentation/home/controller/home_controller.dart';
 
@@ -17,6 +18,12 @@ class HomePage extends GetView<HomeController> {
           fit: BoxFit.fitHeight,
         ),
         centerTitle: true,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.settings_outlined),
+            onPressed: () => Get.toNamed(RoutePath.setting),
+          ),
+        ],
       ),
       body: Obx(() => SafeArea(child: controller.drawerPage)),
       drawer: Drawer(

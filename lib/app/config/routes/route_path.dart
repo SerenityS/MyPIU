@@ -5,9 +5,7 @@ class RoutePath {
   // Home
   static const String home = '/home';
 
-  // PlayData
-  static const String playData = '/playData';
-
-  // Title
-  static const String title = '/title';
+  // Setting
+  static const String setting = '/setting';
+  static const String term = '/term';
 }

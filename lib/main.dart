@@ -29,7 +29,9 @@ class MainApp extends StatelessWidget {
         appBarTheme: const AppBarTheme(
           elevation: 0,
           backgroundColor: AppColor.bg,
+          foregroundColor: Colors.white,
           surfaceTintColor: AppColor.bg,
+          titleTextStyle: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.w600),
         ),
         colorSchemeSeed: Colors.redAccent,
         drawerTheme: const DrawerThemeData(
