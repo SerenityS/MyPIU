@@ -36,6 +36,7 @@ flutter:
 
   assets:
     - assets/avatar/
+    - assets/grade/
     - assets/icon/
     - assets/image/
     - assets/jacket/
