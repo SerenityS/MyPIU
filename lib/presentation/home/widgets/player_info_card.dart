@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
@@ -17,15 +18,15 @@ class PlayerInfoCard extends GetView<MyDataController> {
   Widget build(BuildContext context) {
     return Container(
       width: double.maxFinite,
-      margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-      padding: const EdgeInsets.all(16),
+      margin: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.w),
+      padding: EdgeInsets.all(16.w),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(8.r),
         image: const DecorationImage(image: AssetImage("assets/image/bg1.png"), fit: BoxFit.cover),
       ),
       child: Obx(() {
         if (controller.isLoading.value) {
-          return const Center(child: Padding(padding: EdgeInsets.all(8.0), child: CircularProgressIndicator()));
+          return Center(child: Padding(padding: EdgeInsets.all(8.w), child: const CircularProgressIndicator()));
         }
 
         return Column(
@@ -33,16 +34,16 @@ class PlayerInfoCard extends GetView<MyDataController> {
             Row(
               children: [
                 ClipRRect(
-                  borderRadius: BorderRadius.circular(8),
-                  child: Image.asset('assets/avatar/${controller.myData.avatar}', width: 80),
+                  borderRadius: BorderRadius.circular(8.r),
+                  child: Image.asset('assets/avatar/${controller.myData.avatar}', width: 80.w),
                 ),
-                const SizedBox(width: 12),
+                SizedBox(width: 12.w),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       FittedBox(child: TitleText(controller.myData.titleText, controller.myData.titleType)),
-                      FittedBox(child: Text(controller.myData.nickname, style: AppTypeFace.nickname)),
+                      FittedBox(child: Text(controller.myData.nickname, style: AppTypeFace().nickname)),
                     ],
                   ),
                 ),
@@ -53,11 +54,11 @@ class PlayerInfoCard extends GetView<MyDataController> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  SvgPicture.asset('assets/icon/coin.svg', width: 16, height: 16),
-                  const SizedBox(width: 4),
+                  SvgPicture.asset('assets/icon/coin.svg', width: 16.w, height: 16.w),
+                  SizedBox(width: 4.w),
                   Text(
                     controller.myData.coin.formatWithComma(),
-                    style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, fontFamily: 'Oxanium'),
+                    style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold, fontFamily: 'Oxanium'),
                   ),
                 ],
               ),

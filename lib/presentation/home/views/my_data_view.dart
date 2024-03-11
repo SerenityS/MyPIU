@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:piu_util/app/config/app_color.dart';
 import 'package:piu_util/domain/entities/chart_data.dart';
@@ -38,22 +39,26 @@ class _PlayerPlateCard extends GetView<PlayDataController> {
   Widget build(BuildContext context) {
     return Container(
       width: double.maxFinite,
-      margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-      padding: const EdgeInsets.all(8),
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(8), color: AppColor.cardSecondary),
+      margin: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.w),
+      padding: EdgeInsets.all(8.w),
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(8.r), color: AppColor.cardSecondary),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Padding(
-            padding: EdgeInsets.all(4),
-            child:
-                Text("Plate Data", style: TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold, fontFamily: 'Oxanium')),
+          Padding(
+            padding: EdgeInsets.all(4.w),
+            child: Text("Plate Data",
+                style: TextStyle(color: Colors.white, fontSize: 24.sp, fontWeight: FontWeight.bold, fontFamily: 'Oxanium')),
           ),
           Obx(() {
             if (controller.isLoading.value) {
               return const Center(child: CircularProgressIndicator());
             } else if (controller.bestScoreDataList.isEmpty) {
-              return const Center(child: Text("No Data"));
+              return Center(
+                  child: Text(
+                "플레이트 정보가 없습니다.\n게임을 플레이해주세요.",
+                style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w500),
+              ));
             }
 
             return GridView.builder(
@@ -83,52 +88,52 @@ class _PlateDetailCard extends GetView<PlayDataController> {
     final List<ChartData> clearDataList = controller.bestScoreDataList.where((p0) => p0.plateType == PlateType.values[index]).toList();
 
     return Container(
-      margin: const EdgeInsets.all(4),
-      padding: const EdgeInsets.all(8),
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(8), color: AppColor.cardPrimary),
+      margin: EdgeInsets.all(4.w),
+      padding: EdgeInsets.all(8.w),
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(8.r), color: AppColor.cardPrimary),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.asset('assets/plate/${PlateType.values[index].fileName}'),
-          const SizedBox(height: 4),
+          SizedBox(height: 4.h),
           Text(
             clearDataList.length.toString(),
-            style: const TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold, fontFamily: 'Oxanium'),
+            style: TextStyle(color: Colors.white, fontSize: 24.sp, fontWeight: FontWeight.bold, fontFamily: 'Oxanium'),
           ),
-          const SizedBox(height: 4),
+          SizedBox(height: 4.h),
           Container(
             width: double.maxFinite,
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(6), color: Colors.red),
+            padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.w),
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(6.r), color: Colors.red),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text("SINGLE", style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold)),
+                Text("SINGLE", style: TextStyle(color: Colors.white, fontSize: 14.sp, fontFamily: 'Oxanium')),
                 Text(
                   clearDataList
                       .where((element) => element.plateType == PlateType.values[index] && element.chartType == ChartType.SINGLE)
                       .fold<int>(0, (highest, element) => highest > element.level ? highest : element.level)
                       .toString(),
-                  style: const TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold, fontFamily: 'Oxanium'),
+                  style: TextStyle(color: Colors.white, fontSize: 15.sp, fontFamily: 'Oxanium'),
                 ),
               ],
             ),
           ),
-          const SizedBox(height: 4),
+          SizedBox(height: 4.h),
           Container(
             width: double.maxFinite,
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(6), color: Colors.green),
+            padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.w),
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(6.r), color: Colors.green),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text("DOUBLE", style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold)),
+                Text("DOUBLE", style: TextStyle(color: Colors.white, fontSize: 14.sp, fontFamily: 'Oxanium')),
                 Text(
                   clearDataList
                       .where((element) => element.plateType == PlateType.values[index] && element.chartType == ChartType.DOUBLE)
                       .fold<int>(0, (highest, element) => highest > element.level ? highest : element.level)
                       .toString(),
-                  style: const TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold, fontFamily: 'Oxanium'),
+                  style: TextStyle(color: Colors.white, fontSize: 15.sp, fontFamily: 'Oxanium'),
                 ),
               ],
             ),

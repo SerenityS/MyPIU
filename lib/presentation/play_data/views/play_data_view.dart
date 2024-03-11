@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:piu_util/app/config/app_color.dart';
+import 'package:piu_util/app/config/app_typeface.dart';
 import 'package:piu_util/domain/enum/chart_type.dart';
 import 'package:piu_util/presentation/home/controller/my_data_controller.dart';
 
@@ -21,7 +23,11 @@ class PlayDataView extends GetView<PlayDataController> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () async => await controller.takeScreenshot(),
+        onPressed: () async {
+          if (controller.isLoading.value) return;
+
+          await controller.takeScreenshot();
+        },
         child: const Icon(Icons.photo_camera_outlined),
       ),
     );
@@ -34,21 +40,23 @@ class _LevelSelectHeader extends GetView<PlayDataController> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(8),
-      margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+      padding: EdgeInsets.all(8.w),
+      margin: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.w),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(8.r),
         color: AppColor.input,
       ),
       child: Row(
         children: [
-          const Text("Single", style: TextStyle(fontSize: 15, fontWeight: FontWeight.w900, fontFamily: 'Oxanium')),
+          Text("Single", style: TextStyle(fontSize: 15.sp, fontFamily: 'Oxanium')),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 4),
+            padding: EdgeInsets.symmetric(horizontal: 4.w),
             child: Obx(
               () => Switch(
                   value: controller.currentChartType.value == ChartType.DOUBLE,
                   onChanged: (value) {
+                    if (controller.isLoading.value) return;
+
                     if (value) {
                       controller.currentChartType.value = ChartType.DOUBLE;
                     } else {
@@ -57,38 +65,47 @@ class _LevelSelectHeader extends GetView<PlayDataController> {
                   }),
             ),
           ),
-          const Text("Double", style: TextStyle(fontSize: 15, fontWeight: FontWeight.w900, fontFamily: 'Oxanium')),
+          Text("Double", style: TextStyle(fontSize: 15.sp, fontFamily: 'Oxanium')),
           const Spacer(),
           SizedBox(
-            width: 70,
-            child: TextField(
-              controller: TextEditingController(text: controller.currentLevel.value.toString()),
-              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w900, fontFamily: 'Oxanium'),
-              decoration: InputDecoration(
-                isDense: true,
-                contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                filled: true,
-                fillColor: AppColor.input,
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(8), borderSide: const BorderSide(color: AppColor.error)),
-                enabledBorder:
-                    OutlineInputBorder(borderRadius: BorderRadius.circular(8), borderSide: const BorderSide(color: AppColor.error)),
-                focusedBorder:
-                    OutlineInputBorder(borderRadius: BorderRadius.circular(8), borderSide: const BorderSide(color: AppColor.error)),
-                hintText: "레벨을 입력해주세요.",
-                hintStyle: const TextStyle(fontSize: 15, color: Colors.grey),
-                prefix: const Text("Lv. ", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w900, fontFamily: 'Oxanium')),
+            width: 70.w,
+            child: Obx(
+              () => TextField(
+                enabled: !controller.isLoading.value,
+                controller: TextEditingController(text: controller.currentLevel.value.toString()),
+                style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w900, fontFamily: 'Oxanium'),
+                decoration: InputDecoration(
+                  isDense: true,
+                  contentPadding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.w),
+                  filled: true,
+                  fillColor: AppColor.input,
+                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(8.r), borderSide: const BorderSide(color: AppColor.error)),
+                  enabledBorder:
+                      OutlineInputBorder(borderRadius: BorderRadius.circular(8.r), borderSide: const BorderSide(color: AppColor.error)),
+                  focusedBorder:
+                      OutlineInputBorder(borderRadius: BorderRadius.circular(8.r), borderSide: const BorderSide(color: AppColor.error)),
+                  hintText: "레벨을 입력해주세요.",
+                  hintStyle: const TextStyle(fontSize: 15, color: Colors.grey),
+                  prefix: Text("Lv. ", style: TextStyle(fontSize: 14.sp, fontFamily: 'Oxanium')),
+                ),
+                onChanged: (value) {
+                  if (value.isEmpty) {
+                    return;
+                  }
+
+                  controller.currentLevel.value = int.parse(value);
+                },
+                onTapOutside: (PointerDownEvent event) {
+                  FocusManager.instance.primaryFocus?.unfocus();
+                },
               ),
-              onChanged: (value) {
-                if (value.isEmpty) {
-                  return;
-                }
-                controller.currentLevel.value = int.parse(value);
-              },
             ),
           ),
           const Spacer(),
           ElevatedButton(
             onPressed: () async {
+              if (controller.isLoading.value) return;
+
               await controller.getBestScoreData();
               await controller.generateClearData();
             },
@@ -108,16 +125,16 @@ class _BestScoreBody extends GetView<PlayDataController> {
     return Expanded(
       child: Obx(() {
         if (controller.isLoading.value) {
-          return const Column(
+          return Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              CircularProgressIndicator(),
-              SizedBox(height: 8),
-              Text("최신 정보로 업데이트 중 입니다."),
+              const CircularProgressIndicator(),
+              SizedBox(height: 8.h),
+              Text("최신 정보로 업데이트 중 입니다.", style: AppTypeFace().loading),
             ],
           );
         } else if (controller.clearDataList.isEmpty) {
-          return const Text("정보가 없습니다.");
+          return Text("정보가 없습니다.", style: AppTypeFace().loading);
         }
 
         return const _BestScoreGridView();
@@ -145,13 +162,13 @@ class _BestScoreGridView extends GetView<PlayDataController> {
                   child: Column(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: EdgeInsets.all(8.w),
                         child: Column(
                           children: [
                             Text("PIU Phoenix ${controller.currentChartType.value.name} ${controller.currentLevel.value} Score List",
-                                style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, fontFamily: 'Oxanium')),
+                                style: TextStyle(fontSize: 20.sp, fontFamily: 'Oxanium')),
                             Text("Player: ${Get.find<MyDataController>().myData.nickname}",
-                                style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, fontFamily: 'Oxanium')),
+                                style: TextStyle(fontSize: 20.sp, fontFamily: 'Oxanium')),
                           ],
                         ),
                       ),
@@ -175,11 +192,10 @@ class _BestScoreGridView extends GetView<PlayDataController> {
                                         ? ""
                                         : (controller.clearDataList[i].score / 10000).toStringAsFixed(1),
                                     style: TextStyle(
-                                        fontSize: 30,
-                                        fontWeight: FontWeight.bold,
+                                        fontSize: 30.sp,
                                         foreground: Paint()
                                           ..style = PaintingStyle.stroke
-                                          ..strokeWidth = 3
+                                          ..strokeWidth = 3.w
                                           ..color = Colors.white,
                                         fontFamily: 'Oxanium'),
                                   ),
@@ -187,10 +203,9 @@ class _BestScoreGridView extends GetView<PlayDataController> {
                                     (controller.clearDataList[i].score / 10000).toStringAsFixed(1) == "0.0"
                                         ? ""
                                         : (controller.clearDataList[i].score / 10000).toStringAsFixed(1),
-                                    style: const TextStyle(
-                                      fontSize: 30,
+                                    style: TextStyle(
+                                      fontSize: 30.sp,
                                       color: Colors.red,
-                                      fontWeight: FontWeight.bold,
                                       fontFamily: 'Oxanium',
                                     ),
                                   ),
@@ -200,11 +215,11 @@ class _BestScoreGridView extends GetView<PlayDataController> {
                         ],
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: EdgeInsets.all(8.w),
                         child: Column(
                           children: [
                             Text("at ${DateTime.now().toString().substring(0, 16)}",
-                                style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold, fontFamily: 'Oxanium')),
+                                style: TextStyle(fontSize: 14.sp, fontFamily: 'Oxanium')),
                           ],
                         ),
                       ),

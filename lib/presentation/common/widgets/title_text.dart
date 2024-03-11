@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:piu_util/app/config/app_typeface.dart';
 import 'package:piu_util/domain/enum/title_type.dart';
 
@@ -12,12 +13,12 @@ class TitleText extends StatelessWidget {
     return Stack(
       children: [
         Text(text,
-            style: AppTypeFace.title.copyWith(
-              foreground: Paint()
-                ..style = PaintingStyle.stroke
-                ..strokeWidth = 1.8
-                ..color = Colors.white,
-            )),
+            style: AppTypeFace().title.copyWith(
+                  foreground: Paint()
+                    ..style = PaintingStyle.stroke
+                    ..strokeWidth = 1.8.w
+                    ..color = Colors.white,
+                )),
         ShaderMask(
           blendMode: BlendMode.srcIn,
           shaderCallback: (Rect bounds) {
@@ -27,7 +28,7 @@ class TitleText extends StatelessWidget {
               colors: [type.startColor, type.endColor],
             ).createShader(bounds);
           },
-          child: Text(text, style: AppTypeFace.title),
+          child: Text(text, style: AppTypeFace().title),
         ),
       ],
     );

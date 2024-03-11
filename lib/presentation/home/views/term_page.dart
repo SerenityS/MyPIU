@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:piu_util/domain/enum/term_type.dart';
 
@@ -19,7 +20,7 @@ class TermPage extends StatelessWidget {
           if (snapshot.hasData) {
             return Markdown(
               data: snapshot.data,
-              padding: const EdgeInsets.all(20.0),
+              padding: EdgeInsets.all(20.w),
               physics: const ClampingScrollPhysics(),
               styleSheet: MarkdownStyleSheet(),
             );

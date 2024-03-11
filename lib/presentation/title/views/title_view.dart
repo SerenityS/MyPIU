@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:piu_util/app/config/app_color.dart';
 import 'package:piu_util/domain/entities/title_data.dart';
@@ -38,7 +39,11 @@ class TitleView extends GetView<TitleController> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () async => await controller.getTitleData(),
+        onPressed: () async {
+          if (controller.isLoading.value) return;
+
+          await controller.getTitleData();
+        },
         child: const Icon(Icons.refresh),
       ),
     );
@@ -51,43 +56,49 @@ class _TitleFilter extends GetView<TitleController> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(12, 0, 12, 8),
+      padding: EdgeInsets.fromLTRB(12.w, 0, 12.w, 8.h),
       child: SizedBox(
-        height: 40,
+        height: 40.h,
         child: Row(
           children: [
             Expanded(
-              child: TextField(
-                controller: controller.searchController,
-                style: const TextStyle(color: Colors.white),
-                decoration: InputDecoration(
-                  isDense: true,
-                  contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                  filled: true,
-                  fillColor: AppColor.input,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide.none,
+              child: Obx(
+                () => TextField(
+                  enabled: !controller.isLoading.value,
+                  controller: controller.searchController,
+                  style: const TextStyle(color: Colors.white),
+                  decoration: InputDecoration(
+                    isDense: true,
+                    contentPadding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.w),
+                    filled: true,
+                    fillColor: AppColor.input,
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8.r),
+                      borderSide: BorderSide.none,
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8.r),
+                      borderSide: BorderSide.none,
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8.r),
+                      borderSide: BorderSide.none,
+                    ),
+                    hintText: "칭호명을 입력해주세요.",
+                    hintStyle: const TextStyle(color: Colors.grey),
                   ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide.none,
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide.none,
-                  ),
-                  hintText: "칭호명을 입력해주세요.",
-                  hintStyle: const TextStyle(color: Colors.grey),
+                  onChanged: (value) => controller.filterTitleData(),
+                  onTapOutside: (PointerDownEvent event) {
+                    FocusManager.instance.primaryFocus?.unfocus();
+                  },
                 ),
-                onChanged: (value) => controller.filterTitleData(),
               ),
             ),
-            const SizedBox(width: 8),
+            SizedBox(width: 8.w),
             Container(
-              padding: const EdgeInsets.only(right: 14),
+              padding: EdgeInsets.only(right: 14.w),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
+                borderRadius: BorderRadius.circular(8.r),
                 color: AppColor.input,
               ),
               child: Row(
@@ -96,11 +107,13 @@ class _TitleFilter extends GetView<TitleController> {
                     () => Checkbox(
                         value: controller.hasTitle.value,
                         onChanged: (value) {
+                          if (controller.isLoading.value) return;
+
                           controller.hasTitle.value = value!;
                           controller.filterTitleData();
                         }),
                   ),
-                  const Text("보유 칭호"),
+                  const Text("보유 칭호", style: TextStyle(fontWeight: FontWeight.w600)),
                 ],
               ),
             )
@@ -120,25 +133,25 @@ class _TitleCard extends GetView<TitleController> {
   Widget build(BuildContext context) {
     return Container(
       width: double.maxFinite,
-      padding: const EdgeInsets.all(12),
-      margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+      padding: EdgeInsets.all(12.w),
+      margin: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.w),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(8.r),
         color: AppColor.cardPrimary,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           FittedBox(child: TitleText(title.titleText, title.titleType)),
-          const SizedBox(height: 4),
+          SizedBox(height: 4.h),
           Row(
             children: [
-              const Icon(Icons.info_outline, color: Colors.white, size: 16),
-              const SizedBox(width: 4),
-              Expanded(child: Text(title.description, style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500))),
+              Icon(Icons.info_outline, color: Colors.white, size: 16.w),
+              SizedBox(width: 4.w),
+              Expanded(child: Text(title.description, style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w500))),
             ],
           ),
-          const SizedBox(height: 8),
+          SizedBox(height: 8.h),
           Material(
             color: Colors.transparent,
             child: InkWell(
@@ -147,7 +160,7 @@ class _TitleCard extends GetView<TitleController> {
 
                 await controller.setTitle(title);
               },
-              borderRadius: BorderRadius.circular(8),
+              borderRadius: BorderRadius.circular(8.r),
               highlightColor: Colors.transparent,
               splashColor: title.isEnable
                   ? AppColor.enabled.withOpacity(0.2)
@@ -157,14 +170,14 @@ class _TitleCard extends GetView<TitleController> {
               child: Container(
                 alignment: Alignment.center,
                 width: double.maxFinite,
-                padding: const EdgeInsets.symmetric(vertical: 8),
+                padding: EdgeInsets.symmetric(vertical: 8.w),
                 decoration: BoxDecoration(
                   border: title.isEnable
                       ? Border.all(color: AppColor.enabled)
                       : title.hasTitle
                           ? Border.all(color: AppColor.info)
                           : Border.all(color: AppColor.error),
-                  borderRadius: BorderRadius.circular(8),
+                  borderRadius: BorderRadius.circular(8.r),
                   color: Colors.transparent,
                 ),
                 child: Text(

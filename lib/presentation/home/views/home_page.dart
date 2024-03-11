@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:piu_util/app/config/routes/route_path.dart';
 
@@ -13,7 +14,7 @@ class HomePage extends GetView<HomeController> {
       appBar: AppBar(
         foregroundColor: Colors.white,
         title: Image.asset(
-          height: 50,
+          height: 50.h,
           'assets/image/logo.png',
           fit: BoxFit.fitHeight,
         ),

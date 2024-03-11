@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:get/get.dart';
@@ -25,12 +26,12 @@ class AvatarView extends GetView<AvatarController> {
                 if (controller.isLoading.value) return const Center(child: CircularProgressIndicator());
 
                 return Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  padding: EdgeInsets.symmetric(horizontal: 8.w),
                   child: GridView.builder(
                     physics: const ClampingScrollPhysics(),
                     shrinkWrap: true,
                     gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3, crossAxisSpacing: 0, childAspectRatio: 0.85),
+                        const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3, crossAxisSpacing: 0, childAspectRatio: 0.8),
                     itemCount: controller.filteredAvatarList.length,
                     itemBuilder: (BuildContext context, int index) {
                       return _AvatarCard(controller.filteredAvatarList[index]);
@@ -43,7 +44,11 @@ class AvatarView extends GetView<AvatarController> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () async => await controller.getAvatars(),
+        onPressed: () async {
+          if (controller.isLoading.value) return;
+
+          await controller.getAvatars();
+        },
         child: const Icon(Icons.refresh),
       ),
     );
@@ -56,43 +61,49 @@ class _AvatarFilter extends GetView<AvatarController> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(12, 0, 12, 8),
+      padding: EdgeInsets.fromLTRB(12.w, 0, 12.w, 8.h),
       child: SizedBox(
-        height: 40,
+        height: 40.w,
         child: Row(
           children: [
             Expanded(
-              child: TextField(
-                controller: controller.searchController,
-                style: const TextStyle(color: Colors.white),
-                decoration: InputDecoration(
-                  isDense: true,
-                  contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                  filled: true,
-                  fillColor: AppColor.input,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide.none,
+              child: Obx(
+                () => TextField(
+                  enabled: !controller.isLoading.value,
+                  controller: controller.searchController,
+                  style: const TextStyle(color: Colors.white),
+                  decoration: InputDecoration(
+                    isDense: true,
+                    contentPadding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.w),
+                    filled: true,
+                    fillColor: AppColor.input,
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8.r),
+                      borderSide: BorderSide.none,
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8.r),
+                      borderSide: BorderSide.none,
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8.r),
+                      borderSide: BorderSide.none,
+                    ),
+                    hintText: "아바타명을 입력해주세요.",
+                    hintStyle: const TextStyle(color: Colors.grey),
                   ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide.none,
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide.none,
-                  ),
-                  hintText: "아바타명을 입력해주세요.",
-                  hintStyle: const TextStyle(color: Colors.grey),
+                  onChanged: (value) => controller.filterAvatarData(),
+                  onTapOutside: (PointerDownEvent event) {
+                    FocusManager.instance.primaryFocus?.unfocus();
+                  },
                 ),
-                onChanged: (value) => controller.filterAvatarData(),
               ),
             ),
-            const SizedBox(width: 8),
+            SizedBox(width: 8.w),
             Container(
-              padding: const EdgeInsets.only(right: 14),
+              padding: EdgeInsets.only(right: 14.w),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
+                borderRadius: BorderRadius.circular(8.r),
                 color: AppColor.input,
               ),
               child: Row(
@@ -101,11 +112,13 @@ class _AvatarFilter extends GetView<AvatarController> {
                     () => Checkbox(
                         value: controller.hasAvatar.value,
                         onChanged: (value) {
+                          if (controller.isLoading.value) return;
+
                           controller.hasAvatar.value = value!;
                           controller.filterAvatarData();
                         }),
                   ),
-                  const Text("보유 아바타"),
+                  const Text("보유 아바타", style: TextStyle(fontWeight: FontWeight.w600)),
                 ],
               ),
             )
@@ -125,28 +138,29 @@ class _AvatarCard extends GetView<AvatarController> {
   Widget build(BuildContext context) {
     return Container(
       width: double.maxFinite,
-      padding: const EdgeInsets.all(12),
-      margin: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
+      padding: EdgeInsets.all(12.w),
+      margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 4.w),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(8.r),
         color: AppColor.cardPrimary,
       ),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ClipRRect(
-            borderRadius: BorderRadius.circular(6),
+            borderRadius: BorderRadius.circular(6.r),
             child: Image.asset('assets/avatar/${avatar.fileName}'),
           ),
-          const SizedBox(height: 4),
-          FittedBox(child: Text(avatar.name, style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold))),
-          const SizedBox(height: 4),
+          SizedBox(height: 4.h),
+          FittedBox(child: Text(avatar.name, style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.bold))),
+          SizedBox(height: 4.h),
           Row(
             children: [
               if (avatar.requiredCoin > 0) ...[
-                SvgPicture.asset('assets/icon/coin.svg', width: 14, height: 14),
-                const SizedBox(width: 4),
-                Text(avatar.requiredCoin.formatWithComma(), style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w400)),
+                SvgPicture.asset('assets/icon/coin.svg', width: 14.w, height: 14.w),
+                SizedBox(width: 4.w),
+                Text(avatar.requiredCoin.formatWithComma(), style: TextStyle(fontSize: 11.sp, fontWeight: FontWeight.w400)),
               ],
               const Spacer(),
               Material(
@@ -161,7 +175,7 @@ class _AvatarCard extends GetView<AvatarController> {
                       await controller.setAvatar(avatar);
                     }
                   },
-                  borderRadius: BorderRadius.circular(6),
+                  borderRadius: BorderRadius.circular(6.r),
                   highlightColor: Colors.transparent,
                   splashColor: avatar.isEnable
                       ? AppColor.enabled.withOpacity(0.2)
@@ -181,7 +195,7 @@ class _AvatarCard extends GetView<AvatarController> {
                               : avatar.status == "have"
                                   ? Border.all(color: AppColor.info)
                                   : Border.all(color: AppColor.error),
-                      borderRadius: BorderRadius.circular(6),
+                      borderRadius: BorderRadius.circular(6.r),
                       color: Colors.transparent,
                     ),
                     child: Text(
@@ -193,7 +207,7 @@ class _AvatarCard extends GetView<AvatarController> {
                                   ? "설정하기"
                                   : "해금불가",
                       style: TextStyle(
-                          fontSize: 11,
+                          fontSize: 11.sp,
                           fontWeight: FontWeight.w400,
                           color: avatar.isEnable
                               ? AppColor.enabled

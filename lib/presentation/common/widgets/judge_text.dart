@@ -12,15 +12,15 @@ class JudgeText extends StatelessWidget {
     return Stack(
       children: [
         Text(type.name.toUpperCase(),
-            style: AppTypeFace.judge.copyWith(
-              foreground: Paint()
-                ..style = PaintingStyle.stroke
-                ..strokeWidth = 1.5
-                ..color = Colors.white,
-            )),
+            style: AppTypeFace().judge.copyWith(
+                  foreground: Paint()
+                    ..style = PaintingStyle.stroke
+                    ..strokeWidth = 1.5
+                    ..color = Colors.white,
+                )),
         Text(
           type.name.toUpperCase(),
-          style: AppTypeFace.judge.copyWith(color: type.color),
+          style: AppTypeFace().judge.copyWith(color: type.color),
         ),
       ],
     );
