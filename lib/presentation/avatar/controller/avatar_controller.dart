@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
+import 'package:piu_util/data/datasources/local/avatar_local_data_source.dart';
 import 'package:piu_util/domain/entities/avatar_data.dart';
 import 'package:piu_util/domain/usecases/avatar_usecases.dart';
 import 'package:piu_util/presentation/home/controller/my_data_controller.dart';
 
 class AvatarController extends GetxController {
   final AvatarUseCases _useCases = Get.find<AvatarUseCases>();
+  final AvatarDataLocalDataSource _avatarDataSource = AvatarDataLocalDataSource();
   final RxBool isLoading = true.obs;
 
   final RxList<AvatarData> avatarDataList = <AvatarData>[].obs;
@@ -19,7 +21,18 @@ class AvatarController extends GetxController {
   void onInit() async {
     super.onInit();
 
-    await getAvatars();
+    List<AvatarData>? avatarData = _avatarDataSource.getAvatarData();
+    if (avatarData == null) {
+      await getAvatars();
+    } else {
+      avatarDataList.assignAll(avatarData);
+      filterAvatarData();
+      isLoading.value = false;
+    }
+
+    ever(avatarDataList, (_) {
+      _avatarDataSource.saveAvatarData(avatarDataList);
+    });
   }
 
   Future<void> buyAvatar(AvatarData avatar) async {
@@ -62,6 +75,7 @@ class AvatarController extends GetxController {
     isLoading.value = true;
 
     avatarDataList.assignAll(await _useCases.getAvatars.execute());
+    _avatarDataSource.saveAvatarData(avatarDataList);
     filterAvatarData();
 
     isLoading.value = false;

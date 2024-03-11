@@ -12,6 +12,7 @@ void main() async {
 
   // Initialize Hive
   Hive.init((await getApplicationDocumentsDirectory()).path);
+  await Hive.openBox('avatar');
   await Hive.openBox('play_data');
   await Hive.openBox('title');
 
