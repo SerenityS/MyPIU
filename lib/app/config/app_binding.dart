@@ -1,10 +1,10 @@
 import 'package:get/instance_manager.dart';
 import 'package:piu_util/app/network/builder/dio_builder.dart';
 import 'package:piu_util/app/service/auth_service.dart';
-import 'package:piu_util/data/datasources/repositories_impl/auth_repository_impl.dart';
-import 'package:piu_util/data/datasources/repositories_impl/avatar_repository_impl.dart';
-import 'package:piu_util/data/datasources/repositories_impl/my_data_repository_impl.dart';
-import 'package:piu_util/data/datasources/repositories_impl/play_data_repository_impl.dart';
+import 'package:piu_util/data/repositories_impl/auth_repository_impl.dart';
+import 'package:piu_util/data/repositories_impl/avatar_repository_impl.dart';
+import 'package:piu_util/data/repositories_impl/my_data_repository_impl.dart';
+import 'package:piu_util/data/repositories_impl/play_data_repository_impl.dart';
 import 'package:piu_util/domain/repositories/auth_repository.dart';
 import 'package:piu_util/domain/repositories/avatar_repository.dart';
 import 'package:piu_util/domain/repositories/my_data_repository.dart';
