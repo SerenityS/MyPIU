@@ -10,6 +10,7 @@ class AppUrl {
   // Play Data
   static const String bestScoreUrl = "/my_page/my_best_score.php";
   static const String playDataUrl = "/my_page/play_data.php";
+  static const String recentlyPlayDataUrl = "/my_page/recently_played.php";
 
   // Title
   static const String getTitleUrl = "/my_page/title.php";

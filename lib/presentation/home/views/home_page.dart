@@ -31,23 +31,30 @@ class HomePage extends GetView<HomeController> {
               },
             ),
             ListTile(
-              title: const Text('Title'),
+              title: const Text('Recently Play'),
               onTap: () {
                 controller.drawerIndex = 1;
                 Get.back();
               },
             ),
             ListTile(
-              title: const Text('Score Checker'),
+              title: const Text('Title'),
               onTap: () {
                 controller.drawerIndex = 2;
                 Get.back();
               },
             ),
             ListTile(
-              title: const Text('Avatar Shop'),
+              title: const Text('Score Checker'),
               onTap: () {
                 controller.drawerIndex = 3;
+                Get.back();
+              },
+            ),
+            ListTile(
+              title: const Text('Avatar Shop'),
+              onTap: () {
+                controller.drawerIndex = 4;
                 Get.back();
               },
             ),

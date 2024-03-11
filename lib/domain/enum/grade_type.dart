@@ -1,22 +1,6 @@
 // ignore_for_file: constant_identifier_names
 
 enum GradeType {
-  SSSp("sss_p.png"),
-  SSS("sss.png"),
-  SSp("ss_p.png"),
-  SS("ss.png"),
-  Sp("s_p.png"),
-  S("s.png"),
-  AAAp("aaa_p.png"),
-  AAA("aaa.png"),
-  AAp("aa_p.png"),
-  AA("aa.png"),
-  Ap("a_p.png"),
-  A("a.png"),
-  B("b.png"),
-  C("c.png"),
-  D("d.png"),
-  F("f.png"),
   xSSSp("x_sss_p.png"),
   xSSS("x_sss.png"),
   xSSp("x_ss_p.png"),
@@ -32,7 +16,23 @@ enum GradeType {
   xB("x_b.png"),
   xC("x_c.png"),
   xD("x_d.png"),
-  xF("x_f.png");
+  xF("x_f.png"),
+  SSSp("sss_p.png"),
+  SSS("sss.png"),
+  SSp("ss_p.png"),
+  SS("ss.png"),
+  Sp("s_p.png"),
+  S("s.png"),
+  AAAp("aaa_p.png"),
+  AAA("aaa.png"),
+  AAp("aa_p.png"),
+  AA("aa.png"),
+  Ap("a_p.png"),
+  A("a.png"),
+  B("b.png"),
+  C("c.png"),
+  D("d.png"),
+  F("f.png");
 
   final String fileName;
   const GradeType(this.fileName);
