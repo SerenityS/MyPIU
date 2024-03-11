@@ -4,6 +4,7 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:piu_util/data/datasources/local/play_data_local_data_source.dart';
@@ -112,12 +113,17 @@ class PlayDataController extends GetxController {
     ui.Image image = await boundary.toImage(pixelRatio: 3);
     ByteData? byteData = await image.toByteData(format: ui.ImageByteFormat.png);
     Uint8List pngBytes = byteData!.buffer.asUint8List();
+
     var result = await ImageGallerySaver.saveImage(
       Uint8List.fromList(pngBytes),
       name:
           "score_check_${DateTime.now().year}-${DateTime.now().month}-${DateTime.now().day}-${DateTime.now().hour}-${DateTime.now().minute}-${DateTime.now().second}",
     );
 
-    print(result);
+    if (result['isSuccess']) {
+      Fluttertoast.showToast(msg: "이미지를 갤러리에 저장했습니다.");
+    } else {
+      Fluttertoast.showToast(msg: "이미지를 저장하지 못했습니다.");
+    }
   }
 }
