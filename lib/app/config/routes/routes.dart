@@ -1,4 +1,5 @@
 import 'package:get/route_manager.dart';
+import 'package:piu_util/presentation/avatar/controller/avatar_binding.dart';
 import 'package:piu_util/presentation/home/controller/home_binding.dart';
 import 'package:piu_util/presentation/home/views/home_page.dart';
 import 'package:piu_util/presentation/login/controller/login_binding.dart';
@@ -23,7 +24,12 @@ class Routes {
     GetPage(
       name: RoutePath.home,
       page: () => const HomePage(),
-      bindings: [HomeBinding(), PlayDataBinding(), TitleBinding()],
+      bindings: [
+        HomeBinding(),
+        AvatarBinding(),
+        PlayDataBinding(),
+        TitleBinding(),
+      ],
     ),
 
     // PlayData

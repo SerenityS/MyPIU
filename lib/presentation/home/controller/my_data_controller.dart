@@ -12,6 +12,14 @@ class MyDataController extends GetxController {
 
   MyData get myData => _myDataList[_userIdx.value];
 
+  void setAvatar(String avatar) {
+    _myDataList[_userIdx.value] = _myDataList[_userIdx.value].copyWith(avatar: avatar);
+  }
+
+  void setCoin(int coin) {
+    _myDataList[_userIdx.value] = _myDataList[_userIdx.value].copyWith(coin: _myDataList[_userIdx.value].coin - coin);
+  }
+
   void setTitle(TitleData titleData) {
     _myDataList[_userIdx.value] = _myDataList[_userIdx.value].copyWith(titleText: titleData.titleText, titleType: titleData.titleType);
   }

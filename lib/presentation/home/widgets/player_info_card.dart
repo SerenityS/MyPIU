@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 import 'package:piu_util/app/config/app_typeface.dart';
@@ -7,7 +8,9 @@ import 'package:piu_util/presentation/common/widgets/title_text.dart';
 import '../controller/my_data_controller.dart';
 
 class PlayerInfoCard extends GetView<MyDataController> {
-  const PlayerInfoCard({super.key});
+  const PlayerInfoCard({super.key, this.showCoin = false});
+
+  final bool showCoin;
 
   @override
   Widget build(BuildContext context) {
@@ -44,6 +47,20 @@ class PlayerInfoCard extends GetView<MyDataController> {
                 ),
               ],
             ),
+            if (showCoin) ...[
+              const SizedBox(height: 4),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  SvgPicture.asset('assets/icon/coin.svg', width: 16, height: 16),
+                  const SizedBox(width: 4),
+                  Text(
+                    controller.myData.coin.toString(),
+                    style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, fontFamily: 'Oxanium'),
+                  ),
+                ],
+              ),
+            ],
           ],
         );
       }),

@@ -58,7 +58,7 @@ class TitleController extends GetxController {
 
     titleDataList.assignAll(await _useCases.getTitleData.execute());
     _titleLocalDataSource.saveTitleData(titleDataList);
-    filteredTitleDataList.assignAll(titleDataList);
+    filterTitleData();
 
     isLoading.value = false;
   }

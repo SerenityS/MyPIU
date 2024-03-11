@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:piu_util/app/config/app_color.dart';
 
 import 'package:piu_util/presentation/home/controller/home_controller.dart';
 
@@ -44,6 +41,13 @@ class HomePage extends GetView<HomeController> {
               title: const Text('Score Checker'),
               onTap: () {
                 controller.drawerIndex = 2;
+                Get.back();
+              },
+            ),
+            ListTile(
+              title: const Text('Avatar Shop'),
+              onTap: () {
+                controller.drawerIndex = 3;
                 Get.back();
               },
             ),

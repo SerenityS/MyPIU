@@ -13,4 +13,5 @@ class AppColor {
   static const enabled = Color(0xFFFFA000);
   static const info = Color(0xFF90949A);
   static const error = Color(0xFFD32F2F);
+  static const buy = Color(0xFF00E5FF);
 }
