@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 import 'package:piu_util/app/config/app_typeface.dart';
+import 'package:piu_util/app/config/extension/int_format_comma.dart';
 import 'package:piu_util/presentation/common/widgets/title_text.dart';
 
 import '../controller/my_data_controller.dart';
@@ -55,7 +56,7 @@ class PlayerInfoCard extends GetView<MyDataController> {
                   SvgPicture.asset('assets/icon/coin.svg', width: 16, height: 16),
                   const SizedBox(width: 4),
                   Text(
-                    controller.myData.coin.toString(),
+                    controller.myData.coin.formatWithComma(),
                     style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, fontFamily: 'Oxanium'),
                   ),
                 ],

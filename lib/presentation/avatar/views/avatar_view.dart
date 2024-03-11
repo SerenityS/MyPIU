@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:get/get.dart';
 import 'package:piu_util/app/config/app_color.dart';
+import 'package:piu_util/app/config/extension/int_format_comma.dart';
 import 'package:piu_util/domain/entities/avatar_data.dart';
 import 'package:piu_util/presentation/avatar/controller/avatar_controller.dart';
 import 'package:piu_util/presentation/home/widgets/player_info_card.dart';
@@ -145,7 +146,7 @@ class _AvatarCard extends GetView<AvatarController> {
               if (avatar.requiredCoin > 0) ...[
                 SvgPicture.asset('assets/icon/coin.svg', width: 14, height: 14),
                 const SizedBox(width: 4),
-                Text(avatar.requiredCoin.toString(), style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w400)),
+                Text(avatar.requiredCoin.formatWithComma(), style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w400)),
               ],
               const Spacer(),
               Material(
