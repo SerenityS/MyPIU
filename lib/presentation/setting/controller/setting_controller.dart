@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:hive/hive.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:piu_util/app/config/routes/route_path.dart';
 import 'package:piu_util/data/datasources/local/auth_local_data_source.dart';
@@ -19,7 +20,8 @@ class SettingController extends GetxController {
   Future<void> logout() async {
     await Get.find<AuthUseCases>().logout.execute();
     await AuthLocalDataSource().deleteCredential();
+    await Hive.deleteFromDisk();
 
-    Get.offAndToNamed(RoutePath.login);
+    Get.offAllNamed(RoutePath.login);
   }
 }
