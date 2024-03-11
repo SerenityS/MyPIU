@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:get/get.dart';
+import 'package:html/dom.dart';
 import 'package:html/parser.dart' show parse;
 import 'package:piu_util/app/config/app_url.dart';
 import 'package:piu_util/app/config/extension/get_file_name_extension.dart';
@@ -76,8 +77,11 @@ List<ChartData> parseClearData(String html) {
 
   var document = parse(html);
 
-  var parsedClearData = document.getElementsByClassName("my_best_scoreList flex wrap");
-  for (var scoreData in parsedClearData[0].getElementsByClassName("in")) {
+  List<Element>? parsedClearData = document.getElementsByClassName("my_best_scoreList flex wrap").firstOrNull?.getElementsByClassName("in");
+
+  if (parsedClearData == null) return clearDataList;
+
+  for (var scoreData in parsedClearData) {
     String title = scoreData.getElementsByClassName("song_name")[0].text;
     int score = int.parse(scoreData.getElementsByClassName("txt_v")[0].text.replaceAll(",", ""));
     String level1 = scoreData.getElementsByTagName("img")[1].attributes["src"]!;
@@ -108,7 +112,11 @@ List<RecentlyPlayData> parseRecentlyPlayData(String html) {
 
   var document = parse(html);
 
-  var parsedRecentlyPlayData = document.getElementsByClassName("recently_playeList flex wrap").first.getElementsByClassName("wrap_in");
+  List<Element>? parsedRecentlyPlayData =
+      document.getElementsByClassName("recently_playeList flex wrap").firstOrNull?.getElementsByClassName("wrap_in");
+
+  if (parsedRecentlyPlayData == null) return recentlyPlayDataList;
+
   for (var recentlyData in parsedRecentlyPlayData) {
     String jacketFileName = recentlyData.getElementsByClassName("in bgfix").first.attributes["style"]!.getFileNameExtension();
     String title = recentlyData.getElementsByClassName("song_name flex").first.getElementsByTagName("p").first.text;

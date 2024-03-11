@@ -113,7 +113,8 @@ class _BestScoreBody extends GetView<PlayDataController> {
                         foreground: Paint()
                           ..style = PaintingStyle.stroke
                           ..strokeWidth = 3
-                          ..color = Colors.white),
+                          ..color = Colors.white,
+                        fontFamily: 'Oxanium'),
                   ),
                   Text(
                     (controller.clearDataList[index].score / 10000).toStringAsFixed(1) == "0.0"
@@ -123,6 +124,7 @@ class _BestScoreBody extends GetView<PlayDataController> {
                       fontSize: 30,
                       color: Colors.red,
                       fontWeight: FontWeight.bold,
+                      fontFamily: 'Oxanium',
                     ),
                   ),
                 ],

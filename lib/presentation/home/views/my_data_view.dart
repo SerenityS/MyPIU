@@ -6,19 +6,25 @@ import 'package:piu_util/domain/enum/chart_type.dart';
 import 'package:piu_util/domain/enum/plate_type.dart';
 import 'package:piu_util/presentation/play_data/controller/play_data_controller.dart';
 
+import '../controller/my_data_controller.dart';
 import '../widgets/player_info_card.dart';
 
-class MyDataView extends StatelessWidget {
+class MyDataView extends GetView<MyDataController> {
   const MyDataView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
-      physics: ClampingScrollPhysics(),
+    return SingleChildScrollView(
+      physics: const ClampingScrollPhysics(),
       child: Column(
         children: [
-          PlayerInfoCard(),
-          _PlayerPlateCard(),
+          const PlayerInfoCard(),
+          Obx(() {
+            if (controller.isLoading.value) {
+              return const SizedBox();
+            }
+            return const _PlayerPlateCard();
+          }),
         ],
       ),
     );
