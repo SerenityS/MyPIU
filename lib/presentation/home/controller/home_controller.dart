@@ -9,9 +9,9 @@ import 'package:piu_util/presentation/title/views/title_view.dart';
 class HomeController extends GetxController {
   final List<Widget> drawerPages = [
     const MyDataView(),
+    const PlayDataView(),
     const RecentlyPlayDataView(),
     const TitleView(),
-    const PlayDataView(),
     const AvatarView(),
   ];
 

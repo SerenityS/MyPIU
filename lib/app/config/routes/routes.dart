@@ -2,8 +2,10 @@ import 'package:get/route_manager.dart';
 import 'package:piu_util/presentation/avatar/controller/avatar_binding.dart';
 import 'package:piu_util/presentation/home/controller/home_binding.dart';
 import 'package:piu_util/presentation/home/views/home_page.dart';
-import 'package:piu_util/presentation/home/views/setting_page.dart';
-import 'package:piu_util/presentation/home/views/term_page.dart';
+import 'package:piu_util/presentation/setting/controller/setting_binding.dart';
+import 'package:piu_util/presentation/setting/views/licences_page.dart';
+import 'package:piu_util/presentation/setting/views/setting_page.dart';
+import 'package:piu_util/presentation/setting/views/term_page.dart';
 import 'package:piu_util/presentation/login/controller/login_binding.dart';
 import 'package:piu_util/presentation/login/views/login_page.dart';
 import 'package:piu_util/presentation/play_data/controller/play_data_binding.dart';
@@ -36,6 +38,11 @@ class Routes {
     GetPage(
       name: RoutePath.setting,
       page: () => const SettingPage(),
+      binding: SettingBinding(),
+    ),
+    GetPage(
+      name: RoutePath.licences,
+      page: () => const LicencesPage(),
     ),
     GetPage(
       name: RoutePath.term,

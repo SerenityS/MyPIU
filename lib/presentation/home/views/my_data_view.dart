@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:piu_util/app/config/app_color.dart';
+import 'package:piu_util/app/config/app_typeface.dart';
 import 'package:piu_util/domain/entities/chart_data.dart';
 import 'package:piu_util/domain/enum/chart_type.dart';
 import 'package:piu_util/domain/enum/plate_type.dart';
@@ -15,20 +16,28 @@ class MyDataView extends GetView<MyDataController> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      physics: const ClampingScrollPhysics(),
-      child: Column(
-        children: [
-          const PlayerInfoCard(),
-          Obx(() {
-            if (controller.isLoading.value) {
-              return const SizedBox();
-            }
-            return const _PlayerPlateCard();
-          }),
-        ],
-      ),
-    );
+    return Obx(() {
+      if (controller.isLoading.value) {
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Center(child: CircularProgressIndicator()),
+            SizedBox(height: 8.h),
+            Text("내 정보를 불러오는 중...", style: AppTypeFace().loading),
+          ],
+        );
+      }
+
+      return const SingleChildScrollView(
+        physics: ClampingScrollPhysics(),
+        child: Column(
+          children: [
+            PlayerInfoCard(),
+            _PlayerPlateCard(),
+          ],
+        ),
+      );
+    });
   }
 }
 
@@ -52,7 +61,18 @@ class _PlayerPlateCard extends GetView<PlayDataController> {
           ),
           Obx(() {
             if (controller.isLoading.value) {
-              return const Center(child: CircularProgressIndicator());
+              return Center(
+                child: Padding(
+                  padding: EdgeInsets.only(bottom: 4.w),
+                  child: Column(
+                    children: [
+                      const CircularProgressIndicator(),
+                      SizedBox(height: 8.h),
+                      Text("플레이트 정보를 불러오는 중...", style: AppTypeFace().loading),
+                    ],
+                  ),
+                ),
+              );
             } else if (controller.bestScoreDataList.isEmpty) {
               return Center(
                   child: Text(

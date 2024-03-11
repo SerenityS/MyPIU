@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:piu_util/app/config/app_color.dart';
+import 'package:piu_util/app/config/app_typeface.dart';
 
 import '../controller/login_controller.dart';
 
@@ -12,30 +15,42 @@ class LoginPage extends GetView<LoginController> {
       body: SafeArea(
         child: Obx(() {
           if (controller.isLoading.value) {
-            return const Column(
+            return Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Center(child: CircularProgressIndicator()),
-                SizedBox(height: 8),
-                Text("로그인 중..."),
+                const Center(child: CircularProgressIndicator()),
+                SizedBox(height: 8.h),
+                Text("로그인 중...", style: AppTypeFace().loading),
               ],
             );
           }
 
-          return Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              TextField(
-                controller: controller.emailController,
-                decoration: const InputDecoration(labelText: 'Email'),
+          return Center(
+            child: Container(
+              padding: EdgeInsets.all(16.w),
+              margin: EdgeInsets.all(12.w),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12.r),
+                color: AppColor.input,
               ),
-              TextField(
-                controller: controller.passwordController,
-                decoration: const InputDecoration(labelText: 'Password'),
-                obscureText: true,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text("AM.PASS 로그인", style: AppTypeFace().title),
+                  TextField(
+                    controller: controller.emailController,
+                    decoration: const InputDecoration(hintText: 'Email', hintStyle: TextStyle(color: Colors.grey)),
+                  ),
+                  TextField(
+                    controller: controller.passwordController,
+                    decoration: const InputDecoration(hintText: 'Password', hintStyle: TextStyle(color: Colors.grey)),
+                    obscureText: true,
+                  ),
+                  SizedBox(height: 8.h),
+                  ElevatedButton(onPressed: () async => await controller.login(), child: const Text('Login')),
+                ],
               ),
-              ElevatedButton(onPressed: () async => await controller.login(), child: const Text('Login')),
-            ],
+            ),
           );
         }),
       ),

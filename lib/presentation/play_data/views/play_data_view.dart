@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:piu_util/app/config/app_color.dart';
@@ -22,13 +23,20 @@ class PlayDataView extends GetView<PlayDataController> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () async {
-          if (controller.isLoading.value) return;
+      floatingActionButton: Obx(
+        () => FloatingActionButton(
+          onPressed: () async {
+            if (controller.isLoading.value || controller.isCapture.value) return;
 
-          await controller.takeScreenshot();
-        },
-        child: const Icon(Icons.photo_camera_outlined),
+            await controller.takeScreenshot();
+          },
+          child: controller.isCapture.value
+              ? Padding(
+                  padding: EdgeInsets.all(12.w),
+                  child: const CircularProgressIndicator(),
+                )
+              : const Icon(Icons.photo_camera_outlined),
+        ),
       ),
     );
   }
@@ -72,7 +80,7 @@ class _LevelSelectHeader extends GetView<PlayDataController> {
             child: Obx(
               () => TextField(
                 enabled: !controller.isLoading.value,
-                controller: TextEditingController(text: controller.currentLevel.value.toString()),
+                controller: controller.lvTextController,
                 style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w900, fontFamily: 'Oxanium'),
                 decoration: InputDecoration(
                   isDense: true,
@@ -88,6 +96,8 @@ class _LevelSelectHeader extends GetView<PlayDataController> {
                   hintStyle: const TextStyle(fontSize: 15, color: Colors.grey),
                   prefix: Text("Lv. ", style: TextStyle(fontSize: 14.sp, fontFamily: 'Oxanium')),
                 ),
+                keyboardType: TextInputType.number,
+                inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                 onChanged: (value) {
                   if (value.isEmpty) {
                     return;
@@ -134,7 +144,7 @@ class _BestScoreBody extends GetView<PlayDataController> {
             ],
           );
         } else if (controller.clearDataList.isEmpty) {
-          return Text("정보가 없습니다.", style: AppTypeFace().loading);
+          return Center(child: Text("해당 레벨에 대한 정보가 없습니다.", style: AppTypeFace().loading));
         }
 
         return const _BestScoreGridView();
@@ -195,7 +205,7 @@ class _BestScoreGridView extends GetView<PlayDataController> {
                                         fontSize: 30.sp,
                                         foreground: Paint()
                                           ..style = PaintingStyle.stroke
-                                          ..strokeWidth = 3.w
+                                          ..strokeWidth = 3.5.w
                                           ..color = Colors.white,
                                         fontFamily: 'Oxanium'),
                                   ),
@@ -205,7 +215,13 @@ class _BestScoreGridView extends GetView<PlayDataController> {
                                         : (controller.clearDataList[i].score / 10000).toStringAsFixed(1),
                                     style: TextStyle(
                                       fontSize: 30.sp,
-                                      color: Colors.red,
+                                      color: controller.clearDataList[i].score >= 950000
+                                          ? const Color(0xFF005AFF)
+                                          : controller.clearDataList[i].score >= 900000
+                                              ? const Color(0xFF32CD32)
+                                              : controller.clearDataList[i].score >= 850000
+                                                  ? const Color(0xFFFFD700)
+                                                  : Colors.red,
                                       fontFamily: 'Oxanium',
                                     ),
                                   ),

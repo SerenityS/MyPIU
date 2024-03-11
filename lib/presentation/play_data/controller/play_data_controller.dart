@@ -16,11 +16,13 @@ import 'package:piu_util/domain/usecases/play_data_usecases.dart';
 class PlayDataController extends GetxController {
   final PlayDataUseCases _useCases = Get.find<PlayDataUseCases>();
   final PlayDataLocalDataSource _playDataSource = PlayDataLocalDataSource();
+  final TextEditingController lvTextController = TextEditingController();
 
   final RxBool isLoading = true.obs;
+  final RxBool isCapture = false.obs;
 
   final Rx<ChartType> currentChartType = ChartType.DOUBLE.obs;
-  final RxInt currentLevel = 24.obs;
+  final RxInt currentLevel = 0.obs;
 
   final RxList<ChartData> clearDataList = <ChartData>[].obs;
   final RxList<ChartData> bestScoreDataList = <ChartData>[].obs;
@@ -40,6 +42,14 @@ class PlayDataController extends GetxController {
     } else {
       bestScoreDataList.assignAll(clearData);
     }
+
+    for (var element in bestScoreDataList) {
+      if (currentLevel.value < element.level) {
+        currentLevel.value = element.level;
+        currentChartType.value = element.chartType;
+      }
+    }
+    lvTextController.text = currentLevel.value.toString();
 
     await generateClearData();
 
@@ -109,6 +119,8 @@ class PlayDataController extends GetxController {
   }
 
   Future<void> takeScreenshot() async {
+    isCapture.value = true;
+
     RenderRepaintBoundary boundary = scoreWidgetKey.currentContext!.findRenderObject() as RenderRepaintBoundary;
     ui.Image image = await boundary.toImage(pixelRatio: 3);
     ByteData? byteData = await image.toByteData(format: ui.ImageByteFormat.png);
@@ -125,5 +137,7 @@ class PlayDataController extends GetxController {
     } else {
       Fluttertoast.showToast(msg: "이미지를 저장하지 못했습니다.");
     }
+
+    isCapture.value = false;
   }
 }
