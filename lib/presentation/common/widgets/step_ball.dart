@@ -28,8 +28,8 @@ class StepBall extends StatelessWidget {
                     Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Image.asset("assets/step_ball/${chartType.name}_num_${level.toString()[0]}.png", width: 25),
-                        Image.asset("assets/step_ball/${chartType.name}_num_${level.toString()[1]}.png", width: 25),
+                        Image.asset("assets/step_ball/${chartType.fileName}_num_${level.toString()[0]}.png", width: 25),
+                        Image.asset("assets/step_ball/${chartType.fileName}_num_${level.toString()[1]}.png", width: 25),
                       ],
                     ),
                   ],

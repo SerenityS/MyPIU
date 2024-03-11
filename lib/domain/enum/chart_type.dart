@@ -16,10 +16,10 @@ enum ChartType {
   @JsonValue("UCS")
   UCS("u", "u_bg.png", "u_text.png");
 
-  final String name;
+  final String fileName;
   final String bgFileName;
   final String textFileName;
-  const ChartType(this.name, this.bgFileName, this.textFileName);
+  const ChartType(this.fileName, this.bgFileName, this.textFileName);
 
   static ChartType fromString(String text) {
     for (ChartType entry in ChartType.values) {
