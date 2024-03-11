@@ -41,6 +41,7 @@ flutter:
     - assets/jacket/
     - assets/json/
     - assets/plate/
+    - assets/step_ball/
 
   fonts:
     - family: Pretendard
