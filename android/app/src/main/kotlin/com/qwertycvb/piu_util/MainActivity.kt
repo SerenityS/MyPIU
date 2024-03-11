@@ -1,4 +1,4 @@
-package com.example.piu_util
+package com.qwertycvb.piu_util
 
 import io.flutter.embedding.android.FlutterActivity
 
