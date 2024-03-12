@@ -21,15 +21,22 @@ class PlayDataController extends GetxController {
   final RxBool isLoading = true.obs;
   final RxBool isCapture = false.obs;
 
-  final Rx<ChartType> currentChartType = ChartType.DOUBLE.obs;
+  final RxBool showSingle = true.obs;
+  final RxBool showDouble = true.obs;
+
   final RxInt currentLevel = 0.obs;
 
   final RxInt totalPageIndex = 0.obs;
   final RxInt currentLoadingPageIndex = 0.obs;
 
+  final RxList<ChartData> singleClearDataList = <ChartData>[].obs;
+  final RxList<ChartData> doubleClearDataList = <ChartData>[].obs;
+
   final RxList<ChartData> clearDataList = <ChartData>[].obs;
   final RxList<ChartData> bestScoreDataList = <ChartData>[].obs;
-  final RxList<ChartData> levelDataList = <ChartData>[].obs;
+
+  final RxList<ChartData> singleLevelDataList = <ChartData>[].obs;
+  final RxList<ChartData> doubleLevelDataList = <ChartData>[].obs;
 
   final RxList<PlayData> playDataList = <PlayData>[].obs;
 
@@ -49,7 +56,6 @@ class PlayDataController extends GetxController {
     for (var element in bestScoreDataList) {
       if (currentLevel.value < element.level) {
         currentLevel.value = element.level;
-        currentChartType.value = element.chartType;
       }
     }
     lvTextController.text = currentLevel.value.toString();
@@ -60,18 +66,34 @@ class PlayDataController extends GetxController {
       await generateClearData();
     });
 
-    ever(currentChartType, (_) async {
+    ever(showSingle, (_) async {
+      await generateClearData();
+    });
+
+    ever(showDouble, (_) async {
       await generateClearData();
     });
   }
 
-  Future<void> getLevelData() async {
+  Future<void> getSingleLevelData() async {
     // Get Chart Data from JSON
     try {
-      var jsonString = await rootBundle.loadString('assets/json/${currentChartType.value.name}_$currentLevel.json');
-      levelDataList.assignAll((json.decode(jsonString) as List).map((e) => ChartData.fromJson(e)).toList());
+      var singleJsonString = await rootBundle.loadString('assets/json/SINGLE_$currentLevel.json');
+
+      singleLevelDataList.assignAll((json.decode(singleJsonString) as List).map((e) => ChartData.fromJson(e)).toList());
     } catch (e) {
-      levelDataList.assignAll([]);
+      singleLevelDataList.assignAll([]);
+    }
+  }
+
+  Future<void> getDoubleLevelData() async {
+    // Get Chart Data from JSON
+    try {
+      var doubleJsonString = await rootBundle.loadString('assets/json/DOUBLE_$currentLevel.json');
+
+      doubleLevelDataList.assignAll((json.decode(doubleJsonString) as List).map((e) => ChartData.fromJson(e)).toList());
+    } catch (e) {
+      doubleLevelDataList.assignAll([]);
     }
   }
 
@@ -87,19 +109,20 @@ class PlayDataController extends GetxController {
   }
 
   Future<void> generateClearData() async {
-    await getLevelData();
+    await getSingleLevelData();
+    await getDoubleLevelData();
 
     // Generate Clear Data
-    List<ChartData> generatedData = [];
+    List<ChartData> singleGeneratedData = [];
+    List<ChartData> doubleGeneratedData = [];
 
-    for (var chartData in levelDataList) {
+    for (var chartData in singleLevelDataList) {
       var matchingData = bestScoreDataList.firstWhereOrNull(
-        (clearData) =>
-            clearData.title == chartData.title && clearData.level == chartData.level && clearData.chartType == chartData.chartType,
+        (clearData) => clearData.title == chartData.title && clearData.level == chartData.level && clearData.chartType == ChartType.SINGLE,
       );
 
       if (matchingData != null) {
-        generatedData.add(
+        singleGeneratedData.add(
           ChartData(
             title: chartData.title,
             level: matchingData.level,
@@ -111,12 +134,37 @@ class PlayDataController extends GetxController {
           ),
         );
       } else {
-        generatedData.add(chartData);
+        singleGeneratedData.add(chartData);
       }
     }
 
-    generatedData.sort((a, b) => b.score.compareTo(a.score));
-    clearDataList.assignAll(generatedData);
+    for (var chartData in doubleLevelDataList) {
+      var matchingData = bestScoreDataList.firstWhereOrNull(
+        (clearData) => clearData.title == chartData.title && clearData.level == chartData.level && clearData.chartType == ChartType.DOUBLE,
+      );
+
+      if (matchingData != null) {
+        doubleGeneratedData.add(
+          ChartData(
+            title: chartData.title,
+            level: matchingData.level,
+            score: matchingData.score,
+            chartType: matchingData.chartType,
+            gradeType: matchingData.gradeType,
+            plateType: matchingData.plateType,
+            jacketFileName: chartData.jacketFileName,
+          ),
+        );
+      } else {
+        doubleGeneratedData.add(chartData);
+      }
+    }
+
+    singleGeneratedData.sort((a, b) => b.score.compareTo(a.score));
+    doubleGeneratedData.sort((a, b) => b.score.compareTo(a.score));
+
+    singleClearDataList.assignAll(singleGeneratedData);
+    doubleClearDataList.assignAll(doubleGeneratedData);
 
     isLoading.value = false;
   }
