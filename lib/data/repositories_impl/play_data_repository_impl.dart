@@ -145,6 +145,16 @@ List<RecentlyPlayData> parseRecentlyPlayData(String html) {
     String level1 = recentlyData.getElementsByTagName("img")[1].attributes["src"]!;
     String level2 = recentlyData.getElementsByTagName("img")[2].attributes["src"]!;
 
+    if (level1.contains("u_num_x")) {
+      // Hack for UCS chart
+      level1 = "https://piugame.com/l_img/stepball/full/u_num_0.png";
+      level2 = "https://piugame.com/l_img/stepball/full/u_num_${ChartType.fromString(chartType).index}.png";
+
+      chartType = "https://piugame.com/l_img/stepball/full/u_text.png";
+    } else if (level1.contains("c_icon")) {
+      level1 = "https://piugame.com/l_img/stepball/full/c_num_0.png"; // Hack for COOP chart
+    }
+
     var gradeData = recentlyData.getElementsByClassName("li_in ac").first;
     String? gradeType = gradeData.getElementsByTagName("img").firstOrNull?.attributes["src"];
     int? score = int.tryParse(gradeData.getElementsByClassName("tx").first.text.replaceAll(",", ""));

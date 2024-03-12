@@ -11,14 +11,18 @@ class StepBall extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String level = this.level.toString().padLeft(2, "0");
+    String parsedLevel = level.toString().padLeft(2, "0");
 
     return SizedBox(
       height: 50,
       child: Stack(
         clipBehavior: Clip.none,
         children: [
-          Image.asset("assets/step_ball/${chartType.bgFileName}"),
+          if (chartType == ChartType.UCS) ...[
+            Image.asset("assets/step_ball/${ChartType.values[level].bgFileName}"),
+          ] else ...[
+            Image.asset("assets/step_ball/${chartType.bgFileName}"),
+          ],
           Positioned.fill(
             child: Align(
               alignment: Alignment.center,
@@ -31,10 +35,14 @@ class StepBall extends StatelessWidget {
                     children: [
                       if (chartType == ChartType.COOP) ...[
                         Image.asset("assets/step_ball/c_icon.png", width: 25),
+                        Image.asset("assets/step_ball/${chartType.fileName}_num_${parsedLevel.toString()[1]}.png", width: 25),
+                      ] else if (chartType == ChartType.UCS) ...[
+                        Image.asset("assets/step_ball/u_num_x.png", width: 25),
+                        Image.asset("assets/step_ball/u_num_x.png", width: 25),
                       ] else ...[
-                        Image.asset("assets/step_ball/${chartType.fileName}_num_${level.toString()[0]}.png", width: 25),
+                        Image.asset("assets/step_ball/${chartType.fileName}_num_${parsedLevel.toString()[0]}.png", width: 25),
+                        Image.asset("assets/step_ball/${chartType.fileName}_num_${parsedLevel.toString()[1]}.png", width: 25),
                       ],
-                      Image.asset("assets/step_ball/${chartType.fileName}_num_${level.toString()[1]}.png", width: 25),
                     ],
                   ),
                 ],
