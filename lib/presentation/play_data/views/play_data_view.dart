@@ -140,7 +140,8 @@ class _BestScoreBody extends GetView<PlayDataController> {
             children: [
               const CircularProgressIndicator(),
               SizedBox(height: 8.h),
-              Text("최신 정보로 업데이트 중 입니다.", style: AppTypeFace().loading),
+              Text("최신 정보로 업데이트 중 입니다...(${controller.currentLoadingPageIndex}/${controller.totalPageIndex})",
+                  style: AppTypeFace().loading),
             ],
           );
         } else if (controller.clearDataList.isEmpty) {

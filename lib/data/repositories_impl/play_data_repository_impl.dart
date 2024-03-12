@@ -13,35 +13,52 @@ import 'package:piu_util/domain/enum/chart_type.dart';
 import 'package:piu_util/domain/enum/grade_type.dart';
 import 'package:piu_util/domain/enum/plate_type.dart';
 import 'package:piu_util/domain/repositories/play_data_repository.dart';
+import 'package:piu_util/presentation/play_data/controller/play_data_controller.dart';
 
 class PlayDataRepositoryImpl extends PlayDataRepository {
   final Dio _dio = Get.find<DioBuilder>();
 
+  Iterable<List<T>> chunk<T>(List<T> list, int size) sync* {
+    for (var i = 0; i < list.length; i += size) {
+      yield list.sublist(i, i + size > list.length ? list.length : i + size);
+    }
+  }
+
   @override
   Future<List<ChartData>> getBestScore() async {
-    // Request first page to get total page count
+    final PlayDataController _playDataController = Get.find<PlayDataController>();
+
+    _playDataController.totalPageIndex.value = 0;
+    _playDataController.currentLoadingPageIndex.value = 0;
+
     var firstPageResponse = await _dio.get("${AppUrl.bestScoreUrl}?&page=1");
 
     if (firstPageResponse.statusCode != 200) {
       throw Exception("Failed to get best score");
     }
 
+    // Assuming getClearDataPageIndex and parseClearData are defined elsewhere
     int totalPages = (getClearDataPageIndex(firstPageResponse.data) / 12).ceil();
+    _playDataController.totalPageIndex.value = totalPages;
+
     List<ChartData> chartDataList = parseClearData(firstPageResponse.data);
 
-    // Request the rest of the pages with parallel requests
-    List<Future> requests = [];
-    for (int pageIndex = 2; pageIndex <= totalPages; pageIndex++) {
-      requests.add(_dio.get("${AppUrl.bestScoreUrl}?&page=$pageIndex"));
-    }
+    // Create a list for all page requests but initiate requests in chunks of 7
+    List<int> allPages = List.generate(totalPages - 1, (i) => i + 2); // Pages 2 through totalPages
+    List<List<int>> pageChunks = chunk(allPages, 5).toList();
 
-    var responses = await Future.wait(requests);
+    for (var chunk in pageChunks) {
+      List<Future> requests = chunk.map((pageIndex) => _dio.get("${AppUrl.bestScoreUrl}?&page=$pageIndex")).toList();
 
-    for (var response in responses) {
-      if (response.statusCode == 200) {
-        chartDataList.addAll(parseClearData(response.data));
-      } else {
-        throw Exception("Failed to get best score from one of the pages");
+      var responses = await Future.wait(requests);
+
+      for (var response in responses) {
+        if (response.statusCode == 200) {
+          chartDataList.addAll(parseClearData(response.data));
+          _playDataController.currentLoadingPageIndex.value++;
+        } else {
+          throw Exception("Failed to get best score from one of the pages");
+        }
       }
     }
 

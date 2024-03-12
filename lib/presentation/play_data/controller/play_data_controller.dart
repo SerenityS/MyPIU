@@ -24,6 +24,9 @@ class PlayDataController extends GetxController {
   final Rx<ChartType> currentChartType = ChartType.DOUBLE.obs;
   final RxInt currentLevel = 0.obs;
 
+  final RxInt totalPageIndex = 0.obs;
+  final RxInt currentLoadingPageIndex = 0.obs;
+
   final RxList<ChartData> clearDataList = <ChartData>[].obs;
   final RxList<ChartData> bestScoreDataList = <ChartData>[].obs;
   final RxList<ChartData> levelDataList = <ChartData>[].obs;

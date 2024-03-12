@@ -68,7 +68,8 @@ class _PlayerPlateCard extends GetView<PlayDataController> {
                     children: [
                       const CircularProgressIndicator(),
                       SizedBox(height: 8.h),
-                      Text("플레이트 정보를 불러오는 중...", style: AppTypeFace().loading),
+                      Text("플레이트 정보를 불러오는 중...(${controller.currentLoadingPageIndex}/${controller.totalPageIndex})",
+                          style: AppTypeFace().loading),
                     ],
                   ),
                 ),
