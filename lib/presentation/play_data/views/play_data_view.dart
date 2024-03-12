@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:piu_util/app/config/app_color.dart';
 import 'package:piu_util/app/config/app_typeface.dart';
+import 'package:piu_util/app/config/extension/score_to_string.dart';
 import 'package:piu_util/domain/enum/chart_type.dart';
 import 'package:piu_util/presentation/home/controller/my_data_controller.dart';
 
@@ -199,9 +200,9 @@ class _BestScoreGridView extends GetView<PlayDataController> {
                               child: Stack(
                                 children: [
                                   Text(
-                                    (controller.clearDataList[i].score / 10000).toStringAsFixed(1) == "0.0"
+                                    (controller.clearDataList[i].score.toScoreString()) == "0.0"
                                         ? ""
-                                        : (controller.clearDataList[i].score / 10000).toStringAsFixed(1),
+                                        : controller.clearDataList[i].score.toScoreString(),
                                     style: TextStyle(
                                         fontSize: 30.sp,
                                         foreground: Paint()
@@ -211,9 +212,9 @@ class _BestScoreGridView extends GetView<PlayDataController> {
                                         fontFamily: 'Oxanium'),
                                   ),
                                   Text(
-                                    (controller.clearDataList[i].score / 10000).toStringAsFixed(1) == "0.0"
+                                    (controller.clearDataList[i].score.toScoreString()) == "0.0"
                                         ? ""
-                                        : (controller.clearDataList[i].score / 10000).toStringAsFixed(1),
+                                        : controller.clearDataList[i].score.toScoreString(),
                                     style: TextStyle(
                                       fontSize: 30.sp,
                                       color: controller.clearDataList[i].score >= 950000
