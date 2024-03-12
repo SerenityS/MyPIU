@@ -30,7 +30,7 @@ class SettingPage extends GetView<SettingController> {
             child: const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("This app is non-commercial.", style: TextStyle(color: Colors.red)),
+                Text("This app is non-commercial usage only.", style: TextStyle(color: Colors.red)),
                 Text(
                     "This app is not affiliated with PUMPITUP & Andamiro Co., LTD.\nAll trademarks and copyrights are the property of their respective owners."),
               ],
