@@ -26,11 +26,6 @@ class PlayDataRepositoryImpl extends PlayDataRepository {
 
   @override
   Future<List<ChartData>> getBestScore() async {
-    final PlayDataController _playDataController = Get.find<PlayDataController>();
-
-    _playDataController.totalPageIndex.value = 0;
-    _playDataController.currentLoadingPageIndex.value = 0;
-
     var firstPageResponse = await _dio.get("${AppUrl.bestScoreUrl}?&page=1");
 
     if (firstPageResponse.statusCode != 200) {
@@ -39,13 +34,15 @@ class PlayDataRepositoryImpl extends PlayDataRepository {
 
     // Assuming getClearDataPageIndex and parseClearData are defined elsewhere
     int totalPages = (getClearDataPageIndex(firstPageResponse.data) / 12).ceil();
-    _playDataController.totalPageIndex.value = totalPages;
+
+    final PlayDataController playDataController = Get.find<PlayDataController>();
+    playDataController.totalPageIndex.value = totalPages - 1;
 
     List<ChartData> chartDataList = parseClearData(firstPageResponse.data);
 
-    // Create a list for all page requests but initiate requests in chunks of 7
+    // Create a list for all page requests but initiate requests in chunks of 4
     List<int> allPages = List.generate(totalPages - 1, (i) => i + 2); // Pages 2 through totalPages
-    List<List<int>> pageChunks = chunk(allPages, 5).toList();
+    List<List<int>> pageChunks = chunk(allPages, 4).toList();
 
     for (var chunk in pageChunks) {
       List<Future> requests = chunk.map((pageIndex) => _dio.get("${AppUrl.bestScoreUrl}?&page=$pageIndex")).toList();
@@ -55,12 +52,15 @@ class PlayDataRepositoryImpl extends PlayDataRepository {
       for (var response in responses) {
         if (response.statusCode == 200) {
           chartDataList.addAll(parseClearData(response.data));
-          _playDataController.currentLoadingPageIndex.value++;
+          playDataController.currentLoadingPageIndex.value++;
         } else {
           throw Exception("Failed to get best score from one of the pages");
         }
       }
     }
+
+    playDataController.totalPageIndex.value = 0;
+    playDataController.currentLoadingPageIndex.value = 0;
 
     return chartDataList;
   }
@@ -107,7 +107,11 @@ List<ChartData> parseClearData(String html) {
     String gradeType = scoreData.getElementsByTagName("img")[3].attributes["src"]!;
     String plateType = scoreData.getElementsByTagName("img")[4].attributes["src"]!;
 
-    if (level1.contains("u_num_x")) continue; // Skip UCS clear data
+    if (level1.contains("u_num_x")) {
+      continue; // Skip UCS clear data
+    } else if (level1.contains("c_icon")) {
+      level1 = "https://piugame.com/l_img/stepball/full/c_num_0.png"; // Hack for COOP chart
+    }
 
     clearDataList.add(
       ChartData(

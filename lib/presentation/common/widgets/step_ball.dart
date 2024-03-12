@@ -11,6 +11,8 @@ class StepBall extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String level = this.level.toString().padLeft(2, "0");
+
     return SizedBox(
       height: 50,
       child: Stack(
@@ -27,7 +29,11 @@ class StepBall extends StatelessWidget {
                   Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Image.asset("assets/step_ball/${chartType.fileName}_num_${level.toString()[0]}.png", width: 25),
+                      if (chartType == ChartType.COOP) ...[
+                        Image.asset("assets/step_ball/c_icon.png", width: 25),
+                      ] else ...[
+                        Image.asset("assets/step_ball/${chartType.fileName}_num_${level.toString()[0]}.png", width: 25),
+                      ],
                       Image.asset("assets/step_ball/${chartType.fileName}_num_${level.toString()[1]}.png", width: 25),
                     ],
                   ),
