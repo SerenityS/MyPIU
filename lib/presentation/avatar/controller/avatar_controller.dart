@@ -73,12 +73,16 @@ class AvatarController extends GetxController {
 
   Future<void> getAvatars() async {
     isLoading.value = true;
+    try {
+      avatarDataList.assignAll(await _useCases.getAvatars.execute());
+    } catch (e) {
+      avatarDataList.assignAll([]);
+    } finally {
+      _avatarDataSource.saveAvatarData(avatarDataList);
+      filterAvatarData();
 
-    avatarDataList.assignAll(await _useCases.getAvatars.execute());
-    _avatarDataSource.saveAvatarData(avatarDataList);
-    filterAvatarData();
-
-    isLoading.value = false;
+      isLoading.value = false;
+    }
   }
 
   Future<void> setAvatar(AvatarData avatar) async {

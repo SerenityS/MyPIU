@@ -76,10 +76,14 @@ class PlayDataController extends GetxController {
   }
 
   Future<void> getBestScoreData() async {
-    isLoading.value = true;
-    // Get Best Score Data from web
-    bestScoreDataList.assignAll(await _useCases.getBestScore.execute());
-    await _playDataSource.saveClearData(bestScoreDataList);
+    try {
+      isLoading.value = true;
+      // Get Best Score Data from web
+      bestScoreDataList.assignAll(await _useCases.getBestScore.execute());
+      await _playDataSource.saveClearData(bestScoreDataList);
+    } catch (e) {
+      bestScoreDataList.assignAll([]);
+    }
   }
 
   Future<void> generateClearData() async {
@@ -124,23 +128,25 @@ class PlayDataController extends GetxController {
   Future<void> takeScreenshot() async {
     isCapture.value = true;
 
-    RenderRepaintBoundary boundary = scoreWidgetKey.currentContext!.findRenderObject() as RenderRepaintBoundary;
-    ui.Image image = await boundary.toImage(pixelRatio: 3);
-    ByteData? byteData = await image.toByteData(format: ui.ImageByteFormat.png);
-    Uint8List pngBytes = byteData!.buffer.asUint8List();
+    try {
+      RenderRepaintBoundary boundary = scoreWidgetKey.currentContext!.findRenderObject() as RenderRepaintBoundary;
+      ui.Image image = await boundary.toImage(pixelRatio: 3);
+      ByteData? byteData = await image.toByteData(format: ui.ImageByteFormat.png);
+      Uint8List pngBytes = byteData!.buffer.asUint8List();
 
-    var result = await ImageGallerySaver.saveImage(
-      Uint8List.fromList(pngBytes),
-      name:
-          "score_check_${DateTime.now().year}-${DateTime.now().month}-${DateTime.now().day}-${DateTime.now().hour}-${DateTime.now().minute}-${DateTime.now().second}",
-    );
+      var result = await ImageGallerySaver.saveImage(
+        Uint8List.fromList(pngBytes),
+        name:
+            "score_check_${DateTime.now().year}-${DateTime.now().month}-${DateTime.now().day}-${DateTime.now().hour}-${DateTime.now().minute}-${DateTime.now().second}",
+      );
 
-    if (result['isSuccess']) {
-      Fluttertoast.showToast(msg: "이미지를 갤러리에 저장했습니다.");
-    } else {
-      Fluttertoast.showToast(msg: "이미지를 저장하지 못했습니다.");
+      if (result['isSuccess']) {
+        Fluttertoast.showToast(msg: "이미지를 저장했습니다.");
+      } else {
+        Fluttertoast.showToast(msg: "이미지를 저장하지 못했습니다.");
+      }
+    } finally {
+      isCapture.value = false;
     }
-
-    isCapture.value = false;
   }
 }

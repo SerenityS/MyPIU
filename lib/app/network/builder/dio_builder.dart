@@ -9,9 +9,9 @@ import '../interceptor/redirect_interceptor.dart';
 class DioBuilder extends DioMixin implements Dio {
   final CookieJar cookieJar = CookieJar();
 
-  final Duration connectionTimeOutMls = const Duration(milliseconds: 10000);
-  final Duration readTimeOutMls = const Duration(milliseconds: 10000);
-  final Duration writeTimeOutMls = const Duration(milliseconds: 10000);
+  final Duration connectionTimeOutMls = const Duration(milliseconds: 30000);
+  final Duration readTimeOutMls = const Duration(milliseconds: 30000);
+  final Duration writeTimeOutMls = const Duration(milliseconds: 30000);
 
   DioBuilder() {
     options = BaseOptions(
