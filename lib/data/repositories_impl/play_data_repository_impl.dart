@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:dio/dio.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:html/dom.dart';
 import 'package:html/parser.dart' show parse;
@@ -26,6 +29,9 @@ class PlayDataRepositoryImpl extends PlayDataRepository {
 
   @override
   Future<List<ChartData>> getBestScore() async {
+    var fullSongDataJson = await rootBundle.loadString('assets/json/full_list.json');
+    var fullSongData = json.decode(fullSongDataJson);
+
     var firstPageResponse = await _dio.get("${AppUrl.bestScoreUrl}?&page=1");
 
     if (firstPageResponse.statusCode != 200) {
@@ -38,7 +44,7 @@ class PlayDataRepositoryImpl extends PlayDataRepository {
     final PlayDataController playDataController = Get.find<PlayDataController>();
     playDataController.totalPageIndex.value = totalPages - 1;
 
-    List<ChartData> chartDataList = parseClearData(firstPageResponse.data);
+    List<ChartData> chartDataList = parseClearData(firstPageResponse.data, fullSongData);
 
     // Create a list for all page requests but initiate requests in chunks of 4
     List<int> allPages = List.generate(totalPages - 1, (i) => i + 2); // Pages 2 through totalPages
@@ -51,13 +57,15 @@ class PlayDataRepositoryImpl extends PlayDataRepository {
 
       for (var response in responses) {
         if (response.statusCode == 200) {
-          chartDataList.addAll(parseClearData(response.data));
+          chartDataList.addAll(parseClearData(response.data, fullSongData));
           playDataController.currentLoadingPageIndex.value++;
         } else {
           throw Exception("Failed to get best score from one of the pages");
         }
       }
     }
+
+    chartDataList.sort((a, b) => b.score.compareTo(a.score));
 
     playDataController.totalPageIndex.value = 0;
     playDataController.currentLoadingPageIndex.value = 0;
@@ -89,7 +97,7 @@ int getClearDataPageIndex(String html) {
   return int.parse(bestScoreLength[0].text);
 }
 
-List<ChartData> parseClearData(String html) {
+List<ChartData> parseClearData(String html, dynamic fullSongData) {
   final List<ChartData> clearDataList = [];
 
   var document = parse(html);
@@ -121,6 +129,7 @@ List<ChartData> parseClearData(String html) {
         chartType: ChartType.fromString(chartType),
         gradeType: GradeType.fromString(gradeType),
         plateType: PlateType.fromString(plateType),
+        jacketFileName: fullSongData[title]["jacketFileName"],
       ),
     );
   }

@@ -61,23 +61,30 @@ class HomePage extends GetView<HomeController> {
                 },
               ),
               ListTile(
-                title: const Text('최근 플레이'),
+                title: const Text('레이팅 정보'),
                 onTap: () {
                   controller.drawerIndex = 2;
                   Get.back();
                 },
               ),
               ListTile(
-                title: const Text('칭호'),
+                title: const Text('최근 플레이'),
                 onTap: () {
                   controller.drawerIndex = 3;
                   Get.back();
                 },
               ),
               ListTile(
-                title: const Text('아바타 상점'),
+                title: const Text('칭호'),
                 onTap: () {
                   controller.drawerIndex = 4;
+                  Get.back();
+                },
+              ),
+              ListTile(
+                title: const Text('아바타 상점'),
+                onTap: () {
+                  controller.drawerIndex = 5;
                   Get.back();
                 },
               ),

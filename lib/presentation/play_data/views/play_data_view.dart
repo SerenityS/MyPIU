@@ -58,9 +58,15 @@ class _LevelSelectHeader extends GetView<PlayDataController> {
       child: Row(
         children: [
           Obx(() => Checkbox(value: controller.showSingle.value, onChanged: (value) => controller.showSingle.value = value!)),
-          Text("Single", style: TextStyle(fontSize: 15.sp, fontFamily: 'Oxanium')),
+          GestureDetector(
+              behavior: HitTestBehavior.translucent,
+              onTap: () => controller.showSingle.value = !controller.showSingle.value,
+              child: Text("Single", style: TextStyle(fontSize: 15.sp, fontFamily: 'Oxanium'))),
           Obx(() => Checkbox(value: controller.showDouble.value, onChanged: (value) => controller.showDouble.value = value!)),
-          Text("Double", style: TextStyle(fontSize: 15.sp, fontFamily: 'Oxanium')),
+          GestureDetector(
+              behavior: HitTestBehavior.translucent,
+              onTap: () => controller.showDouble.value = !controller.showDouble.value,
+              child: Text("Double", style: TextStyle(fontSize: 15.sp, fontFamily: 'Oxanium'))),
           const Spacer(),
           SizedBox(
             width: 70.w,

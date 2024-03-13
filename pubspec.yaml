@@ -1,7 +1,7 @@
 name: piu_util
 description: "A new Flutter project."
 publish_to: "none"
-version: 0.1.1
+version: 0.1.0
 
 environment:
   sdk: ">=3.3.0 <4.0.0"
@@ -10,6 +10,7 @@ dependencies:
   cookie_jar: ^4.0.8
   dio: ^5.4.1
   dio_cookie_manager: ^3.1.1
+  fl_chart: ^0.66.2
   flutter:
     sdk: flutter
   flutter_markdown: ^0.6.21

@@ -17,25 +17,26 @@ enum GradeType {
   xC("x_c.png"),
   xD("x_d.png"),
   xF("x_f.png"),
-  SSSp("sss_p.png"),
-  SSS("sss.png"),
-  SSp("ss_p.png"),
-  SS("ss.png"),
-  Sp("s_p.png"),
-  S("s.png"),
-  AAAp("aaa_p.png"),
-  AAA("aaa.png"),
-  AAp("aa_p.png"),
-  AA("aa.png"),
-  Ap("a_p.png"),
-  A("a.png"),
-  B("b.png"),
-  C("c.png"),
-  D("d.png"),
-  F("f.png");
+  SSSp("sss_p.png", 1.5),
+  SSS("sss.png", 1.44),
+  SSp("ss_p.png", 1.38),
+  SS("ss.png", 1.32),
+  Sp("s_p.png", 1.26),
+  S("s.png", 1.2),
+  AAAp("aaa_p.png", 1.15),
+  AAA("aaa.png", 1.1),
+  AAp("aa_p.png", 1.05),
+  AA("aa.png", 1.0),
+  Ap("a_p.png", 0.9),
+  A("a.png", 0.8),
+  B("b.png", 0.7),
+  C("c.png", 0.6),
+  D("d.png", 0.5),
+  F("f.png", 0.0);
 
   final String fileName;
-  const GradeType(this.fileName);
+  final double ratingPrefix;
+  const GradeType(this.fileName, [this.ratingPrefix = 0.0]);
 
   static GradeType fromString(String text) {
     for (GradeType entry in GradeType.values) {
