@@ -38,63 +38,104 @@ class RatingView extends GetView<RatingController> {
             decoration: BoxDecoration(color: AppColor.cardPrimary, borderRadius: BorderRadius.circular(12.r)),
             child: Theme(
               data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
-              child: ExpansionTile(
-                onExpansionChanged: (value) {
-                  if (value) containerKey.ensureVisible();
-                },
-                title: Text("Lv. ${index + 1}", style: TextStyle(fontSize: 25.sp, fontFamily: 'Oxanium', color: Colors.white)),
-                tilePadding: EdgeInsets.zero,
-                expandedAlignment: Alignment.topLeft,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      RichText(
-                        text: TextSpan(
-                          style: TextStyle(fontSize: 18.sp, fontFamily: 'Oxanium'),
-                          children: [
-                            TextSpan(
-                              text: "Rating: ${(data.singleRating + data.doubleRating).formatWithComma()}\n",
-                            ),
-                            TextSpan(
-                              text: "Clear: ${data.clearData.length}(",
-                            ),
-                            TextSpan(
-                              text: data.singleCount.toString(),
-                              style: const TextStyle(color: Colors.red),
-                            ),
-                            const TextSpan(text: "+"),
-                            TextSpan(
-                              text: data.doubleCount.toString(),
-                              style: const TextStyle(color: Colors.green),
-                            ),
-                            TextSpan(text: ") / ${controller.singleChartCount[index] + controller.doubleChartCount[index]}"),
-                          ],
-                        ),
-                      ),
-                      if (data.clearData.isNotEmpty) ...[
-                        const SizedBox(height: 10),
-                        Container(
-                          decoration: BoxDecoration(border: Border.all(color: Colors.white), borderRadius: BorderRadius.circular(12.r)),
-                          padding: EdgeInsets.symmetric(vertical: 4.w),
-                          child: Column(
-                            children: [
-                              Text("Grade Info", style: TextStyle(fontSize: 20.sp, fontFamily: 'Oxanium')),
-                              SizedBox(height: 8.w),
-                              GradeTypeBarChart(ratingData: controller.ratingDataList[index]),
-                            ],
-                          ),
-                        ),
-                      ]
-                    ],
-                  ),
-                ],
-              ),
+              child: _RatingExpansionTile(containerKey: containerKey, data: data, controller: controller, index: index),
             ),
           );
         },
       );
     });
+  }
+}
+
+class _RatingExpansionTile extends StatefulWidget {
+  const _RatingExpansionTile({
+    required this.containerKey,
+    required this.data,
+    required this.controller,
+    required this.index,
+  });
+
+  final GlobalKey<State<StatefulWidget>> containerKey;
+  final RatingData data;
+  final RatingController controller;
+  final int index;
+
+  @override
+  State<_RatingExpansionTile> createState() => _RatingExpansionTileState();
+}
+
+class _RatingExpansionTileState extends State<_RatingExpansionTile> {
+  bool isExpanded = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return ExpansionTile(
+      onExpansionChanged: (value) {
+        if (value) widget.containerKey.ensureVisible();
+
+        setState(() {
+          isExpanded = value;
+        });
+      },
+      title: !isExpanded
+          ? Row(
+              children: [
+                Text("Lv. ${widget.index + 1} ", style: TextStyle(fontSize: 25.sp, fontFamily: 'Oxanium', color: Colors.white)),
+                if (widget.data.singleRating + widget.data.doubleRating > 0) ...[
+                  Text("(${(widget.data.singleRating + widget.data.doubleRating).formatWithComma()})",
+                      style: TextStyle(fontSize: 16.sp, fontFamily: 'Oxanium', color: Colors.white)),
+                ],
+              ],
+            )
+          : Text("Lv. ${widget.index + 1}", style: TextStyle(fontSize: 25.sp, fontFamily: 'Oxanium', color: Colors.white)),
+      tilePadding: EdgeInsets.zero,
+      expandedAlignment: Alignment.topLeft,
+      children: [
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            RichText(
+              text: TextSpan(
+                style: TextStyle(fontSize: 18.sp, fontFamily: 'Oxanium'),
+                children: [
+                  TextSpan(
+                    text: "Rating: ${(widget.data.singleRating + widget.data.doubleRating).formatWithComma()}\n",
+                  ),
+                  TextSpan(
+                    text: "Clear: ${widget.data.clearData.length}(",
+                  ),
+                  TextSpan(
+                    text: widget.data.singleCount.toString(),
+                    style: const TextStyle(color: Colors.red),
+                  ),
+                  const TextSpan(text: "+"),
+                  TextSpan(
+                    text: widget.data.doubleCount.toString(),
+                    style: const TextStyle(color: Colors.green),
+                  ),
+                  TextSpan(
+                      text: ") / ${widget.controller.singleChartCount[widget.index] + widget.controller.doubleChartCount[widget.index]}"),
+                ],
+              ),
+            ),
+            if (widget.data.clearData.isNotEmpty) ...[
+              const SizedBox(height: 10),
+              Container(
+                decoration: BoxDecoration(border: Border.all(color: Colors.white), borderRadius: BorderRadius.circular(12.r)),
+                padding: EdgeInsets.symmetric(vertical: 4.w),
+                child: Column(
+                  children: [
+                    Text("Grade Info", style: TextStyle(fontSize: 20.sp, fontFamily: 'Oxanium')),
+                    SizedBox(height: 8.w),
+                    GradeTypeBarChart(ratingData: widget.controller.ratingDataList[widget.index]),
+                  ],
+                ),
+              ),
+            ]
+          ],
+        ),
+      ],
+    );
   }
 }
 
