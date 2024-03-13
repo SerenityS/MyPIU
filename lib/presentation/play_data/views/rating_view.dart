@@ -30,6 +30,7 @@ class RatingView extends GetView<RatingController> {
           final GlobalKey containerKey = GlobalKey();
 
           if (index < 9) return const SizedBox();
+          if (9 <= index && index <= 19 && controller.ratingDataList[index].clearData.isEmpty) return const SizedBox();
 
           return Container(
             key: containerKey,
