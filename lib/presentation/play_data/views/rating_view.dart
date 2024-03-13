@@ -29,8 +29,7 @@ class RatingView extends GetView<RatingController> {
           final RatingData data = controller.ratingDataList[index];
           final GlobalKey containerKey = GlobalKey();
 
-          if (index < 10) return const SizedBox();
-          if (data.clearData.isEmpty) return const SizedBox();
+          if (index < 9) return const SizedBox();
 
           return Container(
             key: containerKey,
@@ -45,6 +44,7 @@ class RatingView extends GetView<RatingController> {
                 },
                 title: Text("Lv. ${index + 1}", style: TextStyle(fontSize: 25.sp, fontFamily: 'Oxanium', color: Colors.white)),
                 tilePadding: EdgeInsets.zero,
+                expandedAlignment: Alignment.topLeft,
                 children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -72,18 +72,20 @@ class RatingView extends GetView<RatingController> {
                           ],
                         ),
                       ),
-                      const SizedBox(height: 10),
-                      Container(
-                        decoration: BoxDecoration(border: Border.all(color: Colors.white), borderRadius: BorderRadius.circular(12.r)),
-                        padding: EdgeInsets.symmetric(vertical: 4.w),
-                        child: Column(
-                          children: [
-                            Text("Grade Info", style: TextStyle(fontSize: 20.sp, fontFamily: 'Oxanium')),
-                            SizedBox(height: 8.w),
-                            GradeTypeBarChart(ratingData: controller.ratingDataList[index]),
-                          ],
+                      if (data.clearData.isNotEmpty) ...[
+                        const SizedBox(height: 10),
+                        Container(
+                          decoration: BoxDecoration(border: Border.all(color: Colors.white), borderRadius: BorderRadius.circular(12.r)),
+                          padding: EdgeInsets.symmetric(vertical: 4.w),
+                          child: Column(
+                            children: [
+                              Text("Grade Info", style: TextStyle(fontSize: 20.sp, fontFamily: 'Oxanium')),
+                              SizedBox(height: 8.w),
+                              GradeTypeBarChart(ratingData: controller.ratingDataList[index]),
+                            ],
+                          ),
                         ),
-                      ),
+                      ]
                     ],
                   ),
                 ],
@@ -200,33 +202,18 @@ class _GradeTypeBarChartState extends State<GradeTypeBarChart> {
                       color: (aggregatedData[gradeData]?[ChartType.SINGLE] ?? 0) == 0 ? Colors.green : Colors.red,
                       toY: (aggregatedData[gradeData]?[ChartType.SINGLE] ?? 0) + (aggregatedData[gradeData]?[ChartType.DOUBLE] ?? 0),
                       rodStackItems: [
-                        if ((aggregatedData[gradeData]?[ChartType.SINGLE] ?? 0) > (aggregatedData[gradeData]?[ChartType.DOUBLE] ?? 0)) ...[
-                          if (aggregatedData[gradeData]![ChartType.DOUBLE] != null)
-                            BarChartRodStackItem(
-                              0,
-                              aggregatedData[gradeData]![ChartType.DOUBLE]!,
-                              Colors.green,
-                            ),
-                          if (aggregatedData[gradeData]![ChartType.SINGLE] != null)
-                            BarChartRodStackItem(
-                              (aggregatedData[gradeData]?[ChartType.DOUBLE] ?? 0),
-                              aggregatedData[gradeData]![ChartType.SINGLE]! + (aggregatedData[gradeData]?[ChartType.DOUBLE] ?? 0),
-                              Colors.red,
-                            ),
-                        ] else ...[
-                          if (aggregatedData[gradeData]![ChartType.SINGLE] != null)
-                            BarChartRodStackItem(
-                              0,
-                              aggregatedData[gradeData]![ChartType.SINGLE]!,
-                              Colors.red,
-                            ),
-                          if (aggregatedData[gradeData]![ChartType.DOUBLE] != null)
-                            BarChartRodStackItem(
-                              (aggregatedData[gradeData]?[ChartType.SINGLE] ?? 0),
-                              aggregatedData[gradeData]![ChartType.DOUBLE]! + (aggregatedData[gradeData]?[ChartType.SINGLE] ?? 0),
-                              Colors.green,
-                            ),
-                        ]
+                        if (aggregatedData[gradeData]![ChartType.SINGLE] != null)
+                          BarChartRodStackItem(
+                            0,
+                            aggregatedData[gradeData]![ChartType.SINGLE]!,
+                            Colors.red,
+                          ),
+                        if (aggregatedData[gradeData]![ChartType.DOUBLE] != null)
+                          BarChartRodStackItem(
+                            (aggregatedData[gradeData]?[ChartType.SINGLE] ?? 0),
+                            aggregatedData[gradeData]![ChartType.DOUBLE]! + (aggregatedData[gradeData]?[ChartType.SINGLE] ?? 0),
+                            Colors.green,
+                          ),
                       ],
                     ),
                 ],
