@@ -4,6 +4,7 @@ import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:piu_util/presentation/avatar/views/avatar_view.dart';
 import 'package:piu_util/presentation/home/views/my_data_view.dart';
+import 'package:piu_util/presentation/play_data/views/best_score_view.dart';
 import 'package:piu_util/presentation/play_data/views/play_data_view.dart';
 import 'package:piu_util/presentation/play_data/views/rating_view.dart';
 import 'package:piu_util/presentation/play_data/views/recently_play_view.dart';
@@ -13,6 +14,7 @@ class HomeController extends GetxController {
   final List<Widget> drawerPages = [
     const MyDataView(),
     const PlayDataView(),
+    const BestScoreView(),
     const RatingView(),
     const RecentlyPlayDataView(),
     const TitleView(),
