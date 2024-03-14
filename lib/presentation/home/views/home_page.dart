@@ -47,49 +47,49 @@ class HomePage extends GetView<HomeController> {
             physics: const ClampingScrollPhysics(),
             children: [
               ListTile(
-                title: const Text('내 정보'),
+                title: const Text('My Data'),
                 onTap: () {
                   controller.drawerIndex = 0;
                   Get.back();
                 },
               ),
               ListTile(
-                title: const Text('스코어 체커'),
+                title: const Text('Score Checker'),
                 onTap: () {
                   controller.drawerIndex = 1;
                   Get.back();
                 },
               ),
               ListTile(
-                title: const Text('베스트 스코어'),
+                title: const Text('My Best Score'),
                 onTap: () {
                   controller.drawerIndex = 2;
                   Get.back();
                 },
               ),
               ListTile(
-                title: const Text('레이팅 정보'),
+                title: const Text('Rating Data'),
                 onTap: () {
                   controller.drawerIndex = 3;
                   Get.back();
                 },
               ),
               ListTile(
-                title: const Text('최근 플레이'),
+                title: const Text('Recently Play Data'),
                 onTap: () {
                   controller.drawerIndex = 4;
                   Get.back();
                 },
               ),
               ListTile(
-                title: const Text('칭호'),
+                title: const Text('Title'),
                 onTap: () {
                   controller.drawerIndex = 5;
                   Get.back();
                 },
               ),
               ListTile(
-                title: const Text('아바타 상점'),
+                title: const Text('Avatar Shop'),
                 onTap: () {
                   controller.drawerIndex = 6;
                   Get.back();
