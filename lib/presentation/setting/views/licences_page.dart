@@ -31,13 +31,13 @@ class LicencesPage extends StatelessWidget {
                     context,
                     CupertinoPageRoute(
                       builder: (_) => LicenceDetailPage(
-                        title: ossLicenses[index].name[0].toUpperCase() + ossLicenses[index].name.substring(1),
+                        title: ossLicenses[index].name,
                         licence: ossLicenses[index].license!,
                       ),
                     ),
                   );
                 },
-                title: Text(ossLicenses[index].name[0].toUpperCase() + ossLicenses[index].name.substring(1)),
+                title: Text(ossLicenses[index].name),
                 subtitle: Text(ossLicenses[index].description),
               ),
             ),
@@ -67,12 +67,15 @@ class LicenceDetailPage extends StatelessWidget {
             padding: EdgeInsets.all(5.w),
             decoration: BoxDecoration(color: AppColor.cardPrimary, borderRadius: BorderRadius.circular(8.r)),
             child: SingleChildScrollView(
-              physics: const BouncingScrollPhysics(),
+              physics: const ClampingScrollPhysics(),
               child: Column(
                 children: [
-                  Text(
-                    licence,
-                    style: TextStyle(fontSize: 15.sp),
+                  Padding(
+                    padding: EdgeInsets.all(8.w),
+                    child: Text(
+                      licence,
+                      style: TextStyle(fontSize: 15.sp),
+                    ),
                   ),
                 ],
               ),
