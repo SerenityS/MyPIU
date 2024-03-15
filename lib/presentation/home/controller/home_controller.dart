@@ -22,6 +22,7 @@ class HomeController extends GetxController {
   ];
 
   final _drawerIndex = 0.obs;
+  int get drawerIndex => _drawerIndex.value;
   set drawerIndex(int value) => _drawerIndex.value = value;
 
   get drawerPage => drawerPages[_drawerIndex.value];
@@ -35,5 +36,7 @@ class HomeController extends GetxController {
     await Hive.openBox('avatar');
     await Hive.openBox('play_data');
     await Hive.openBox('title');
+
+    _drawerIndex.value = int.parse(Get.parameters['index']!);
   }
 }

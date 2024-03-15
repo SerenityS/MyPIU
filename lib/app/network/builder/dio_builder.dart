@@ -1,10 +1,12 @@
 import 'package:cookie_jar/cookie_jar.dart';
 import 'package:dio/dio.dart';
 import 'package:dio_cookie_manager/dio_cookie_manager.dart';
-import 'package:piu_util/app/config/app_const.dart';
-import 'package:piu_util/app/network/interceptor/error_interceptor.dart';
 
+import 'package:piu_util/app/config/app_const.dart';
+
+import '../interceptor/error_interceptor.dart';
 import '../interceptor/redirect_interceptor.dart';
+import '../interceptor/session_check_interceptor.dart';
 
 class DioBuilder extends DioMixin implements Dio {
   final CookieJar cookieJar = CookieJar();
@@ -34,6 +36,9 @@ class DioBuilder extends DioMixin implements Dio {
 
     // Add interceptor for error handling
     interceptors.add(ErrorInterceptor());
+
+    // Add interceptor for session check
+    interceptors.add(SessionCheckInterceptor());
 
     // Add interceptor for logging
     // if (kDebugMode) {

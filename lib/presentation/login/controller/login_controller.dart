@@ -15,6 +15,8 @@ class LoginController extends GetxController {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
+  int drawerIndex = Get.arguments ?? 0;
+
   @override
   void onInit() async {
     super.onInit();
@@ -57,7 +59,7 @@ class LoginController extends GetxController {
 
     if (result) {
       await _saveCredential();
-      Get.offAllNamed(RoutePath.home);
+      Get.offAllNamed("${RoutePath.home}?index=$drawerIndex");
     } else {
       Get.snackbar('Error', 'Login Failed');
       await _deleteCredential();

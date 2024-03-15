@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:dio_cookie_manager/dio_cookie_manager.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
+import 'package:piu_util/app/config/app_url.dart';
 import 'package:piu_util/app/network/builder/dio_builder.dart';
 import 'package:piu_util/domain/entities/login_entity.dart';
 import 'package:piu_util/domain/repositories/auth_repository.dart';
@@ -16,7 +17,7 @@ class AuthRepositoryImpl extends AuthRepository {
       await _dio.get("");
 
       // Post login request
-      var response = await _dio.post("/bbs/login_check.php", data: loginEntity.toJson());
+      var response = await _dio.post(AppUrl.loginUrl, data: loginEntity.toJson());
 
       if (response.data.toString().contains("안녕하세요!")) {
         return true;
