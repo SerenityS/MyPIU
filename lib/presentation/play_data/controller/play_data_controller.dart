@@ -12,6 +12,7 @@ import 'package:piu_util/domain/entities/chart_data.dart';
 import 'package:piu_util/domain/entities/play_data.dart';
 import 'package:piu_util/domain/enum/chart_type.dart';
 import 'package:piu_util/domain/usecases/play_data_usecases.dart';
+import 'package:piu_util/presentation/home/controller/my_data_controller.dart';
 
 class PlayDataController extends GetxController {
   final PlayDataUseCases _useCases = Get.find<PlayDataUseCases>();
@@ -24,6 +25,7 @@ class PlayDataController extends GetxController {
   final RxBool showSingle = true.obs;
   final RxBool showDouble = true.obs;
 
+  int totalClearCount = 0;
   final RxInt currentLevel = 0.obs;
 
   final RxInt totalPageIndex = 0.obs;
@@ -51,6 +53,15 @@ class PlayDataController extends GetxController {
       await getBestScoreData();
     } else {
       bestScoreDataList.assignAll(clearData);
+
+      for (var element in bestScoreDataList) {
+        if (element.level >= 10) totalClearCount++;
+      }
+
+      if (totalClearCount != Get.find<MyDataController>().myData.totalClear) {
+        Fluttertoast.showToast(msg: "새로운 클리어 정보가 있습니다.\n클리어 정보를 갱신합니다.");
+        await getBestScoreData();
+      }
     }
 
     for (var element in bestScoreDataList) {

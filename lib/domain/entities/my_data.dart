@@ -16,6 +16,7 @@ class MyData with _$MyData {
     required int coin,
     required String recentPlayDate,
     required String recentPlayPlace,
+    required int totalClear,
   }) = _MyData;
 
   factory MyData.fromJson(Map<String, Object?> json) => _$MyDataFromJson(json);

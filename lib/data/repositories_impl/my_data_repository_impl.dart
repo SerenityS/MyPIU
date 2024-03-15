@@ -60,6 +60,11 @@ List<MyData> parseMyData(String html) {
     String recentPlayDate = myData.getElementsByClassName("tt")[1].text.split(' : ')[1];
     String recentPlayPlace = myData.getElementsByClassName("tt")[2].text.split(' : ')[1];
 
+    int totalClear = int.tryParse(
+          document.getElementsByClassName("l_con").first.getElementsByClassName("t1").first.text.split("/").first.replaceAll(",", ""),
+        ) ??
+        0;
+
     myDataList.add(
       MyData(
         id: id,
@@ -70,6 +75,7 @@ List<MyData> parseMyData(String html) {
         coin: coin,
         recentPlayDate: recentPlayDate,
         recentPlayPlace: recentPlayPlace,
+        totalClear: totalClear,
       ),
     );
   }

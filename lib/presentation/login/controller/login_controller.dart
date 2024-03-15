@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:piu_util/app/config/routes/route_path.dart';
 import 'package:piu_util/data/datasources/local/auth_local_data_source.dart';
@@ -61,14 +62,9 @@ class LoginController extends GetxController {
       await _saveCredential();
       Get.offAllNamed("${RoutePath.home}?index=$drawerIndex");
     } else {
-      Get.snackbar('Error', 'Login Failed');
+      Fluttertoast.showToast(msg: "로그인에 실패하였습니다.\n이메일과 비밀번호를 확인해주세요.");
       await _deleteCredential();
       isLoading.value = false;
     }
-  }
-
-  Future<void> logout() async {
-    await _useCases.logout.execute();
-    await _deleteCredential();
   }
 }
