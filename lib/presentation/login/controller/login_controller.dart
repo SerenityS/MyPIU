@@ -13,6 +13,7 @@ class LoginController extends GetxController {
 
   LoginEntity? _credendtial;
 
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
@@ -52,6 +53,8 @@ class LoginController extends GetxController {
   }
 
   Future<void> login() async {
+    if (!formKey.currentState!.validate()) return;
+
     isLoading.value = true;
 
     final result = await _useCases.login.execute(

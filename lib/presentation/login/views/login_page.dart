@@ -33,22 +33,31 @@ class LoginPage extends GetView<LoginController> {
                 borderRadius: BorderRadius.circular(12.r),
                 color: AppColor.input,
               ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text("AM.PASS 로그인", style: AppTypeFace().title),
-                  TextField(
-                    controller: controller.emailController,
-                    decoration: const InputDecoration(hintText: 'Email', hintStyle: TextStyle(color: Colors.grey)),
-                  ),
-                  TextField(
-                    controller: controller.passwordController,
-                    decoration: const InputDecoration(hintText: 'Password', hintStyle: TextStyle(color: Colors.grey)),
-                    obscureText: true,
-                  ),
-                  SizedBox(height: 8.h),
-                  ElevatedButton(onPressed: () async => await controller.login(), child: const Text('Login')),
-                ],
+              child: Form(
+                key: controller.formKey,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text("AM.PASS 로그인", style: AppTypeFace().title),
+                    TextFormField(
+                      controller: controller.emailController,
+                      decoration: const InputDecoration(hintText: 'Email', hintStyle: TextStyle(color: Colors.grey)),
+                      validator: (value) => GetUtils.isEmail(value!) ? null : '유효한 이메일을 입력해주세요.',
+                    ),
+                    TextFormField(
+                      controller: controller.passwordController,
+                      decoration: const InputDecoration(hintText: 'Password', hintStyle: TextStyle(color: Colors.grey)),
+                      validator: (value) => value!.isEmpty ? '비밀번호를 입력해주세요.' : null,
+                      obscureText: true,
+                      onFieldSubmitted: (value) async => await controller.login(),
+                    ),
+                    SizedBox(height: 8.h),
+                    TextButton(
+                      onPressed: () async => await controller.login(),
+                      child: const Text('Login'),
+                    ),
+                  ],
+                ),
               ),
             ),
           );

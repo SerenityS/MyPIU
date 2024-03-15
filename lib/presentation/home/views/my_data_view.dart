@@ -30,7 +30,7 @@ class MyDataView extends GetView<MyDataController> {
         }
 
         return const SingleChildScrollView(
-          physics: ClampingScrollPhysics(),
+          physics: BouncingScrollPhysics(),
           child: Column(
             children: [
               PlayerInfoCard(),
