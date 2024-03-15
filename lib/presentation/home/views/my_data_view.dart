@@ -16,28 +16,41 @@ class MyDataView extends GetView<MyDataController> {
 
   @override
   Widget build(BuildContext context) {
-    return Obx(() {
-      if (controller.isLoading.value) {
-        return Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Center(child: CircularProgressIndicator()),
-            SizedBox(height: 8.h),
-            Text("내 정보를 불러오는 중...", style: AppTypeFace().loading),
-          ],
-        );
-      }
+    return Scaffold(
+      body: Obx(() {
+        if (controller.isLoading.value) {
+          return Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Center(child: CircularProgressIndicator()),
+              SizedBox(height: 8.h),
+              Text("내 정보를 불러오는 중...", style: AppTypeFace().loading),
+            ],
+          );
+        }
 
-      return const SingleChildScrollView(
-        physics: ClampingScrollPhysics(),
-        child: Column(
-          children: [
-            PlayerInfoCard(),
-            _PlayerPlateCard(),
-          ],
-        ),
-      );
-    });
+        return const SingleChildScrollView(
+          physics: ClampingScrollPhysics(),
+          child: Column(
+            children: [
+              PlayerInfoCard(),
+              _PlayerPlateCard(),
+            ],
+          ),
+        );
+      }),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          final controller = Get.find<PlayDataController>();
+
+          if (controller.isLoading.value) return;
+
+          await controller.getBestScoreData();
+          await controller.generateClearData();
+        },
+        child: const Icon(Icons.refresh),
+      ),
+    );
   }
 }
 

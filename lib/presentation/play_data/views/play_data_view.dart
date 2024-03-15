@@ -56,18 +56,26 @@ class _LevelSelectHeader extends GetView<PlayDataController> {
         color: AppColor.input,
       ),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Obx(() => Checkbox(value: controller.showSingle.value, onChanged: (value) => controller.showSingle.value = value!)),
-          GestureDetector(
-              behavior: HitTestBehavior.translucent,
-              onTap: () => controller.showSingle.value = !controller.showSingle.value,
-              child: Text("Single", style: TextStyle(fontSize: 15.sp, fontFamily: 'Oxanium'))),
-          Obx(() => Checkbox(value: controller.showDouble.value, onChanged: (value) => controller.showDouble.value = value!)),
-          GestureDetector(
-              behavior: HitTestBehavior.translucent,
-              onTap: () => controller.showDouble.value = !controller.showDouble.value,
-              child: Text("Double", style: TextStyle(fontSize: 15.sp, fontFamily: 'Oxanium'))),
-          const Spacer(),
+          Row(
+            children: [
+              Obx(() => Checkbox(value: controller.showSingle.value, onChanged: (value) => controller.showSingle.value = value!)),
+              GestureDetector(
+                  behavior: HitTestBehavior.translucent,
+                  onTap: () => controller.showSingle.value = !controller.showSingle.value,
+                  child: Text("Single", style: TextStyle(fontSize: 15.sp, fontFamily: 'Oxanium'))),
+            ],
+          ),
+          Row(
+            children: [
+              Obx(() => Checkbox(value: controller.showDouble.value, onChanged: (value) => controller.showDouble.value = value!)),
+              GestureDetector(
+                  behavior: HitTestBehavior.translucent,
+                  onTap: () => controller.showDouble.value = !controller.showDouble.value,
+                  child: Text("Double", style: TextStyle(fontSize: 15.sp, fontFamily: 'Oxanium'))),
+            ],
+          ),
           SizedBox(
             width: 70.w,
             child: Obx(
@@ -103,16 +111,6 @@ class _LevelSelectHeader extends GetView<PlayDataController> {
                 },
               ),
             ),
-          ),
-          const Spacer(),
-          ElevatedButton(
-            onPressed: () async {
-              if (controller.isLoading.value) return;
-
-              await controller.getBestScoreData();
-              await controller.generateClearData();
-            },
-            child: const Icon(Icons.refresh),
           ),
         ],
       ),
