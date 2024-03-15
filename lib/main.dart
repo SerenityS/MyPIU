@@ -23,6 +23,7 @@ class MainApp extends StatelessWidget {
       useInheritedMediaQuery: true,
       builder: (_, child) {
         return GetMaterialApp(
+          debugShowCheckedModeBanner: false,
           theme: ThemeData(
             fontFamily: 'Pretendard',
             appBarTheme: AppBarTheme(

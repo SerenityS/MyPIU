@@ -24,7 +24,6 @@ class SettingPage extends GetView<SettingController> {
           ListTile(title: const Text('Open Source Licences'), onTap: () => Get.toNamed(RoutePath.licences)),
           ListTile(title: Obx(() => Text('App Version : ${controller.appVersion}'))),
           ListTile(title: Text('PIU Asset Version : ${controller.assetVersion}')),
-          const ListTile(title: Text('Made by qwertycvb')),
           const Spacer(),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),

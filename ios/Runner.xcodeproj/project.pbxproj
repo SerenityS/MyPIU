@@ -473,7 +473,7 @@
 				DEVELOPMENT_TEAM = TTF56HFVS4;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "PIU Util";
+				INFOPLIST_KEY_CFBundleDisplayName = "MyPIU";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -663,7 +663,7 @@
 				DEVELOPMENT_TEAM = TTF56HFVS4;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "PIU Util";
+				INFOPLIST_KEY_CFBundleDisplayName = "MyPIU";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -693,7 +693,7 @@
 				DEVELOPMENT_TEAM = TTF56HFVS4;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "PIU Util";
+				INFOPLIST_KEY_CFBundleDisplayName = "MyPIU";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

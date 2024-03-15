@@ -41,7 +41,7 @@ class HomePage extends GetView<HomeController> {
             ),
           ],
         ),
-        body: Obx(() => SafeArea(child: controller.drawerPage)),
+        body: Obx(() => controller.drawerPage),
         drawer: Drawer(
           child: ListView(
             physics: const ClampingScrollPhysics(),

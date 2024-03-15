@@ -29,13 +29,10 @@ class MyDataView extends GetView<MyDataController> {
           );
         }
 
-        return const SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
+        return SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
           child: Column(
-            children: [
-              PlayerInfoCard(),
-              _PlayerPlateCard(),
-            ],
+            children: [const PlayerInfoCard(), const _PlayerPlateCard(), SizedBox(height: MediaQuery.of(context).padding.bottom)],
           ),
         );
       }),
