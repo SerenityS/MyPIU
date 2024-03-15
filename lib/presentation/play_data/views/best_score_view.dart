@@ -135,7 +135,7 @@ Future<void> _showFilterModal(BuildContext context) async {
                         final Debouncer debouncer = Debouncer();
 
                         debouncer.debounce(
-                          duration: const Duration(milliseconds: 150),
+                          duration: const Duration(milliseconds: 100),
                           onDebounce: () async => controller.filterBestScoreData(),
                         );
                       },
@@ -156,7 +156,7 @@ Future<void> _showFilterModal(BuildContext context) async {
                             final Debouncer debouncer = Debouncer();
 
                             debouncer.debounce(
-                              duration: const Duration(milliseconds: 150),
+                              duration: const Duration(milliseconds: 100),
                               onDebounce: () => controller.toggleChartType(ChartType.SINGLE),
                             );
                           },
@@ -168,7 +168,7 @@ Future<void> _showFilterModal(BuildContext context) async {
                             final Debouncer debouncer = Debouncer();
 
                             debouncer.debounce(
-                              duration: const Duration(milliseconds: 150),
+                              duration: const Duration(milliseconds: 100),
                               onDebounce: () => controller.toggleChartType(ChartType.DOUBLE),
                             );
                           },
@@ -196,7 +196,7 @@ Future<void> _showFilterModal(BuildContext context) async {
                                 final Debouncer debouncer = Debouncer();
 
                                 debouncer.debounce(
-                                  duration: const Duration(milliseconds: 150),
+                                  duration: const Duration(milliseconds: 100),
                                   onDebounce: () => controller.toggleGradeType(GradeType.values[i]),
                                 );
                               },
@@ -209,7 +209,7 @@ Future<void> _showFilterModal(BuildContext context) async {
                               final Debouncer debouncer = Debouncer();
 
                               debouncer.debounce(
-                                duration: const Duration(milliseconds: 150),
+                                duration: const Duration(milliseconds: 100),
                                 onDebounce: () => controller.toggleGradeType(GradeType.A),
                               );
                             },
@@ -237,7 +237,7 @@ Future<void> _showFilterModal(BuildContext context) async {
                                 final Debouncer debouncer = Debouncer();
 
                                 debouncer.debounce(
-                                  duration: const Duration(milliseconds: 150),
+                                  duration: const Duration(milliseconds: 100),
                                   onDebounce: () => controller.togglePlateType(PlateType.values[i]),
                                 );
                               },
@@ -338,7 +338,7 @@ class __SliderState extends State<_Slider> {
           final Debouncer debouncer = Debouncer();
 
           debouncer.debounce(
-            duration: const Duration(milliseconds: 150),
+            duration: const Duration(milliseconds: 100),
             onDebounce: () => Get.find<BestScoreController>().filterBestScoreData(),
           );
         });
