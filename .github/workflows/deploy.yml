@@ -1,0 +1,48 @@
+name: Deploy App to TestFlight(release) / Shorebird(patch)
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      release_type:
+        description: "Deployment type (release / patch)"
+        required: true
+        default: "release"
+jobs:
+  init:
+    runs-on: macMini
+    if: ${{ contains(github.event.head_commit.message , '#release') || contains(github.event.head_commit.message , '#patch') || github.event_name == 'workflow_dispatch' }}
+    name: Initialize repo & flutter
+    steps:
+      - name: Pull repo
+        run: cd ~/MyPIU && git checkout main && git pull -f
+
+      - name: Initialize flutter
+        run: |
+          flutter clean
+          flutter pub get
+          flutter pub run build_runner build --delete-conflicting-outputs
+          cd ios && pod install && cd ..
+
+  release:
+    runs-on: macMini
+    needs: init
+    if: ${{ contains(github.event.head_commit.message , '#release') || (github.event_name == 'workflow_dispatch' && github.event.inputs.release_type == 'release') }}
+    name: Build & Deploy Release
+    steps:
+      - name: Build .ipa using shorebird
+        run: shorebird release ios -f
+      - name: Deploy .ipa using fastlane
+        run: cd ios && bundle exec fastlane beta
+        env:
+          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
+        timeout-minutes: 40
+
+  patch:
+    runs-on: macMini
+    needs: init
+    if: ${{ contains(github.event.head_commit.message , '#patch') || (github.event_name == 'workflow_dispatch' && github.event.inputs.release_type == 'patch') }}
+    name: Build & Deploy Patch
+    steps:
+      - name: Build & Deploy patch using shorebird
+        run: shorebird patch ios -f

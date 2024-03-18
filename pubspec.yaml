@@ -52,6 +52,7 @@ flutter:
     - assets/plate/
     - assets/step_ball/
     - assets/term/
+    - shorebird.yaml
 
   fonts:
     - family: Pretendard
