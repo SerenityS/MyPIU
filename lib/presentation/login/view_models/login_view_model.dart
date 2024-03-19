@@ -1,49 +1,57 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
-import 'package:piu_util/app/config/routes/route_path.dart';
 import 'package:piu_util/data/datasources/local/auth_local_data_source.dart';
 import 'package:piu_util/domain/entities/login_entity.dart';
 import 'package:piu_util/domain/usecases/auth_usecases.dart';
 
-class LoginController extends GetxController {
+class LoginViewModel extends GetxController {
+  // UseCases & DataSource
   final AuthUseCases _useCases = Get.find<AuthUseCases>();
   final AuthLocalDataSource _authDataSource = AuthLocalDataSource();
-  RxBool isLoading = false.obs;
 
+  // Credential
   LoginEntity? _credendtial;
 
+  // Login Status
+  RxBool isLoading = false.obs;
+  RxBool isAuthenticated = false.obs;
+
+  // View
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-
-  int drawerIndex = Get.arguments ?? 0;
 
   @override
   void onInit() async {
     super.onInit();
 
-    await _getCredential();
-    if (_credendtial != null) {
+    if (await _getCredential()) {
       emailController.text = _credendtial!.email;
       passwordController.text = _credendtial!.password;
+
       await login();
     }
   }
 
-  @override
-  void onClose() {
-    emailController.dispose();
-    passwordController.dispose();
-    super.onClose();
+  Future<bool> _deleteCredential() async {
+    try {
+      await _authDataSource.deleteCredential();
+      return true;
+    } catch (e) {
+      if (kDebugMode) print(e.toString());
+      return false;
+    }
   }
 
-  Future<void> _deleteCredential() async {
-    await _authDataSource.deleteCredential();
-  }
-
-  Future<void> _getCredential() async {
-    _credendtial = await _authDataSource.getCredential();
+  Future<bool> _getCredential() async {
+    try {
+      _credendtial = await _authDataSource.getCredential();
+      return true;
+    } catch (e) {
+      if (kDebugMode) print(e.toString());
+      return false;
+    }
   }
 
   Future<void> _saveCredential() async {
@@ -52,22 +60,27 @@ class LoginController extends GetxController {
     );
   }
 
-  Future<void> login() async {
-    if (!formKey.currentState!.validate()) return;
+  Future<bool> login() async {
+    if (formKey.currentState!.validate() == false) return false;
+    isLoading(true);
 
-    isLoading.value = true;
-
-    final result = await _useCases.login.execute(
+    final bool loginResult = await _useCases.login.execute(
       LoginEntity(email: emailController.text, password: passwordController.text),
     );
 
-    if (result) {
+    if (loginResult) {
       await _saveCredential();
-      Get.offAllNamed("${RoutePath.home}?index=$drawerIndex");
+
+      isAuthenticated(true);
+      isLoading(false);
+
+      return true;
     } else {
-      Fluttertoast.showToast(msg: "로그인에 실패하였습니다.\n이메일과 비밀번호를 확인해주세요.");
       await _deleteCredential();
-      isLoading.value = false;
+
+      isLoading(false);
+
+      return false;
     }
   }
 }
