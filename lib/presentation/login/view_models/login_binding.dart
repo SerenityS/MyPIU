@@ -1,10 +1,10 @@
 import 'package:get/get.dart';
 
-import 'login_controller.dart';
+import 'login_view_model.dart';
 
 class LoginBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<LoginController>(() => LoginController(), fenix: true);
+    Get.lazyPut<LoginViewModel>(() => LoginViewModel(), fenix: true);
   }
 }

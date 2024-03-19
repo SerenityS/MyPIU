@@ -6,7 +6,7 @@ import 'package:piu_util/presentation/setting/controller/setting_binding.dart';
 import 'package:piu_util/presentation/setting/views/licences_page.dart';
 import 'package:piu_util/presentation/setting/views/setting_page.dart';
 import 'package:piu_util/presentation/setting/views/term_page.dart';
-import 'package:piu_util/presentation/login/controller/login_binding.dart';
+import 'package:piu_util/presentation/login/view_models/login_binding.dart';
 import 'package:piu_util/presentation/login/views/login_page.dart';
 import 'package:piu_util/presentation/play_data/controller/play_data_binding.dart';
 import 'package:piu_util/presentation/title/controller/title_binding.dart';
