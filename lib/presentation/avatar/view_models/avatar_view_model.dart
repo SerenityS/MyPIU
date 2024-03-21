@@ -6,14 +6,17 @@ import 'package:piu_util/data/datasources/local/avatar_local_data_source.dart';
 import 'package:piu_util/domain/entities/avatar_data.dart';
 import 'package:piu_util/domain/usecases/avatar_usecases.dart';
 
-class AvatarController extends GetxController {
+class AvatarViewModel extends GetxController {
+  // Data Source
   final AvatarUseCases _useCases = Get.find<AvatarUseCases>();
   final AvatarDataLocalDataSource _avatarDataSource = AvatarDataLocalDataSource();
-  final RxBool isLoading = true.obs;
+  final RxBool isLoading = false.obs;
 
+  // Avatar Data
   final RxList<AvatarData> avatarDataList = <AvatarData>[].obs;
   final RxList<AvatarData> filteredAvatarList = <AvatarData>[].obs;
 
+  // Filter
   final TextEditingController searchController = TextEditingController();
   final RxBool hasAvatar = false.obs;
 
@@ -21,22 +24,27 @@ class AvatarController extends GetxController {
   void onInit() async {
     super.onInit();
 
-    List<AvatarData>? avatarData = _avatarDataSource.getAvatarData();
-    if (avatarData == null) {
-      await getAvatars();
-    } else {
-      avatarDataList.assignAll(avatarData);
-      filterAvatarData();
-      isLoading.value = false;
-    }
-
     ever(avatarDataList, (_) {
       _avatarDataSource.saveAvatarData(avatarDataList);
+      filterAvatarData();
     });
+
+    getAvatarDataFromLocal();
+    if (avatarDataList.isNotEmpty) {
+      if (MyDataService.to.myData.avatar != avatarDataList.firstWhere((element) => element.isEnable).fileName) {
+        await getAvatarsFromRemote();
+      }
+    } else {
+      await getAvatarsFromRemote();
+    }
   }
 
   Future<void> buyAvatar(AvatarData avatar) async {
-    if (await _useCases.buyAvatar.execute(avatar.id!)) {
+    bool result = await _useCases.buyAvatar.execute(avatar.id!);
+
+    if (result) {
+      MyDataService.to.setCoin(avatar.requiredCoin);
+
       List<AvatarData> newAvatarList = avatarDataList.map((e) {
         if (e.name == avatar.name) {
           e = e.copyWith(status: "have");
@@ -44,10 +52,7 @@ class AvatarController extends GetxController {
         return e;
       }).toList();
 
-      MyDataService.to.setCoin(avatar.requiredCoin);
-
       avatarDataList.assignAll(newAvatarList);
-      filterAvatarData();
       Fluttertoast.showToast(msg: "아바타를 구매했습니다.");
     } else {
       Fluttertoast.showToast(msg: "아바타 구매에 실패했습니다.");
@@ -71,22 +76,23 @@ class AvatarController extends GetxController {
     );
   }
 
-  Future<void> getAvatars() async {
-    isLoading.value = true;
-    try {
-      avatarDataList.assignAll(await _useCases.getAvatars.execute());
-    } catch (e) {
-      avatarDataList.assignAll([]);
-    } finally {
-      _avatarDataSource.saveAvatarData(avatarDataList);
-      filterAvatarData();
+  void getAvatarDataFromLocal() {
+    avatarDataList.assignAll(_avatarDataSource.getAvatarData());
+    filteredAvatarList.assignAll(avatarDataList);
+  }
 
-      isLoading.value = false;
-    }
+  Future<void> getAvatarsFromRemote() async {
+    isLoading(true);
+    avatarDataList.assignAll(await _useCases.getAvatars.execute());
+    isLoading(false);
   }
 
   Future<void> setAvatar(AvatarData avatar) async {
-    if (await _useCases.setAvatar.execute(avatar.id!)) {
+    bool result = await _useCases.setAvatar.execute(avatar.id!);
+
+    if (result) {
+      MyDataService.to.setAvatar(avatar.fileName);
+
       List<AvatarData> newAvatarList = avatarDataList.map((e) {
         if (e.name == avatar.name) {
           e = e.copyWith(isEnable: true);
@@ -96,10 +102,7 @@ class AvatarController extends GetxController {
         return e;
       }).toList();
 
-      MyDataService.to.setAvatar(avatar.fileName);
-
       avatarDataList.assignAll(newAvatarList);
-      filterAvatarData();
 
       Fluttertoast.showToast(msg: "아바타를 설정했습니다.");
     } else {

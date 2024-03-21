@@ -6,10 +6,10 @@ import 'package:get/get.dart';
 import 'package:piu_util/app/config/app_color.dart';
 import 'package:piu_util/app/config/extension/int_format_comma.dart';
 import 'package:piu_util/domain/entities/avatar_data.dart';
-import 'package:piu_util/presentation/avatar/controller/avatar_controller.dart';
+import 'package:piu_util/presentation/avatar/view_models/avatar_view_model.dart';
 import 'package:piu_util/presentation/play_data/widgets/player_info_card.dart';
 
-class AvatarView extends GetView<AvatarController> {
+class AvatarView extends GetView<AvatarViewModel> {
   const AvatarView({super.key});
 
   @override
@@ -47,7 +47,7 @@ class AvatarView extends GetView<AvatarController> {
         onPressed: () async {
           if (controller.isLoading.value) return;
 
-          await controller.getAvatars();
+          await controller.getAvatarsFromRemote();
         },
         child: const Icon(Icons.refresh),
       ),
@@ -55,7 +55,7 @@ class AvatarView extends GetView<AvatarController> {
   }
 }
 
-class _AvatarFilter extends GetView<AvatarController> {
+class _AvatarFilter extends GetView<AvatarViewModel> {
   const _AvatarFilter();
 
   @override
@@ -129,7 +129,7 @@ class _AvatarFilter extends GetView<AvatarController> {
   }
 }
 
-class _AvatarCard extends GetView<AvatarController> {
+class _AvatarCard extends GetView<AvatarViewModel> {
   const _AvatarCard(this.avatar);
 
   final AvatarData avatar;
