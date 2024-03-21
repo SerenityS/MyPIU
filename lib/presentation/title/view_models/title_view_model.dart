@@ -5,16 +5,18 @@ import 'package:piu_util/app/service/my_data_service.dart';
 import 'package:piu_util/data/datasources/local/title_local_data_source.dart';
 import 'package:piu_util/domain/entities/title_data.dart';
 import 'package:piu_util/domain/usecases/my_data_usecases.dart';
-import 'package:piu_util/presentation/play_data/view_models/my_data_view_model.dart';
 
-class TitleController extends GetxController {
+class TitleViewModel extends GetxController {
+  // Data Source
   final MyDataUseCases _useCases = Get.find<MyDataUseCases>();
   final TitleLocalDataSource _titleLocalDataSource = TitleLocalDataSource();
-  RxBool isLoading = true.obs;
+  RxBool isLoading = false.obs;
 
-  final RxList<TitleData> titleDataList = <TitleData>[].obs;
+  // Title Data
+  final RxList<TitleData> _titleDataList = <TitleData>[].obs;
   final RxList<TitleData> filteredTitleDataList = <TitleData>[].obs;
 
+  // Filter
   final TextEditingController searchController = TextEditingController();
   final RxBool hasTitle = false.obs;
 
@@ -22,24 +24,24 @@ class TitleController extends GetxController {
   void onInit() async {
     super.onInit();
 
-    List<TitleData>? savedTitleDataList = _titleLocalDataSource.getTitleData();
-    if (savedTitleDataList != null) {
-      titleDataList.assignAll(savedTitleDataList);
-      filteredTitleDataList.assignAll(titleDataList);
+    ever(_titleDataList, (_) {
+      _titleLocalDataSource.saveTitleData(_titleDataList);
+      filterTitleData();
+    });
 
-      if (Get.find<MyDataViewModel>().myData.titleText != titleDataList.firstWhere((element) => element.isEnable).titleText) {
-        await getTitleData();
+    getTitleDataFromLocal();
+    if (_titleDataList.isNotEmpty) {
+      if (MyDataService.to.myData.titleText != _titleDataList.firstWhere((element) => element.isEnable).titleText) {
+        await getTitleDataFromRemote();
       }
-
-      isLoading.value = false;
     } else {
-      await getTitleData();
+      await getTitleDataFromRemote();
     }
   }
 
   void filterTitleData() {
     filteredTitleDataList.assignAll(
-      titleDataList.where(
+      _titleDataList.where(
         (element) {
           final titleContainsSearchText =
               element.titleText.toLowerCase().replaceAll(' ', '').contains(searchController.text.toLowerCase().replaceAll(' ', ''));
@@ -54,14 +56,15 @@ class TitleController extends GetxController {
     );
   }
 
-  Future<void> getTitleData() async {
-    isLoading.value = true;
+  void getTitleDataFromLocal() {
+    _titleDataList.assignAll(_titleLocalDataSource.getTitleData());
+    filteredTitleDataList.assignAll(_titleDataList);
+  }
 
-    titleDataList.assignAll(await _useCases.getTitleData.execute());
-    _titleLocalDataSource.saveTitleData(titleDataList);
-    filterTitleData();
-
-    isLoading.value = false;
+  Future<void> getTitleDataFromRemote() async {
+    isLoading(true);
+    _titleDataList.assignAll(await _useCases.getTitleData.execute());
+    isLoading(false);
   }
 
   Future<void> setTitle(TitleData title) async {
@@ -70,7 +73,7 @@ class TitleController extends GetxController {
     if (result) {
       MyDataService.to.setTitle(title);
 
-      List<TitleData> updatedTitleDataList = titleDataList.map((e) {
+      List<TitleData> updatedTitleDataList = _titleDataList.map((e) {
         if (e.titleText == title.titleText) {
           e = e.copyWith(isEnable: true);
         } else if (e.isEnable) {
@@ -79,9 +82,7 @@ class TitleController extends GetxController {
         return e;
       }).toList();
 
-      titleDataList.assignAll(updatedTitleDataList);
-      _titleLocalDataSource.saveTitleData(titleDataList);
-      filterTitleData();
+      _titleDataList.assignAll(updatedTitleDataList);
 
       Fluttertoast.showToast(msg: "칭호가 변경되었습니다.");
     } else {

@@ -9,7 +9,7 @@ import 'package:piu_util/presentation/setting/views/term_page.dart';
 import 'package:piu_util/presentation/login/view_models/login_binding.dart';
 import 'package:piu_util/presentation/login/views/login_page.dart';
 import 'package:piu_util/presentation/play_data/view_models/play_data_binding.dart';
-import 'package:piu_util/presentation/title/controller/title_binding.dart';
+import 'package:piu_util/presentation/title/view_models/title_binding.dart';
 
 import 'route_path.dart';
 

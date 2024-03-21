@@ -6,9 +6,9 @@ import 'package:piu_util/domain/entities/title_data.dart';
 import 'package:piu_util/presentation/common/widgets/title_text.dart';
 import 'package:piu_util/presentation/play_data/widgets/player_info_card.dart';
 
-import '../controller/title_controller.dart';
+import '../view_models/title_view_model.dart';
 
-class TitleView extends GetView<TitleController> {
+class TitleView extends GetView<TitleViewModel> {
   const TitleView({super.key});
 
   @override
@@ -42,7 +42,7 @@ class TitleView extends GetView<TitleController> {
         onPressed: () async {
           if (controller.isLoading.value) return;
 
-          await controller.getTitleData();
+          await controller.getTitleDataFromRemote();
         },
         child: const Icon(Icons.refresh),
       ),
@@ -50,7 +50,7 @@ class TitleView extends GetView<TitleController> {
   }
 }
 
-class _TitleFilter extends GetView<TitleController> {
+class _TitleFilter extends GetView<TitleViewModel> {
   const _TitleFilter();
 
   @override
@@ -124,7 +124,7 @@ class _TitleFilter extends GetView<TitleController> {
   }
 }
 
-class _TitleCard extends GetView<TitleController> {
+class _TitleCard extends GetView<TitleViewModel> {
   const _TitleCard(this.title);
 
   final TitleData title;

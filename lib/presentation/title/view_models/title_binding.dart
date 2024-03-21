@@ -1,10 +1,10 @@
 import 'package:get/get.dart';
 
-import 'title_controller.dart';
+import 'title_view_model.dart';
 
 class TitleBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<TitleController>(() => TitleController(), fenix: true);
+    Get.lazyPut<TitleViewModel>(() => TitleViewModel(), fenix: true);
   }
 }
