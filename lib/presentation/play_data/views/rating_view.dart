@@ -10,9 +10,9 @@ import 'package:piu_util/domain/entities/chart_data.dart';
 import 'package:piu_util/domain/entities/rating_data.dart';
 import 'package:piu_util/domain/enum/chart_type.dart';
 import 'package:piu_util/domain/enum/grade_type.dart';
-import 'package:piu_util/presentation/play_data/controller/rating_controller.dart';
+import 'package:piu_util/presentation/play_data/view_models/rating_view_model.dart';
 
-class RatingView extends GetView<RatingController> {
+class RatingView extends GetView<RatingViewModel> {
   const RatingView({super.key});
 
   @override
@@ -58,7 +58,7 @@ class _RatingExpansionTile extends StatefulWidget {
 
   final GlobalKey<State<StatefulWidget>> containerKey;
   final RatingData data;
-  final RatingController controller;
+  final RatingViewModel controller;
   final int index;
 
   @override

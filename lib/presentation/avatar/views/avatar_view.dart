@@ -7,7 +7,7 @@ import 'package:piu_util/app/config/app_color.dart';
 import 'package:piu_util/app/config/extension/int_format_comma.dart';
 import 'package:piu_util/domain/entities/avatar_data.dart';
 import 'package:piu_util/presentation/avatar/controller/avatar_controller.dart';
-import 'package:piu_util/presentation/home/widgets/player_info_card.dart';
+import 'package:piu_util/presentation/play_data/widgets/player_info_card.dart';
 
 class AvatarView extends GetView<AvatarController> {
   const AvatarView({super.key});

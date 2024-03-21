@@ -7,9 +7,9 @@ import 'package:piu_util/app/config/app_typeface.dart';
 import 'package:piu_util/app/config/extension/int_format_comma.dart';
 import 'package:piu_util/presentation/common/widgets/title_text.dart';
 
-import '../controller/my_data_controller.dart';
+import '../view_models/my_data_view_model.dart';
 
-class PlayerInfoCard extends GetView<MyDataController> {
+class PlayerInfoCard extends GetView<MyDataViewModel> {
   const PlayerInfoCard({super.key, this.showCoin = false});
 
   final bool showCoin;

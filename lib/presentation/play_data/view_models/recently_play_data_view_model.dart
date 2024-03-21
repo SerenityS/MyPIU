@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import 'package:piu_util/domain/entities/recently_play_data.dart';
 import 'package:piu_util/domain/usecases/play_data_usecases.dart';
 
-class RecentlyPlayDataController extends GetxController {
+class RecentlyPlayDataViewModel extends GetxController {
   final PlayDataUseCases _useCases = Get.find<PlayDataUseCases>();
   final RxBool isLoading = true.obs;
 

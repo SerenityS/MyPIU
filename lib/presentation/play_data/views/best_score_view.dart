@@ -9,10 +9,10 @@ import 'package:piu_util/domain/enum/chart_type.dart';
 import 'package:piu_util/domain/enum/grade_type.dart';
 import 'package:piu_util/domain/enum/plate_type.dart';
 import 'package:piu_util/presentation/common/widgets/step_ball.dart';
-import 'package:piu_util/presentation/play_data/controller/best_score_controller.dart';
+import 'package:piu_util/presentation/play_data/view_models/best_score_view_model.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
 
-class BestScoreView extends GetView<BestScoreController> {
+class BestScoreView extends GetView<BestScoreViewModel> {
   const BestScoreView({super.key});
 
   @override
@@ -93,7 +93,7 @@ Future<void> _showFilterModal(BuildContext context) async {
         child: Container(
           padding: EdgeInsets.only(top: 20.w, bottom: 12.w),
           width: double.maxFinite,
-          child: GetX<BestScoreController>(
+          child: GetX<BestScoreViewModel>(
             builder: (controller) {
               return Column(
                 mainAxisSize: MainAxisSize.min,
@@ -311,9 +311,9 @@ class __SliderState extends State<_Slider> {
   @override
   Widget build(BuildContext context) {
     return SfRangeSlider(
-      values: Get.find<BestScoreController>().rangeValues,
-      min: Get.find<BestScoreController>().minLevel.value.toDouble(),
-      max: Get.find<BestScoreController>().maxLevel.value.toDouble(),
+      values: Get.find<BestScoreViewModel>().rangeValues,
+      min: Get.find<BestScoreViewModel>().minLevel.value.toDouble(),
+      max: Get.find<BestScoreViewModel>().maxLevel.value.toDouble(),
       showTicks: true,
       showDividers: true,
       interval: 1.0,
@@ -321,25 +321,25 @@ class __SliderState extends State<_Slider> {
       enableTooltip: true,
       startThumbIcon: Center(
         child: Text(
-          Get.find<BestScoreController>().rangeValues.start.round().toString(),
+          Get.find<BestScoreViewModel>().rangeValues.start.round().toString(),
           style: TextStyle(fontSize: 11.sp, fontFamily: 'Oxanium'),
         ),
       ),
       endThumbIcon: Center(
         child: Text(
-          Get.find<BestScoreController>().rangeValues.end.round().toString(),
+          Get.find<BestScoreViewModel>().rangeValues.end.round().toString(),
           style: TextStyle(fontSize: 11.sp, fontFamily: 'Oxanium'),
         ),
       ),
       onChanged: (dynamic values) {
         setState(() {
-          Get.find<BestScoreController>().rangeValues = values;
+          Get.find<BestScoreViewModel>().rangeValues = values;
 
           final Debouncer debouncer = Debouncer();
 
           debouncer.debounce(
             duration: const Duration(milliseconds: 100),
-            onDebounce: () => Get.find<BestScoreController>().filterBestScoreData(),
+            onDebounce: () => Get.find<BestScoreViewModel>().filterBestScoreData(),
           );
         });
       },

@@ -8,7 +8,7 @@ import 'package:html/parser.dart' show parse;
 import 'package:piu_util/app/config/app_url.dart';
 import 'package:piu_util/app/config/extension/get_file_name_extension.dart';
 import 'package:piu_util/app/network/builder/dio_builder.dart';
-
+import 'package:piu_util/app/service/play_data_service.dart';
 import 'package:piu_util/domain/entities/chart_data.dart';
 import 'package:piu_util/domain/entities/play_data.dart';
 import 'package:piu_util/domain/entities/recently_play_data.dart';
@@ -16,7 +16,6 @@ import 'package:piu_util/domain/enum/chart_type.dart';
 import 'package:piu_util/domain/enum/grade_type.dart';
 import 'package:piu_util/domain/enum/plate_type.dart';
 import 'package:piu_util/domain/repositories/play_data_repository.dart';
-import 'package:piu_util/presentation/play_data/controller/play_data_controller.dart';
 
 class PlayDataRepositoryImpl extends PlayDataRepository {
   final Dio _dio = Get.find<DioBuilder>();
@@ -28,7 +27,7 @@ class PlayDataRepositoryImpl extends PlayDataRepository {
   }
 
   @override
-  Future<List<ChartData>> getBestScore() async {
+  Future<List<ChartData>> getClearData() async {
     var fullSongDataJson = await rootBundle.loadString('assets/json/full_list.json');
     var fullSongData = json.decode(fullSongDataJson);
 
@@ -41,8 +40,7 @@ class PlayDataRepositoryImpl extends PlayDataRepository {
     // Assuming getClearDataPageIndex and parseClearData are defined elsewhere
     int totalPages = (getClearDataPageIndex(firstPageResponse.data) / 12).ceil();
 
-    final PlayDataController playDataController = Get.find<PlayDataController>();
-    playDataController.totalPageIndex.value = totalPages - 1;
+    PlayDataService.to.totalPageIndex.value = totalPages - 1;
 
     List<ChartData> chartDataList = parseClearData(firstPageResponse.data, fullSongData);
 
@@ -58,7 +56,7 @@ class PlayDataRepositoryImpl extends PlayDataRepository {
       for (var response in responses) {
         if (response.statusCode == 200) {
           chartDataList.addAll(parseClearData(response.data, fullSongData));
-          playDataController.currentLoadingPageIndex.value++;
+          PlayDataService.to.currentLoadingPageIndex.value++;
         } else {
           throw Exception("Failed to get best score from one of the pages");
         }
@@ -67,8 +65,8 @@ class PlayDataRepositoryImpl extends PlayDataRepository {
 
     chartDataList.sort((a, b) => b.score.compareTo(a.score));
 
-    playDataController.totalPageIndex.value = 0;
-    playDataController.currentLoadingPageIndex.value = 0;
+    PlayDataService.to.totalPageIndex.value = 0;
+    PlayDataService.to.currentLoadingPageIndex.value = 0;
 
     return chartDataList;
   }

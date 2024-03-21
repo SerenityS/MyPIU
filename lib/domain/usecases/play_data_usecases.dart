@@ -8,17 +8,17 @@ import '../repositories/play_data_repository.dart';
 class PlayDataUseCases {
   final PlayDataRepository _repository = Get.find<PlayDataRepository>();
 
-  GetBestScore get getBestScore => GetBestScore(_repository);
+  GetClearData get getClearData => GetClearData(_repository);
   GetPlayData get getPlayData => GetPlayData(_repository);
   GetRecentlyPlayData get getRecentlyPlayData => GetRecentlyPlayData(_repository);
 }
 
-class GetBestScore {
+class GetClearData {
   final PlayDataRepository _repository;
-  GetBestScore(this._repository);
+  GetClearData(this._repository);
 
   Future<List<ChartData>> execute() async {
-    return await _repository.getBestScore();
+    return await _repository.getClearData();
   }
 }
 

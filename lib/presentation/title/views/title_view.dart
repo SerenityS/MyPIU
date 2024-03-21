@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:piu_util/app/config/app_color.dart';
 import 'package:piu_util/domain/entities/title_data.dart';
 import 'package:piu_util/presentation/common/widgets/title_text.dart';
-import 'package:piu_util/presentation/home/widgets/player_info_card.dart';
+import 'package:piu_util/presentation/play_data/widgets/player_info_card.dart';
 
 import '../controller/title_controller.dart';
 

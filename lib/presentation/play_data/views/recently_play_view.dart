@@ -9,9 +9,9 @@ import 'package:piu_util/domain/enum/judge_type.dart';
 import 'package:piu_util/presentation/common/widgets/judge_text.dart';
 import 'package:piu_util/presentation/common/widgets/step_ball.dart';
 
-import '../controller/recently_play_data_controller.dart';
+import '../view_models/recently_play_data_view_model.dart';
 
-class RecentlyPlayDataView extends GetView<RecentlyPlayDataController> {
+class RecentlyPlayDataView extends GetView<RecentlyPlayDataViewModel> {
   const RecentlyPlayDataView({super.key});
 
   @override
