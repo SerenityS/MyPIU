@@ -1,6 +1,8 @@
 import 'package:get/instance_manager.dart';
 import 'package:piu_util/app/network/builder/dio_builder.dart';
 import 'package:piu_util/app/service/auth_service.dart';
+import 'package:piu_util/app/service/my_data_service.dart';
+import 'package:piu_util/app/service/play_data_service.dart';
 import 'package:piu_util/data/repositories_impl/auth_repository_impl.dart';
 import 'package:piu_util/data/repositories_impl/avatar_repository_impl.dart';
 import 'package:piu_util/data/repositories_impl/my_data_repository_impl.dart';
@@ -36,6 +38,8 @@ class AppBinding extends Bindings {
 
   void injectServices() {
     Get.put(AuthService());
+    Get.lazyPut(() => MyDataService(), fenix: true);
+    Get.lazyPut(() => PlayDataService(), fenix: true);
   }
 
   void injectUseCases() {

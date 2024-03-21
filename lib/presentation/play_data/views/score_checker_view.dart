@@ -5,13 +5,14 @@ import 'package:get/get.dart';
 import 'package:piu_util/app/config/app_color.dart';
 import 'package:piu_util/app/config/app_typeface.dart';
 import 'package:piu_util/app/config/extension/score_to_string.dart';
+import 'package:piu_util/app/service/play_data_service.dart';
+import 'package:piu_util/presentation/common/widgets/piu_loading.dart';
+import 'package:piu_util/presentation/play_data/view_models/my_data_view_model.dart';
 
-import 'package:piu_util/presentation/home/controller/my_data_controller.dart';
+import '../view_models/score_checker_view_model.dart';
 
-import '../controller/play_data_controller.dart';
-
-class PlayDataView extends GetView<PlayDataController> {
-  const PlayDataView({super.key});
+class ScoreCheckerView extends GetView<ScoreCheckerViewModel> {
+  const ScoreCheckerView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +28,7 @@ class PlayDataView extends GetView<PlayDataController> {
       floatingActionButton: Obx(
         () => FloatingActionButton(
           onPressed: () async {
-            if (controller.isLoading.value || controller.isCapture.value) return;
+            if (controller.isLoading || controller.isCapture.value) return;
 
             await controller.takeScreenshot();
           },
@@ -43,7 +44,7 @@ class PlayDataView extends GetView<PlayDataController> {
   }
 }
 
-class _LevelSelectHeader extends GetView<PlayDataController> {
+class _LevelSelectHeader extends GetView<ScoreCheckerViewModel> {
   const _LevelSelectHeader();
 
   @override
@@ -80,7 +81,7 @@ class _LevelSelectHeader extends GetView<PlayDataController> {
             width: 70.w,
             child: Obx(
               () => TextField(
-                enabled: !controller.isLoading.value,
+                enabled: !controller.isLoading,
                 controller: controller.lvTextController,
                 style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w900, fontFamily: 'Oxanium'),
                 decoration: InputDecoration(
@@ -118,23 +119,15 @@ class _LevelSelectHeader extends GetView<PlayDataController> {
   }
 }
 
-class _BestScoreBody extends GetView<PlayDataController> {
+class _BestScoreBody extends GetView<ScoreCheckerViewModel> {
   const _BestScoreBody();
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: Obx(() {
-        if (controller.isLoading.value) {
-          return Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const CircularProgressIndicator(),
-              SizedBox(height: 8.h),
-              Text("최신 정보로 업데이트 중 입니다...(${controller.currentLoadingPageIndex}/${controller.totalPageIndex})",
-                  style: AppTypeFace().loading),
-            ],
-          );
+        if (controller.isLoading) {
+          return PIULoading("최신 정보로 업데이트 중 입니다...(${PlayDataService.to.currentLoadingPageIndex}/${PlayDataService.to.totalPageIndex})");
         } else if (controller.singleClearDataList.isEmpty && controller.doubleClearDataList.isEmpty) {
           return Center(child: Text("해당 레벨에 대한 정보가 없습니다.", style: AppTypeFace().loading));
         }
@@ -145,7 +138,7 @@ class _BestScoreBody extends GetView<PlayDataController> {
   }
 }
 
-class _BestScoreGridView extends GetView<PlayDataController> {
+class _BestScoreGridView extends GetView<ScoreCheckerViewModel> {
   const _BestScoreGridView();
 
   @override
@@ -169,7 +162,7 @@ class _BestScoreGridView extends GetView<PlayDataController> {
                           children: [
                             Text("PIU Phoenix Lv.${controller.currentLevel.value} Score List",
                                 style: TextStyle(fontSize: 20.sp, fontFamily: 'Oxanium')),
-                            Text("Player: ${Get.find<MyDataController>().myData.nickname}",
+                            Text("Player: ${Get.find<MyDataViewModel>().myData.nickname}",
                                 style: TextStyle(fontSize: 20.sp, fontFamily: 'Oxanium')),
                           ],
                         ),

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
+import 'package:piu_util/app/service/my_data_service.dart';
 import 'package:piu_util/data/datasources/local/title_local_data_source.dart';
 import 'package:piu_util/domain/entities/title_data.dart';
 import 'package:piu_util/domain/usecases/my_data_usecases.dart';
-import 'package:piu_util/presentation/home/controller/my_data_controller.dart';
+import 'package:piu_util/presentation/play_data/view_models/my_data_view_model.dart';
 
 class TitleController extends GetxController {
   final MyDataUseCases _useCases = Get.find<MyDataUseCases>();
@@ -26,7 +27,7 @@ class TitleController extends GetxController {
       titleDataList.assignAll(savedTitleDataList);
       filteredTitleDataList.assignAll(titleDataList);
 
-      if (Get.find<MyDataController>().myData.titleText != titleDataList.firstWhere((element) => element.isEnable).titleText) {
+      if (Get.find<MyDataViewModel>().myData.titleText != titleDataList.firstWhere((element) => element.isEnable).titleText) {
         await getTitleData();
       }
 
@@ -67,7 +68,7 @@ class TitleController extends GetxController {
     bool result = await _useCases.setTitle.execute(title.id!);
 
     if (result) {
-      Get.find<MyDataController>().setTitle(title);
+      MyDataService.to.setTitle(title);
 
       List<TitleData> updatedTitleDataList = titleDataList.map((e) {
         if (e.titleText == title.titleText) {

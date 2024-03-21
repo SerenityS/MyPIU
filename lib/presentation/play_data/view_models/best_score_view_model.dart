@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:piu_util/app/service/play_data_service.dart';
 import 'package:piu_util/domain/entities/chart_data.dart';
 import 'package:piu_util/domain/enum/chart_type.dart';
 import 'package:piu_util/domain/enum/grade_type.dart';
 import 'package:piu_util/domain/enum/plate_type.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
 
-import 'play_data_controller.dart';
+class BestScoreViewModel extends GetxController {
+  // Clear Data
+  List<ChartData> get clearDataList => PlayDataService.to.clearDataList;
+  RxList<ChartData> filterBestScoreDataList = <ChartData>[].obs;
 
-class BestScoreController extends GetxController {
+  // Filter
   final TextEditingController searchController = TextEditingController();
 
   SfRangeValues rangeValues = const SfRangeValues(28.0, 0.0);
@@ -16,36 +20,26 @@ class BestScoreController extends GetxController {
   RxInt maxLevel = 0.obs;
 
   RxList<ChartType> chartTypeList = <ChartType>[ChartType.SINGLE, ChartType.DOUBLE].obs;
-  RxList<GradeType> gradeTypeList = GradeType.values.where((e) => e.index >= GradeType.SSSp.index).toList().obs;
+  RxList<GradeType> gradeTypeList = GradeType.values.map((e) => e).toList().obs;
   RxList<PlateType> plateTypeList = PlateType.values.map((e) => e).toList().obs;
-
-  RxList<ChartData> bestScoreDataList = <ChartData>[].obs;
-  RxList<ChartData> filterBestScoreDataList = <ChartData>[].obs;
 
   @override
   void onInit() {
     super.onInit();
 
-    for (int i = GradeType.SSSp.index; i <= GradeType.F.index; i++) {
-      gradeTypeList.add(GradeType.values[i]);
-    }
+    filterBestScoreDataList.assignAll(PlayDataService.to.clearDataList);
+    _setClearLevel();
 
-    bestScoreDataList.assignAll(Get.find<PlayDataController>().bestScoreDataList);
-    filterBestScoreDataList.assignAll(bestScoreDataList);
+    _listenChanges();
+  }
 
-    for (var element in bestScoreDataList) {
-      if (maxLevel.value < element.level) {
-        maxLevel.value = element.level;
-      } else if (minLevel.value > element.level) {
-        minLevel.value = element.level;
-      }
-    }
+  @override
+  void dispose() {
+    searchController.dispose();
+    super.dispose();
+  }
 
-    rangeValues = SfRangeValues(minLevel.value.toDouble(), maxLevel.value.toDouble());
-
-    ever(Get.find<PlayDataController>().bestScoreDataList, (_) {
-      bestScoreDataList.assignAll(Get.find<PlayDataController>().bestScoreDataList);
-    });
+  void _listenChanges() {
     ever(chartTypeList, (_) => filterBestScoreData());
     ever(gradeTypeList, (_) => filterBestScoreData());
     ever(plateTypeList, (_) => filterBestScoreData());
@@ -53,7 +47,7 @@ class BestScoreController extends GetxController {
 
   void filterBestScoreData() {
     filterBestScoreDataList.assignAll(
-      bestScoreDataList.where(
+      clearDataList.where(
         (element) {
           if (searchController.text.isNotEmpty &&
               !element.title.replaceAll(" ", "").toLowerCase().contains(searchController.text.replaceAll(" ", "").toLowerCase())) {
@@ -80,6 +74,12 @@ class BestScoreController extends GetxController {
         },
       ).toList(),
     );
+  }
+
+  void _setClearLevel() {
+    minLevel.value = clearDataList.fold<int>(28, (lowest, element) => lowest < element.level ? lowest : element.level);
+    maxLevel.value = clearDataList.fold<int>(0, (highest, element) => highest > element.level ? highest : element.level);
+    rangeValues = SfRangeValues(minLevel.value.toDouble(), maxLevel.value.toDouble());
   }
 
   void toggleChartType(ChartType chartType) {

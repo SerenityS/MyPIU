@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
+import 'package:piu_util/app/service/my_data_service.dart';
 import 'package:piu_util/data/datasources/local/avatar_local_data_source.dart';
 import 'package:piu_util/domain/entities/avatar_data.dart';
 import 'package:piu_util/domain/usecases/avatar_usecases.dart';
-import 'package:piu_util/presentation/home/controller/my_data_controller.dart';
 
 class AvatarController extends GetxController {
   final AvatarUseCases _useCases = Get.find<AvatarUseCases>();
@@ -44,7 +44,7 @@ class AvatarController extends GetxController {
         return e;
       }).toList();
 
-      Get.find<MyDataController>().setCoin(avatar.requiredCoin);
+      MyDataService.to.setCoin(avatar.requiredCoin);
 
       avatarDataList.assignAll(newAvatarList);
       filterAvatarData();
@@ -96,7 +96,7 @@ class AvatarController extends GetxController {
         return e;
       }).toList();
 
-      Get.find<MyDataController>().setAvatar(avatar.fileName);
+      MyDataService.to.setAvatar(avatar.fileName);
 
       avatarDataList.assignAll(newAvatarList);
       filterAvatarData();
