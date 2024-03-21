@@ -11,13 +11,13 @@ class AvatarDataLocalDataSource {
     await box.delete(_key);
   }
 
-  List<AvatarData>? getAvatarData() {
+  List<AvatarData> getAvatarData() {
     final avatarData = box.get(_key);
 
     if (avatarData != null) {
       return (jsonDecode(avatarData) as List).map((e) => AvatarData.fromJson(e)).toList();
     } else {
-      return null;
+      return [];
     }
   }
 

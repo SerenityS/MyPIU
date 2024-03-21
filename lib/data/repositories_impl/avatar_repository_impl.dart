@@ -22,9 +22,13 @@ class AvatarRepositoryImpl extends AvatarRepository {
 
   @override
   Future<List<AvatarData>> getAvatars() async {
-    var response = await _dio.get(AppUrl.getAvatarUrl);
+    try {
+      var response = await _dio.get(AppUrl.getAvatarUrl);
 
-    return parseAvatarData(response.data);
+      return parseAvatarData(response.data);
+    } catch (e) {
+      return [];
+    }
   }
 
   @override
