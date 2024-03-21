@@ -11,13 +11,13 @@ class TitleLocalDataSource {
     await box.delete(_titleDataKey);
   }
 
-  List<TitleData>? getTitleData() {
+  List<TitleData> getTitleData() {
     final titleData = box.get(_titleDataKey);
 
     if (titleData != null) {
       return (jsonDecode(titleData) as List).map((e) => TitleData.fromJson(e)).toList();
     } else {
-      return null;
+      return [];
     }
   }
 
