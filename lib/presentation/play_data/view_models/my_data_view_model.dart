@@ -13,6 +13,7 @@ class MyDataViewModel extends GetxController {
   List<ChartData> get clearDataList => PlayDataService.to.clearDataList;
 
   final RxBool isLoading = true.obs;
+  final RxBool isPlateLoading = false.obs;
 
   @override
   void onInit() async {
@@ -25,7 +26,7 @@ class MyDataViewModel extends GetxController {
 
     if (clearDataList.isEmpty) {
       // Get Clear Data from RemoteDataSource
-      await _getClearDataFromRemote();
+      await getClearDataFromRemote();
     } else {
       // Check if there is new clear data
       // when the user's total clear count is different from the local data
@@ -33,7 +34,7 @@ class MyDataViewModel extends GetxController {
 
       if (totalClearCount != MyDataService.to.myData.totalClear) {
         Fluttertoast.showToast(msg: "새로운 클리어 정보가 있습니다.\n클리어 정보를 갱신합니다.");
-        await _getClearDataFromRemote();
+        await getClearDataFromRemote();
       }
     }
   }
@@ -44,10 +45,10 @@ class MyDataViewModel extends GetxController {
     isLoading(false);
   }
 
-  Future<void> _getClearDataFromRemote() async {
-    isLoading(true);
+  Future<void> getClearDataFromRemote() async {
+    isPlateLoading(true);
     await PlayDataService.to.getClearDataFromRemote();
-    isLoading(false);
+    isPlateLoading(false);
   }
 
   int getMaxLevelForType(List<ChartData> dataList, PlateType plateType, ChartType chartType) {

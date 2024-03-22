@@ -18,6 +18,11 @@ class AppTypeFace {
     letterSpacing: 0.6,
   );
 
+  final TextStyle filterTitle = TextStyle(
+    fontSize: 18.sp,
+    fontFamily: 'Oxanium',
+  );
+
   final TextStyle nickname = TextStyle(
     fontSize: 24.sp,
     fontWeight: FontWeight.w900,

@@ -28,6 +28,7 @@ class AvatarViewModel extends GetxController {
       _avatarDataSource.saveAvatarData(avatarDataList);
       filterAvatarData();
     });
+    ever(hasAvatar, (_) => filterAvatarData());
 
     getAvatarDataFromLocal();
     if (avatarDataList.isNotEmpty) {

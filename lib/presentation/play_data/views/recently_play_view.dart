@@ -7,6 +7,7 @@ import 'package:piu_util/app/config/extension/int_format_comma.dart';
 import 'package:piu_util/domain/entities/recently_play_data.dart';
 import 'package:piu_util/domain/enum/judge_type.dart';
 import 'package:piu_util/presentation/common/widgets/judge_text.dart';
+import 'package:piu_util/presentation/common/widgets/piu_image_card.dart';
 import 'package:piu_util/presentation/common/widgets/step_ball.dart';
 
 import '../view_models/recently_play_data_view_model.dart';
@@ -59,18 +60,8 @@ class _RecentlyPlayCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.w),
-      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.w),
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.white, width: 1.5),
-        borderRadius: BorderRadius.circular(8.r),
-        image: DecorationImage(
-          colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.5), BlendMode.darken),
-          image: AssetImage('assets/jacket/${data.jacketFileName}'),
-          fit: BoxFit.cover,
-        ),
-      ),
+    return PIUImageCard(
+      jacketFileName: data.jacketFileName,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
