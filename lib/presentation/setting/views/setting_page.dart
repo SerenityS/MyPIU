@@ -4,9 +4,9 @@ import 'package:get/get.dart';
 import 'package:piu_util/app/config/routes/route_path.dart';
 import 'package:piu_util/domain/enum/term_type.dart';
 
-import '../controller/setting_controller.dart';
+import '../view_models/setting_view_model.dart';
 
-class SettingPage extends GetView<SettingController> {
+class SettingPage extends GetView<SettingViewModel> {
   const SettingPage({super.key});
 
   @override

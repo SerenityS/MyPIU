@@ -8,7 +8,7 @@ import 'package:piu_util/presentation/play_data/views/rating_view.dart';
 import 'package:piu_util/presentation/play_data/views/recently_play_view.dart';
 import 'package:piu_util/presentation/title/views/title_view.dart';
 
-class HomeController extends GetxController {
+class HomeViewModel extends GetxController {
   final List<Widget> drawerPages = [
     const HomeView(),
     const ScoreCheckerView(),

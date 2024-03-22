@@ -1,8 +1,8 @@
 import 'package:get/route_manager.dart';
 import 'package:piu_util/presentation/avatar/view_models/avatar_binding.dart';
-import 'package:piu_util/presentation/home/controller/home_binding.dart';
+import 'package:piu_util/presentation/home/view_models/home_binding.dart';
 import 'package:piu_util/presentation/home/views/home_page.dart';
-import 'package:piu_util/presentation/setting/controller/setting_binding.dart';
+import 'package:piu_util/presentation/setting/view_models/setting_binding.dart';
 import 'package:piu_util/presentation/setting/views/licences_page.dart';
 import 'package:piu_util/presentation/setting/views/setting_page.dart';
 import 'package:piu_util/presentation/setting/views/term_page.dart';

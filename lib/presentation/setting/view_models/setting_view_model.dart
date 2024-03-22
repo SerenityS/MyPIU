@@ -5,7 +5,7 @@ import 'package:piu_util/app/config/routes/route_path.dart';
 import 'package:piu_util/data/datasources/local/auth_local_data_source.dart';
 import 'package:piu_util/domain/usecases/auth_usecases.dart';
 
-class SettingController extends GetxController {
+class SettingViewModel extends GetxController {
   final RxString appVersion = "1.0.0".obs;
   final RxString assetVersion = "1.07.0".obs;
 
