@@ -72,7 +72,6 @@ class LoginViewModel extends GetxController {
       await _saveCredential();
 
       isAuthenticated(true);
-      isLoading(false);
 
       return true;
     } else {

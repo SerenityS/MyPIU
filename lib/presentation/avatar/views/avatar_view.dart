@@ -7,6 +7,9 @@ import 'package:piu_util/app/config/app_color.dart';
 import 'package:piu_util/app/config/extension/int_format_comma.dart';
 import 'package:piu_util/domain/entities/avatar_data.dart';
 import 'package:piu_util/presentation/avatar/view_models/avatar_view_model.dart';
+import 'package:piu_util/presentation/common/widgets/piu_card.dart';
+import 'package:piu_util/presentation/common/widgets/piu_loading.dart';
+import 'package:piu_util/presentation/common/widgets/piu_text_field.dart';
 import 'package:piu_util/presentation/play_data/widgets/player_info_card.dart';
 
 class AvatarView extends GetView<AvatarViewModel> {
@@ -23,7 +26,7 @@ class AvatarView extends GetView<AvatarViewModel> {
           Expanded(
             child: Obx(
               () {
-                if (controller.isLoading.value) return const Center(child: CircularProgressIndicator());
+                if (controller.isLoading.value) return const PIULoading("아바타 정보를 불러오는 중입니다...");
 
                 return Padding(
                   padding: EdgeInsets.symmetric(horizontal: 8.w),
@@ -45,9 +48,7 @@ class AvatarView extends GetView<AvatarViewModel> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          if (controller.isLoading.value) return;
-
-          await controller.getAvatarsFromRemote();
+          if (!controller.isLoading.value) await controller.getAvatarsFromRemote();
         },
         child: const Icon(Icons.refresh),
       ),
@@ -67,37 +68,12 @@ class _AvatarFilter extends GetView<AvatarViewModel> {
         child: Row(
           children: [
             Expanded(
-              child: Obx(
-                () => TextField(
-                  enabled: !controller.isLoading.value,
-                  controller: controller.searchController,
-                  style: const TextStyle(color: Colors.white),
-                  decoration: InputDecoration(
-                    isDense: true,
-                    contentPadding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.w),
-                    filled: true,
-                    fillColor: AppColor.input,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8.r),
-                      borderSide: BorderSide.none,
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8.r),
-                      borderSide: BorderSide.none,
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8.r),
-                      borderSide: BorderSide.none,
-                    ),
+              child: Obx(() => PIUTextField(
+                    isEnable: !controller.isLoading.value,
+                    controller: controller.searchController,
+                    onChanged: (value) => controller.filterAvatarData(),
                     hintText: "아바타명을 입력해주세요.",
-                    hintStyle: const TextStyle(color: Colors.grey),
-                  ),
-                  onChanged: (value) => controller.filterAvatarData(),
-                  onTapOutside: (PointerDownEvent event) {
-                    FocusManager.instance.primaryFocus?.unfocus();
-                  },
-                ),
-              ),
+                  )),
             ),
             SizedBox(width: 8.w),
             Container(
@@ -110,13 +86,11 @@ class _AvatarFilter extends GetView<AvatarViewModel> {
                 children: [
                   Obx(
                     () => Checkbox(
-                        value: controller.hasAvatar.value,
-                        onChanged: (value) {
-                          if (controller.isLoading.value) return;
-
-                          controller.hasAvatar.value = value!;
-                          controller.filterAvatarData();
-                        }),
+                      value: controller.hasAvatar.value,
+                      onChanged: (value) {
+                        if (!controller.isLoading.value) controller.hasAvatar.value = value!;
+                      },
+                    ),
                   ),
                   const Text("보유 아바타", style: TextStyle(fontWeight: FontWeight.w600)),
                 ],
@@ -136,14 +110,8 @@ class _AvatarCard extends GetView<AvatarViewModel> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.maxFinite,
-      padding: EdgeInsets.all(12.w),
+    return PIUCard(
       margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 4.w),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8.r),
-        color: AppColor.cardPrimary,
-      ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -163,66 +131,59 @@ class _AvatarCard extends GetView<AvatarViewModel> {
                 Text(avatar.requiredCoin.formatWithComma(), style: TextStyle(fontSize: 11.sp, fontWeight: FontWeight.w400)),
               ],
               const Spacer(),
-              Material(
-                color: Colors.transparent,
-                child: InkWell(
-                  onTap: () async {
-                    if (avatar.isEnable || avatar.status == "not") {
-                      return;
-                    } else if (avatar.status == "buy") {
-                      await controller.buyAvatar(avatar);
-                    } else if (avatar.status == "have") {
-                      await controller.setAvatar(avatar);
-                    }
-                  },
-                  borderRadius: BorderRadius.circular(6.r),
-                  highlightColor: Colors.transparent,
-                  splashColor: avatar.isEnable
-                      ? AppColor.enabled.withOpacity(0.2)
-                      : avatar.status == "buy"
-                          ? AppColor.buy.withOpacity(0.2)
-                          : avatar.status == "have"
-                              ? AppColor.info.withOpacity(0.4)
-                              : AppColor.error.withOpacity(0.2),
-                  child: Container(
-                    alignment: Alignment.center,
-                    padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
-                    decoration: BoxDecoration(
-                      border: avatar.isEnable
-                          ? Border.all(color: AppColor.enabled)
-                          : avatar.status == "buy"
-                              ? Border.all(color: AppColor.buy)
-                              : avatar.status == "have"
-                                  ? Border.all(color: AppColor.info)
-                                  : Border.all(color: AppColor.error),
-                      borderRadius: BorderRadius.circular(6.r),
-                      color: Colors.transparent,
-                    ),
-                    child: Text(
-                      avatar.isEnable
-                          ? "사용중"
-                          : avatar.status == "buy"
-                              ? "해금가능"
-                              : avatar.status == "have"
-                                  ? "설정하기"
-                                  : "해금불가",
-                      style: TextStyle(
-                          fontSize: 11.sp,
-                          fontWeight: FontWeight.w400,
-                          color: avatar.isEnable
-                              ? AppColor.enabled
-                              : avatar.status == "buy"
-                                  ? AppColor.buy
-                                  : avatar.status == "have"
-                                      ? AppColor.info
-                                      : AppColor.error),
-                    ),
-                  ),
-                ),
-              ),
+              _buildAvatarButton(),
             ],
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildAvatarButton() {
+    Color buttonColor = Colors.transparent;
+    String buttonText = "";
+
+    if (avatar.isEnable) {
+      buttonColor = AppColor.enabled;
+      buttonText = "사용중";
+    } else if (avatar.status == "buy") {
+      buttonColor = AppColor.buy;
+      buttonText = "해금가능";
+    } else if (avatar.status == "have") {
+      buttonColor = AppColor.info;
+      buttonText = "설정하기";
+    } else {
+      buttonColor = AppColor.error;
+      buttonText = "해금불가";
+    }
+
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: () async {
+          if (avatar.isEnable || avatar.status == "not") {
+            return;
+          } else if (avatar.status == "buy") {
+            await controller.buyAvatar(avatar);
+          } else if (avatar.status == "have") {
+            await controller.setAvatar(avatar);
+          }
+        },
+        borderRadius: BorderRadius.circular(6.r),
+        highlightColor: Colors.transparent,
+        splashColor: buttonColor.withOpacity(0.2),
+        child: Container(
+          alignment: Alignment.center,
+          padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
+          decoration: BoxDecoration(
+            border: Border.all(color: buttonColor),
+            borderRadius: BorderRadius.circular(6.r),
+          ),
+          child: Text(
+            buttonText,
+            style: TextStyle(fontSize: 11.sp, fontWeight: FontWeight.w400, color: buttonColor),
+          ),
+        ),
       ),
     );
   }

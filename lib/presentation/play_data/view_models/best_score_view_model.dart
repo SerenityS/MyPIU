@@ -15,7 +15,7 @@ class BestScoreViewModel extends GetxController {
   // Filter
   final TextEditingController searchController = TextEditingController();
 
-  SfRangeValues rangeValues = const SfRangeValues(28.0, 0.0);
+  Rx<SfRangeValues> rangeValues = const SfRangeValues(28.0, 0.0).obs;
   RxInt minLevel = 28.obs;
   RxInt maxLevel = 0.obs;
 
@@ -43,6 +43,7 @@ class BestScoreViewModel extends GetxController {
     ever(chartTypeList, (_) => filterBestScoreData());
     ever(gradeTypeList, (_) => filterBestScoreData());
     ever(plateTypeList, (_) => filterBestScoreData());
+    ever(rangeValues, (_) => filterBestScoreData());
   }
 
   void filterBestScoreData() {
@@ -66,7 +67,7 @@ class BestScoreViewModel extends GetxController {
             return false;
           }
 
-          if (rangeValues.start > element.level || rangeValues.end < element.level) {
+          if (rangeValues.value.start > element.level || rangeValues.value.end < element.level) {
             return false;
           }
 
@@ -79,7 +80,7 @@ class BestScoreViewModel extends GetxController {
   void _setClearLevel() {
     minLevel.value = clearDataList.fold<int>(28, (lowest, element) => lowest < element.level ? lowest : element.level);
     maxLevel.value = clearDataList.fold<int>(0, (highest, element) => highest > element.level ? highest : element.level);
-    rangeValues = SfRangeValues(minLevel.value.toDouble(), maxLevel.value.toDouble());
+    rangeValues.value = SfRangeValues(minLevel.value.toDouble(), maxLevel.value.toDouble());
   }
 
   void toggleChartType(ChartType chartType) {

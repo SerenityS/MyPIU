@@ -128,7 +128,7 @@ class _RatingExpansionTileState extends State<_RatingExpansionTile> {
                   children: [
                     Text("Grade Info", style: TextStyle(fontSize: 20.sp, fontFamily: 'Oxanium')),
                     SizedBox(height: 8.w),
-                    GradeTypeBarChart(ratingData: widget.controller.ratingDataList[widget.index]),
+                    _GradeTypeBarChart(ratingData: widget.controller.ratingDataList[widget.index]),
                   ],
                 ),
               ),
@@ -140,22 +140,10 @@ class _RatingExpansionTileState extends State<_RatingExpansionTile> {
   }
 }
 
-class GradeTypeBarChart extends StatefulWidget {
+class _GradeTypeBarChart extends StatelessWidget {
+  const _GradeTypeBarChart({required this.ratingData});
+
   final RatingData ratingData;
-
-  const GradeTypeBarChart({super.key, required this.ratingData});
-
-  @override
-  State<GradeTypeBarChart> createState() => _GradeTypeBarChartState();
-}
-
-class _GradeTypeBarChartState extends State<GradeTypeBarChart> {
-  late Map<GradeType, int> gradeTypeCounts;
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   Map<GradeType, Map<ChartType, double>> aggregateData(List<ChartData> data) {
     Map<GradeType, Map<ChartType, double>> aggregatedData = {};
@@ -174,7 +162,7 @@ class _GradeTypeBarChartState extends State<GradeTypeBarChart> {
 
   @override
   Widget build(BuildContext context) {
-    final aggregatedData = aggregateData(widget.ratingData.clearData);
+    final aggregatedData = aggregateData(ratingData.clearData);
 
     return SizedBox(
       height: 100.w,
@@ -210,11 +198,7 @@ class _GradeTypeBarChartState extends State<GradeTypeBarChart> {
                     axisSide: meta.axisSide,
                     child: Text(
                       meta.formattedValue,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 12.sp,
-                        fontFamily: 'Oxanium',
-                      ),
+                      style: TextStyle(color: Colors.white, fontSize: 12.sp, fontFamily: 'Oxanium'),
                     ),
                   );
                 },
@@ -226,10 +210,7 @@ class _GradeTypeBarChartState extends State<GradeTypeBarChart> {
               sideTitles: SideTitles(
                 showTitles: true,
                 getTitlesWidget: (value, meta) => Text(GradeType.values[value.toInt()].name.replaceAll("p", "+"),
-                    style: TextStyle(
-                      fontSize: 10.sp,
-                      fontFamily: 'Oxanium',
-                    )),
+                    style: TextStyle(fontSize: 10.sp, fontFamily: 'Oxanium')),
               ),
             ),
           ),

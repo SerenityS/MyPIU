@@ -36,7 +36,7 @@ class HomeView extends GetView<MyDataViewModel> {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () async => await PlayDataService.to.getClearDataFromRemote(),
+        onPressed: () async => await controller.getClearDataFromRemote(),
         child: const Icon(Icons.refresh),
       ),
     );
@@ -48,50 +48,61 @@ class _PlayerPlateCard extends GetView<MyDataViewModel> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.maxFinite,
-      margin: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.w),
-      padding: EdgeInsets.all(8.w),
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(8.r), color: AppColor.cardSecondary),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: EdgeInsets.all(4.w),
-            child: Text(
-              "Plate Data",
-              style: TextStyle(color: Colors.white, fontSize: 24.sp, fontWeight: FontWeight.bold, fontFamily: 'Oxanium'),
-            ),
-          ),
-          Obx(() {
-            if (controller.isLoading.value) {
-              PIULoading("플레이트 정보를 불러오는 중...(${PlayDataService.to.currentLoadingPageIndex}/${PlayDataService.to.totalPageIndex})");
-            } else if (controller.clearDataList.isEmpty) {
-              return Center(
-                child: Text(
-                  "플레이트 정보가 없습니다.\n게임을 플레이해주세요.",
-                  style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w500),
-                ),
-              );
-            }
+    return Obx(() {
+      return Container(
+        width: double.maxFinite,
+        margin: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.w),
+        padding: EdgeInsets.all(8.w),
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(8.r), color: AppColor.cardSecondary),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: controller.isPlateLoading.value
+              ? [
+                  Padding(
+                    padding: EdgeInsets.all(4.w),
+                    child: PIULoading(
+                      "클리어 정보를 불러오는 중...(${PlayDataService.to.currentLoadingPageIndex}/${PlayDataService.to.totalPageIndex})",
+                    ),
+                  )
+                ]
+              : [
+                  Padding(
+                    padding: EdgeInsets.all(4.w),
+                    child: Text(
+                      "Plate Data",
+                      style: TextStyle(color: Colors.white, fontSize: 24.sp, fontWeight: FontWeight.bold, fontFamily: 'Oxanium'),
+                    ),
+                  ),
+                  Obx(() {
+                    if (controller.isLoading.value) {
+                      PIULoading("플레이트 정보를 불러오는 중...(${PlayDataService.to.currentLoadingPageIndex}/${PlayDataService.to.totalPageIndex})");
+                    } else if (controller.clearDataList.isEmpty) {
+                      return Center(
+                        child: Text(
+                          "플레이트 정보가 없습니다.\n게임을 플레이해주세요.",
+                          style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w500),
+                        ),
+                      );
+                    }
 
-            return GridView.builder(
-              physics: const NeverScrollableScrollPhysics(),
-              shrinkWrap: true,
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-              padding: EdgeInsets.zero,
-              itemCount: PlateType.values.length,
-              itemBuilder: (context, index) {
-                final PlateType plateType = PlateType.values[index];
-                final List<ChartData> clearDataList = controller.clearDataList.where((p0) => p0.plateType == plateType).toList();
+                    return GridView.builder(
+                      physics: const NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
+                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+                      padding: EdgeInsets.zero,
+                      itemCount: PlateType.values.length,
+                      itemBuilder: (context, index) {
+                        final PlateType plateType = PlateType.values[index];
+                        final List<ChartData> clearDataList = controller.clearDataList.where((p0) => p0.plateType == plateType).toList();
 
-                return _PlateDetailCard(clearDataList, plateType);
-              },
-            );
-          }),
-        ],
-      ),
-    );
+                        return _PlateDetailCard(clearDataList, plateType);
+                      },
+                    );
+                  }),
+                ],
+        ),
+      );
+    });
   }
 }
 

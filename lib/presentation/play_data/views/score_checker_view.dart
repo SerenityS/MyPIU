@@ -6,6 +6,8 @@ import 'package:piu_util/app/config/app_color.dart';
 import 'package:piu_util/app/config/app_typeface.dart';
 import 'package:piu_util/app/config/extension/score_to_string.dart';
 import 'package:piu_util/app/service/play_data_service.dart';
+import 'package:piu_util/domain/entities/chart_data.dart';
+import 'package:piu_util/presentation/common/widgets/piu_card.dart';
 import 'package:piu_util/presentation/common/widgets/piu_loading.dart';
 import 'package:piu_util/presentation/play_data/view_models/my_data_view_model.dart';
 
@@ -20,7 +22,7 @@ class ScoreCheckerView extends GetView<ScoreCheckerViewModel> {
       body: const SafeArea(
         child: Column(
           children: [
-            _LevelSelectHeader(),
+            _FilterHeader(),
             _BestScoreBody(),
           ],
         ),
@@ -44,18 +46,13 @@ class ScoreCheckerView extends GetView<ScoreCheckerViewModel> {
   }
 }
 
-class _LevelSelectHeader extends GetView<ScoreCheckerViewModel> {
-  const _LevelSelectHeader();
+class _FilterHeader extends GetView<ScoreCheckerViewModel> {
+  const _FilterHeader();
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.fromLTRB(4.w, 8.w, 8.w, 8.w),
-      margin: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.w),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8.r),
-        color: AppColor.input,
-      ),
+    return PIUCard(
+      padding: EdgeInsets.all(8.w),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
@@ -85,8 +82,7 @@ class _LevelSelectHeader extends GetView<ScoreCheckerViewModel> {
                 controller: controller.lvTextController,
                 style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w900, fontFamily: 'Oxanium'),
                 decoration: InputDecoration(
-                  isDense: true,
-                  contentPadding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.w),
+                  contentPadding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 8.w),
                   filled: true,
                   fillColor: AppColor.input,
                   border: OutlineInputBorder(borderRadius: BorderRadius.circular(8.r), borderSide: const BorderSide(color: AppColor.error)),
@@ -94,16 +90,14 @@ class _LevelSelectHeader extends GetView<ScoreCheckerViewModel> {
                       OutlineInputBorder(borderRadius: BorderRadius.circular(8.r), borderSide: const BorderSide(color: AppColor.error)),
                   focusedBorder:
                       OutlineInputBorder(borderRadius: BorderRadius.circular(8.r), borderSide: const BorderSide(color: AppColor.error)),
-                  hintText: "레벨을 입력해주세요.",
+                  hintText: "0",
                   hintStyle: const TextStyle(fontSize: 15, color: Colors.grey),
                   prefix: Text("Lv. ", style: TextStyle(fontSize: 14.sp, fontFamily: 'Oxanium')),
                 ),
                 keyboardType: TextInputType.number,
                 inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                 onChanged: (value) {
-                  if (value.isEmpty) {
-                    return;
-                  }
+                  if (value.isEmpty) return;
 
                   controller.currentLevel.value = int.parse(value);
                 },
@@ -132,14 +126,14 @@ class _BestScoreBody extends GetView<ScoreCheckerViewModel> {
           return Center(child: Text("해당 레벨에 대한 정보가 없습니다.", style: AppTypeFace().loading));
         }
 
-        return const _BestScoreGridView();
+        return const _ScoreView();
       }),
     );
   }
 }
 
-class _BestScoreGridView extends GetView<ScoreCheckerViewModel> {
-  const _BestScoreGridView();
+class _ScoreView extends GetView<ScoreCheckerViewModel> {
+  const _ScoreView();
 
   @override
   Widget build(BuildContext context) {
@@ -168,117 +162,10 @@ class _BestScoreGridView extends GetView<ScoreCheckerViewModel> {
                         ),
                       ),
                       if (controller.showSingle.value) ...[
-                        Column(
-                          children: [
-                            Text("Single", style: TextStyle(fontSize: 20.sp, fontFamily: 'Oxanium', color: Colors.red)),
-                            Wrap(
-                              children: [
-                                for (int i = 0; i < controller.singleClearDataList.length; i++)
-                                  Container(
-                                    width: Get.width / 5,
-                                    height: Get.width / 7,
-                                    alignment: Alignment.center,
-                                    decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                        image: AssetImage("assets/jacket/${controller.singleClearDataList[i].jacketFileName}"),
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                    child: Stack(
-                                      children: [
-                                        Text(
-                                          (controller.singleClearDataList[i].score.toScoreString()) == "0.0"
-                                              ? ""
-                                              : controller.singleClearDataList[i].score.toScoreString(),
-                                          style: TextStyle(
-                                              fontSize: 30.sp,
-                                              foreground: Paint()
-                                                ..style = PaintingStyle.stroke
-                                                ..strokeWidth = 3.5.w
-                                                ..color = Colors.white,
-                                              fontFamily: 'Oxanium'),
-                                        ),
-                                        Text(
-                                          (controller.singleClearDataList[i].score.toScoreString()) == "0.0"
-                                              ? ""
-                                              : controller.singleClearDataList[i].score.toScoreString(),
-                                          style: TextStyle(
-                                            fontSize: 30.sp,
-                                            color: controller.singleClearDataList[i].score >= 950000
-                                                ? const Color(0xFF005AFF)
-                                                : controller.singleClearDataList[i].score >= 900000
-                                                    ? const Color(0xFF32CD32)
-                                                    : controller.singleClearDataList[i].score >= 850000
-                                                        ? const Color(0xFFFFD700)
-                                                        : Colors.red,
-                                            fontFamily: 'Oxanium',
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                              ],
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: 8.h),
+                        _ScoreGridWidget("Single", clearDataList: controller.singleClearDataList, color: Colors.red),
                       ],
                       if (controller.showDouble.value) ...[
-                        Column(
-                          children: [
-                            if (controller.doubleClearDataList.isNotEmpty)
-                              Text("Double", style: TextStyle(fontSize: 20.sp, fontFamily: 'Oxanium', color: Colors.green)),
-                            Wrap(
-                              children: [
-                                for (int i = 0; i < controller.doubleClearDataList.length; i++)
-                                  Container(
-                                    width: Get.width / 5,
-                                    height: Get.width / 7,
-                                    alignment: Alignment.center,
-                                    decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                        image: AssetImage("assets/jacket/${controller.doubleClearDataList[i].jacketFileName}"),
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                    child: Stack(
-                                      children: [
-                                        Text(
-                                          (controller.doubleClearDataList[i].score.toScoreString()) == "0.0"
-                                              ? ""
-                                              : controller.doubleClearDataList[i].score.toScoreString(),
-                                          style: TextStyle(
-                                              fontSize: 30.sp,
-                                              foreground: Paint()
-                                                ..style = PaintingStyle.stroke
-                                                ..strokeWidth = 3.5.w
-                                                ..color = Colors.white,
-                                              fontFamily: 'Oxanium'),
-                                        ),
-                                        Text(
-                                          (controller.doubleClearDataList[i].score.toScoreString()) == "0.0"
-                                              ? ""
-                                              : controller.doubleClearDataList[i].score.toScoreString(),
-                                          style: TextStyle(
-                                            fontSize: 30.sp,
-                                            color: controller.doubleClearDataList[i].score >= 950000
-                                                ? const Color(0xFF005AFF)
-                                                : controller.doubleClearDataList[i].score >= 900000
-                                                    ? const Color(0xFF32CD32)
-                                                    : controller.doubleClearDataList[i].score >= 850000
-                                                        ? const Color(0xFFFFD700)
-                                                        : Colors.red,
-                                            fontFamily: 'Oxanium',
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                              ],
-                            ),
-                            if (controller.doubleClearDataList.isNotEmpty) SizedBox(height: 8.h),
-                          ],
-                        ),
+                        _ScoreGridWidget("Double", clearDataList: controller.doubleClearDataList, color: Colors.green),
                       ],
                       Padding(
                         padding: EdgeInsets.fromLTRB(8.w, 0.w, 8.w, 8.w),
@@ -297,6 +184,71 @@ class _BestScoreGridView extends GetView<ScoreCheckerViewModel> {
           ],
         ),
       ),
+    );
+  }
+}
+
+class _ScoreGridWidget extends StatelessWidget {
+  const _ScoreGridWidget(this.title, {required this.clearDataList, required this.color});
+
+  final List<ChartData> clearDataList;
+  final String title;
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Text(title, style: TextStyle(fontSize: 20.sp, fontFamily: 'Oxanium', color: color)),
+        Wrap(
+          children: [
+            for (int i = 0; i < clearDataList.length; i++)
+              Container(
+                width: Get.width / 5,
+                height: Get.width / 7,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage("assets/jacket/${clearDataList[i].jacketFileName}"),
+                    fit: BoxFit.cover,
+                    colorFilter: (clearDataList[i].score.toScoreString()) == "0.0"
+                        ? ColorFilter.mode(Colors.black.withOpacity(0.4), BlendMode.darken)
+                        : null,
+                  ),
+                ),
+                child: Stack(
+                  children: [
+                    Text(
+                      (clearDataList[i].score.toScoreString()) == "0.0" ? "" : clearDataList[i].score.toScoreString(),
+                      style: TextStyle(
+                          fontSize: 30.sp,
+                          foreground: Paint()
+                            ..style = PaintingStyle.stroke
+                            ..strokeWidth = 3.5.w
+                            ..color = Colors.white,
+                          fontFamily: 'Oxanium'),
+                    ),
+                    Text(
+                      (clearDataList[i].score.toScoreString()) == "0.0" ? "" : clearDataList[i].score.toScoreString(),
+                      style: TextStyle(
+                        fontSize: 30.sp,
+                        color: clearDataList[i].score >= 950000
+                            ? const Color(0xFF005AFF)
+                            : clearDataList[i].score >= 900000
+                                ? const Color(0xFF32CD32)
+                                : clearDataList[i].score >= 850000
+                                    ? const Color(0xFFFFD700)
+                                    : Colors.red,
+                        fontFamily: 'Oxanium',
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+          ],
+        ),
+        SizedBox(height: 8.h),
+      ],
     );
   }
 }

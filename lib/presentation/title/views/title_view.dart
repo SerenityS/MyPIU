@@ -3,6 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:piu_util/app/config/app_color.dart';
 import 'package:piu_util/domain/entities/title_data.dart';
+import 'package:piu_util/presentation/common/widgets/piu_card.dart';
+import 'package:piu_util/presentation/common/widgets/piu_loading.dart';
+import 'package:piu_util/presentation/common/widgets/piu_text_field.dart';
 import 'package:piu_util/presentation/common/widgets/title_text.dart';
 import 'package:piu_util/presentation/play_data/widgets/player_info_card.dart';
 
@@ -21,9 +24,7 @@ class TitleView extends GetView<TitleViewModel> {
             const _TitleFilter(),
             Expanded(
               child: Obx(() {
-                if (controller.isLoading.value) {
-                  return const Center(child: CircularProgressIndicator());
-                }
+                if (controller.isLoading.value) return const PIULoading("칭호 정보를 불러오는 중입니다...");
 
                 return ListView.builder(
                   physics: const ClampingScrollPhysics(),
@@ -62,37 +63,12 @@ class _TitleFilter extends GetView<TitleViewModel> {
         child: Row(
           children: [
             Expanded(
-              child: Obx(
-                () => TextField(
-                  enabled: !controller.isLoading.value,
-                  controller: controller.searchController,
-                  style: const TextStyle(color: Colors.white),
-                  decoration: InputDecoration(
-                    isDense: true,
-                    contentPadding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.w),
-                    filled: true,
-                    fillColor: AppColor.input,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8.r),
-                      borderSide: BorderSide.none,
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8.r),
-                      borderSide: BorderSide.none,
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8.r),
-                      borderSide: BorderSide.none,
-                    ),
+              child: Obx(() => PIUTextField(
+                    isEnable: !controller.isLoading.value,
+                    controller: controller.searchController,
+                    onChanged: (value) => controller.filteredTitleDataList,
                     hintText: "칭호명을 입력해주세요.",
-                    hintStyle: const TextStyle(color: Colors.grey),
-                  ),
-                  onChanged: (value) => controller.filterTitleData(),
-                  onTapOutside: (PointerDownEvent event) {
-                    FocusManager.instance.primaryFocus?.unfocus();
-                  },
-                ),
-              ),
+                  )),
             ),
             SizedBox(width: 8.w),
             Container(
@@ -131,14 +107,7 @@ class _TitleCard extends GetView<TitleViewModel> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.maxFinite,
-      padding: EdgeInsets.all(12.w),
-      margin: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.w),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8.r),
-        color: AppColor.cardPrimary,
-      ),
+    return PIUCard(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -152,52 +121,54 @@ class _TitleCard extends GetView<TitleViewModel> {
             ],
           ),
           SizedBox(height: 8.h),
-          Material(
-            color: Colors.transparent,
-            child: InkWell(
-              onTap: () async {
-                if (title.isEnable || !title.hasTitle) return;
+          _buildTitleButton(),
+        ],
+      ),
+    );
+  }
 
-                await controller.setTitle(title);
-              },
-              borderRadius: BorderRadius.circular(8.r),
-              highlightColor: Colors.transparent,
-              splashColor: title.isEnable
-                  ? AppColor.enabled.withOpacity(0.2)
-                  : title.hasTitle
-                      ? AppColor.info.withOpacity(0.4)
-                      : AppColor.error.withOpacity(0.2),
-              child: Container(
-                alignment: Alignment.center,
-                width: double.maxFinite,
-                padding: EdgeInsets.symmetric(vertical: 8.w),
-                decoration: BoxDecoration(
-                  border: title.isEnable
-                      ? Border.all(color: AppColor.enabled)
-                      : title.hasTitle
-                          ? Border.all(color: AppColor.info)
-                          : Border.all(color: AppColor.error),
-                  borderRadius: BorderRadius.circular(8.r),
-                  color: Colors.transparent,
-                ),
-                child: Text(
-                  title.isEnable
-                      ? "칭호 사용중"
-                      : title.hasTitle
-                          ? "설정하기"
-                          : "해금 조건 미달",
-                  style: TextStyle(
-                    color: title.isEnable
-                        ? AppColor.enabled
-                        : title.hasTitle
-                            ? AppColor.info
-                            : AppColor.error,
-                  ),
-                ),
-              ),
+  Widget _buildTitleButton() {
+    Color buttonColor = Colors.transparent;
+    String buttonText = "";
+
+    if (title.isEnable) {
+      buttonColor = AppColor.enabled;
+      buttonText = "칭호 사용중";
+    } else if (title.hasTitle) {
+      buttonColor = AppColor.info;
+      buttonText = "설정하기";
+    } else {
+      buttonColor = AppColor.error;
+      buttonText = "해금 조건 미달";
+    }
+
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: () async {
+          if (title.isEnable || !title.hasTitle) return;
+
+          await controller.setTitle(title);
+        },
+        borderRadius: BorderRadius.circular(8.r),
+        highlightColor: Colors.transparent,
+        splashColor: buttonColor.withOpacity(0.2),
+        child: Container(
+          alignment: Alignment.center,
+          width: double.maxFinite,
+          padding: EdgeInsets.symmetric(vertical: 8.w),
+          decoration: BoxDecoration(
+            border: Border.all(color: buttonColor),
+            borderRadius: BorderRadius.circular(8.r),
+            color: Colors.transparent,
+          ),
+          child: Text(
+            buttonText,
+            style: TextStyle(
+              color: buttonColor,
             ),
           ),
-        ],
+        ),
       ),
     );
   }
