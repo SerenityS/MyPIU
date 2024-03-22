@@ -154,8 +154,15 @@ List<RecentlyPlayData> parseRecentlyPlayData(String html) {
 
     if (level1.contains("u_num_x")) {
       // Hack for UCS chart
+      String type = recentlyData
+          .getElementsByClassName("stepBall_in flex vc col hc wrap bgfix cont")
+          .first
+          .attributes['style']!
+          .getFileNameExtension()
+          .replaceAll("bg", "text");
+
       level1 = "https://piugame.com/l_img/stepball/full/u_num_0.png";
-      level2 = "https://piugame.com/l_img/stepball/full/u_num_${ChartType.fromString(chartType).index}.png";
+      level2 = "https://piugame.com/l_img/stepball/full/u_num_${ChartType.fromString(type).index}.png";
 
       chartType = "https://piugame.com/l_img/stepball/full/u_text.png";
     } else if (level1.contains("c_icon")) {
