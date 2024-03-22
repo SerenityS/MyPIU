@@ -4,9 +4,9 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:piu_util/app/config/routes/route_path.dart';
 
-import 'package:piu_util/presentation/home/controller/home_controller.dart';
+import 'package:piu_util/presentation/home/view_models/home_view_model.dart';
 
-class HomePage extends GetView<HomeController> {
+class HomePage extends GetView<HomeViewModel> {
   const HomePage({super.key});
 
   @override
