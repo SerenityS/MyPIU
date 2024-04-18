@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:piu_util/app/config/routes/route_path.dart';
-import 'package:piu_util/domain/enum/term_type.dart';
 
 import '../view_models/setting_view_model.dart';
 
@@ -15,8 +14,6 @@ class SettingPage extends GetView<SettingViewModel> {
       appBar: AppBar(title: const Text('설정')),
       body: Column(
         children: [
-          ListTile(title: const Text('서비스 이용 약관'), onTap: () => Get.toNamed(RoutePath.term, arguments: TermType.termOfUse)),
-          ListTile(title: const Text('개인정보 처리방침'), onTap: () => Get.toNamed(RoutePath.term, arguments: TermType.privacyPolicy)),
           ListTile(title: const Text('로그아웃'), onTap: () async => await controller.logout()),
           ListTile(title: const Text('Open Source Licences'), onTap: () => Get.toNamed(RoutePath.licences)),
           ListTile(title: Obx(() => Text('App Version : ${controller.appVersion}'))),

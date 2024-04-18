@@ -14,7 +14,7 @@ class SettingViewModel extends GetxController {
     super.onInit();
 
     PackageInfo packageInfo = await PackageInfo.fromPlatform();
-    appVersion.value = packageInfo.version;
+    appVersion.value = '${packageInfo.version}(${packageInfo.buildNumber})';
   }
 
   Future<void> logout() async {
