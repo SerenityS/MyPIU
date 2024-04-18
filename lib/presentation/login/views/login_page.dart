@@ -83,8 +83,6 @@ class LoginPage extends GetView<LoginViewModel> {
   }
 
   Future<void> _login() async {
-    if (await controller.login()) {
-      Get.offAllNamed("${RoutePath.home}?index=$drawerIndex");
-    }
+    await controller.login();
   }
 }
