@@ -1,7 +1,7 @@
 name: piu_util
 description: "A new Flutter project."
 publish_to: "none"
-version: 1.0.0+3
+version: 1.0.0+4
 
 environment:
   sdk: ">=3.3.0 <4.0.0"
@@ -14,7 +14,6 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_debouncer: ^2.0.0
-  flutter_markdown: ^0.6.21
   flutter_screenutil: ^5.9.0
   flutter_secure_storage: ^9.0.0
   flutter_svg: ^2.0.10+1
@@ -51,7 +50,6 @@ flutter:
     - assets/json/
     - assets/plate/
     - assets/step_ball/
-    - assets/term/
     - shorebird.yaml
 
   fonts:

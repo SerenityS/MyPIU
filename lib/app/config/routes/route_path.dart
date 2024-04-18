@@ -8,5 +8,4 @@ class RoutePath {
   // Setting
   static const String setting = '/setting';
   static const String licences = '/osl';
-  static const String term = '/term';
 }
