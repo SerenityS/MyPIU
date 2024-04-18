@@ -47,7 +47,11 @@ class LoginViewModel extends GetxController {
   Future<bool> _getCredential() async {
     try {
       _credendtial = await _authDataSource.getCredential();
-      return true;
+      if (_credendtial != null) {
+        return true;
+      } else {
+        return false;
+      }
     } catch (e) {
       if (kDebugMode) print(e.toString());
       return false;
