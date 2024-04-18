@@ -33,11 +33,9 @@ class PlayDataService extends GetxService {
   }
 
   void getClearDataFromLocal() {
-    final List<ChartData>? clearData = _playDataSource.getClearData();
+    final List<ChartData> clearData = _playDataSource.getClearData();
 
-    if (clearData != null) {
-      clearDataList.assignAll(clearData);
-    }
+    clearDataList.assignAll(clearData);
   }
 
   Future<void> setLevelData(int level) async {
