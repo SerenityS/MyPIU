@@ -28,25 +28,25 @@
         "jacketFileName": "ba1cf709de84af438c6697c1587528b3.png"
     },
     {
-        "title": "아발란치",
-        "level": 3,
-        "artist": "맴매",
-        "chartType": "CO-OP",
-        "jacketFileName": "c55b5035aa594ffa59dd1a99aef918c8.png"
-    },
-    {
-        "title": "알레그로 퓨리오소",
-        "level": 3,
-        "artist": "DM ashura",
-        "chartType": "CO-OP",
-        "jacketFileName": "e8c609ca4151ca2df88a1d78a762db84.png"
-    },
-    {
         "title": "제로아이즈",
         "level": 3,
         "artist": "FE",
         "chartType": "CO-OP",
         "jacketFileName": "50c4cc1811cead8b175df061b10e6307.png"
+    },
+    {
+        "title": "클레마티스 랩소디아",
+        "level": 3,
+        "artist": "Jehezukiel",
+        "chartType": "CO-OP",
+        "jacketFileName": "bacaf08069b985635db3eebb443d133e.png"
+    },
+    {
+        "title": "아발란치",
+        "level": 3,
+        "artist": "맴매",
+        "chartType": "CO-OP",
+        "jacketFileName": "c55b5035aa594ffa59dd1a99aef918c8.png"
     },
     {
         "title": "요그 소토스",
@@ -56,18 +56,18 @@
         "jacketFileName": "bc54e47a51c88d61e1132c40cce0f714.png"
     },
     {
+        "title": "알레그로 퓨리오소",
+        "level": 3,
+        "artist": "DM ashura",
+        "chartType": "CO-OP",
+        "jacketFileName": "e8c609ca4151ca2df88a1d78a762db84.png"
+    },
+    {
         "title": "테이크 아웃",
         "level": 3,
         "artist": "SHK",
         "chartType": "CO-OP",
         "jacketFileName": "8eb6a7d9798400553892511bf913409a.png"
-    },
-    {
-        "title": "클레마티스 랩소디아",
-        "level": 3,
-        "artist": "Jehezukiel",
-        "chartType": "CO-OP",
-        "jacketFileName": "bacaf08069b985635db3eebb443d133e.png"
     },
     {
         "title": "인피니티",
@@ -98,13 +98,6 @@
         "jacketFileName": "407e597c70954fc0925b41cd905ca913.png"
     },
     {
-        "title": "차이니즈 레스토랑",
-        "level": 3,
-        "artist": "맴매",
-        "chartType": "CO-OP",
-        "jacketFileName": "03770c96fbed570ae8b855c094c0c774.png"
-    },
-    {
         "title": "에프 에프 에프",
         "level": 3,
         "artist": "도인",
@@ -117,5 +110,12 @@
         "artist": "맥스",
         "chartType": "CO-OP",
         "jacketFileName": "0b75dc7c2243277815afefc46a62a135.png"
+    },
+    {
+        "title": "차이니즈 레스토랑",
+        "level": 3,
+        "artist": "맴매",
+        "chartType": "CO-OP",
+        "jacketFileName": "03770c96fbed570ae8b855c094c0c774.png"
     }
 ]

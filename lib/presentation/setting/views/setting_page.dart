@@ -20,7 +20,7 @@ class SettingPage extends GetView<SettingViewModel> {
           ListTile(title: const Text('로그아웃'), onTap: () async => await controller.logout()),
           ListTile(title: const Text('Open Source Licences'), onTap: () => Get.toNamed(RoutePath.licences)),
           ListTile(title: Obx(() => Text('App Version : ${controller.appVersion}'))),
-          ListTile(title: Text('PIU Asset Version : ${controller.assetVersion}')),
+          ListTile(title: Text('PIU Asset Version : v${controller.assetVersion}')),
           const Spacer(),
           _buildFooter(),
         ],

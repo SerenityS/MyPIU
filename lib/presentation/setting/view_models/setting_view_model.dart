@@ -7,7 +7,7 @@ import 'package:piu_util/domain/usecases/auth_usecases.dart';
 
 class SettingViewModel extends GetxController {
   final RxString appVersion = "1.0.0".obs;
-  final RxString assetVersion = "1.07.0".obs;
+  final RxString assetVersion = "1.08.0".obs;
 
   @override
   void onInit() async {

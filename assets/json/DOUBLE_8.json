@@ -7,18 +7,18 @@
         "jacketFileName": "01c8c790b7233abcb0633362378439db.png"
     },
     {
-        "title": "비행기",
-        "level": 8,
-        "artist": "타이푼",
-        "chartType": "DOUBLE",
-        "jacketFileName": "2b68ab56a7ed2f08faccf852ffad7d90.png"
-    },
-    {
         "title": "파이렛",
         "level": 8,
         "artist": "에버글로우",
         "chartType": "DOUBLE",
         "jacketFileName": "a563e0cec403d9e1a26e759dfc16b530.png"
+    },
+    {
+        "title": "비행기",
+        "level": 8,
+        "artist": "타이푼",
+        "chartType": "DOUBLE",
+        "jacketFileName": "2b68ab56a7ed2f08faccf852ffad7d90.png"
     },
     {
         "title": "라스트 리버스",
@@ -56,13 +56,6 @@
         "jacketFileName": "7cbdd1bf58895fef006dc66f71bc77e0.png"
     },
     {
-        "title": "하우스플랜",
-        "level": 8,
-        "artist": "하우스플랜",
-        "chartType": "DOUBLE",
-        "jacketFileName": "ae87cac425d722b861faa8cf8ab2eefd.png"
-    },
-    {
         "title": "포세이돈",
         "level": 8,
         "artist": "큐리",
@@ -77,18 +70,11 @@
         "jacketFileName": "b5beafaf692bb3cd6049f491b0a65038.png"
     },
     {
-        "title": "실버 비트 feat. ChisaUezono",
+        "title": "하우스플랜",
         "level": 8,
-        "artist": "Tatsh",
+        "artist": "하우스플랜",
         "chartType": "DOUBLE",
-        "jacketFileName": "c4b69bc29223fecd215299e13986bb08.png"
-    },
-    {
-        "title": "라라",
-        "level": 8,
-        "artist": "야시 프레스먼",
-        "chartType": "DOUBLE",
-        "jacketFileName": "9dccb5b56aff18745238b883d32a4863.png"
+        "jacketFileName": "ae87cac425d722b861faa8cf8ab2eefd.png"
     },
     {
         "title": "아스테리오스 -리엔트리-",
@@ -105,6 +91,20 @@
         "jacketFileName": "0a20adcd20b664ab3dda36ee2ebbc7b3.png"
     },
     {
+        "title": "라라",
+        "level": 8,
+        "artist": "야시 프레스먼",
+        "chartType": "DOUBLE",
+        "jacketFileName": "9dccb5b56aff18745238b883d32a4863.png"
+    },
+    {
+        "title": "실버 비트 feat. ChisaUezono",
+        "level": 8,
+        "artist": "Tatsh",
+        "chartType": "DOUBLE",
+        "jacketFileName": "c4b69bc29223fecd215299e13986bb08.png"
+    },
+    {
         "title": "히글디 피글디",
         "level": 8,
         "artist": "반야 프로덕션",
@@ -119,17 +119,17 @@
         "jacketFileName": "74f9476994a46831b01fe5f541a09ae3.png"
     },
     {
-        "title": "올 아이 원트 포 크리스마스",
-        "level": 8,
-        "artist": "반야",
-        "chartType": "DOUBLE",
-        "jacketFileName": "c4d160485b1e9ff216e0c45879d4356e.png"
-    },
-    {
         "title": "몽키 핑거즈 2",
         "level": 8,
         "artist": "반야 프로덕션",
         "chartType": "DOUBLE",
         "jacketFileName": "96998dae2671abc97f62fb04b1d5089a.png"
+    },
+    {
+        "title": "올 아이 원트 포 크리스마스",
+        "level": 8,
+        "artist": "반야",
+        "chartType": "DOUBLE",
+        "jacketFileName": "c4d160485b1e9ff216e0c45879d4356e.png"
     }
 ]
