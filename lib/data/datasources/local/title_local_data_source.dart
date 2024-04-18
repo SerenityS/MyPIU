@@ -4,7 +4,7 @@ import 'package:hive/hive.dart';
 import 'package:piu_util/domain/entities/title_data.dart';
 
 class TitleLocalDataSource {
-  final box = Hive.box('title');
+  final box = Hive.box('myData');
   final String _titleDataKey = 'title';
 
   Future<void> deleteTitleData() async {

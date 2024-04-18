@@ -4,7 +4,7 @@ import 'package:hive/hive.dart';
 import 'package:piu_util/domain/entities/avatar_data.dart';
 
 class AvatarDataLocalDataSource {
-  final box = Hive.box('avatar');
+  final box = Hive.box('myData');
   final String _key = 'avatar';
 
   Future<void> deleteAvatarData() async {

@@ -17,10 +17,8 @@ void main() async {
 }
 
 Future<void> _initializeHive() async {
-  Hive.init((await getApplicationDocumentsDirectory()).path);
-  await Hive.openBox('avatar');
-  await Hive.openBox('play_data');
-  await Hive.openBox('title');
+  Hive.init("${(await getApplicationDocumentsDirectory()).path}/hive");
+  await Hive.openBox('myData');
 }
 
 class MainApp extends StatelessWidget {

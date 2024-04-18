@@ -20,8 +20,14 @@ class SettingViewModel extends GetxController {
   Future<void> logout() async {
     await Get.find<AuthUseCases>().logout.execute();
     await AuthLocalDataSource().deleteCredential();
-    await Hive.deleteFromDisk();
+    await _clearBox();
 
     Get.offAllNamed(RoutePath.login);
+  }
+
+  Future<void> _clearBox() async {
+    final box = await Hive.openBox('myData');
+
+    await box.deleteAll(['avatar', 'title', 'clear_data']);
   }
 }
