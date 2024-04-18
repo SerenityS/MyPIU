@@ -14,25 +14,11 @@
         "jacketFileName": "3b2ade8e4cd4ba29e8c151a0c7db6df9.png"
     },
     {
-        "title": "비행기",
-        "level": 1,
-        "artist": "타이푼",
-        "chartType": "SINGLE",
-        "jacketFileName": "2b68ab56a7ed2f08faccf852ffad7d90.png"
-    },
-    {
         "title": "배드 애플!! feat. Nomico",
         "level": 1,
         "artist": "Masayoshi Minoshima",
         "chartType": "SINGLE",
         "jacketFileName": "1b9bf0daa47f8400f9781d6dcadd8fe1.png"
-    },
-    {
-        "title": "설탕음모론",
-        "level": 1,
-        "artist": "맥스",
-        "chartType": "SINGLE",
-        "jacketFileName": "5c597482986398f97fd91d5890727258.png"
     },
     {
         "title": "키티 캣",
@@ -42,6 +28,20 @@
         "jacketFileName": "15e31c739f5afd63b119c3622231df17.png"
     },
     {
+        "title": "비행기",
+        "level": 1,
+        "artist": "타이푼",
+        "chartType": "SINGLE",
+        "jacketFileName": "2b68ab56a7ed2f08faccf852ffad7d90.png"
+    },
+    {
+        "title": "설탕음모론",
+        "level": 1,
+        "artist": "맥스",
+        "chartType": "SINGLE",
+        "jacketFileName": "5c597482986398f97fd91d5890727258.png"
+    },
+    {
         "title": "레이디버그",
         "level": 1,
         "artist": "Coconut",
@@ -49,18 +49,18 @@
         "jacketFileName": "a643f4d4a57a5de83e10b93b2cde79df.png"
     },
     {
-        "title": "여래아",
-        "level": 1,
-        "artist": "시드사운드",
-        "chartType": "SINGLE",
-        "jacketFileName": "1fbb103bbc7d1a94d6e994b27c2e6b9a.png"
-    },
-    {
         "title": "유 앤 아이",
         "level": 1,
         "artist": "드림캐쳐",
         "chartType": "SINGLE",
         "jacketFileName": "348076ff6d242d366c6d8240e538b454.png"
+    },
+    {
+        "title": "여래아",
+        "level": 1,
+        "artist": "시드사운드",
+        "chartType": "SINGLE",
+        "jacketFileName": "1fbb103bbc7d1a94d6e994b27c2e6b9a.png"
     },
     {
         "title": "날아올라",
@@ -91,11 +91,11 @@
         "jacketFileName": "ecf79c1e42b93ee432951987eb08b108.png"
     },
     {
-        "title": "라라",
+        "title": "위 갓 투 노우",
         "level": 1,
-        "artist": "야시 프레스먼",
+        "artist": "맥스",
         "chartType": "SINGLE",
-        "jacketFileName": "9dccb5b56aff18745238b883d32a4863.png"
+        "jacketFileName": "0b75dc7c2243277815afefc46a62a135.png"
     },
     {
         "title": "아마이 유우와쿠 데인저러스",
@@ -105,11 +105,11 @@
         "jacketFileName": "944b44536234a97d16db0c83a1f2bf4f.png"
     },
     {
-        "title": "위 갓 투 노우",
+        "title": "라라",
         "level": 1,
-        "artist": "맥스",
+        "artist": "야시 프레스먼",
         "chartType": "SINGLE",
-        "jacketFileName": "0b75dc7c2243277815afefc46a62a135.png"
+        "jacketFileName": "9dccb5b56aff18745238b883d32a4863.png"
     },
     {
         "title": "케이.오.에이 : 엘리스 인 원더월드",

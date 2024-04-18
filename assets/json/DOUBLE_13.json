@@ -21,18 +21,18 @@
         "jacketFileName": "fb3c26fc1004eb33d79ec9315fc52c76.png"
     },
     {
-        "title": "터키 행진곡",
-        "level": 13,
-        "artist": "반야",
-        "chartType": "DOUBLE",
-        "jacketFileName": "bd2572d5335b73e10db212d3298d6b0d.png"
-    },
-    {
         "title": "소서리스 엘리제",
         "level": 13,
         "artist": "이 얍",
         "chartType": "DOUBLE",
         "jacketFileName": "d1adf67c62182095df53a3172835d167.png"
+    },
+    {
+        "title": "터키 행진곡",
+        "level": 13,
+        "artist": "반야",
+        "chartType": "DOUBLE",
+        "jacketFileName": "bd2572d5335b73e10db212d3298d6b0d.png"
     },
     {
         "title": "사이먼 세이즈, 유로댄스!! (feat. Sara☆M)",
@@ -42,13 +42,6 @@
         "jacketFileName": "ecc05e7a2615a2a2770e4a8c5487eb4c.png"
     },
     {
-        "title": "시",
-        "level": 13,
-        "artist": "Doin",
-        "chartType": "DOUBLE",
-        "jacketFileName": "2e0daf0c0eb3b5a188a20eb0a7dd1581.png"
-    },
-    {
         "title": "추격",
         "level": 13,
         "artist": "MAX",
@@ -56,11 +49,11 @@
         "jacketFileName": "584749a3cecd3f4b5714df28cd502d14.png"
     },
     {
-        "title": "에너지 시너지 매트릭스",
+        "title": "시",
         "level": 13,
-        "artist": "Tanchiky",
+        "artist": "Doin",
         "chartType": "DOUBLE",
-        "jacketFileName": "9a9a1a662444b7305346e031dad8be2e.png"
+        "jacketFileName": "2e0daf0c0eb3b5a188a20eb0a7dd1581.png"
     },
     {
         "title": "웨딩 크래셔",
@@ -75,6 +68,13 @@
         "artist": "SHK",
         "chartType": "DOUBLE",
         "jacketFileName": "6175376a00ff0d561bab24934e04b782.png"
+    },
+    {
+        "title": "에너지 시너지 매트릭스",
+        "level": 13,
+        "artist": "Tanchiky",
+        "chartType": "DOUBLE",
+        "jacketFileName": "9a9a1a662444b7305346e031dad8be2e.png"
     },
     {
         "title": "굿바운스",
@@ -105,11 +105,11 @@
         "jacketFileName": "f89ff0cf996937d690d7ebb7502e6c1e.png"
     },
     {
-        "title": "트로피카닉",
+        "title": "팔랑크스 \"RS2018 edit\"",
         "level": 13,
-        "artist": "SHK",
+        "artist": "Cranky",
         "chartType": "DOUBLE",
-        "jacketFileName": "7599c6b45fc18dacacbd7fa710e1fbbe.png"
+        "jacketFileName": "67d5f6eb534fb64e4488c0be06321192.png"
     },
     {
         "title": "탄탄멘",
@@ -119,11 +119,18 @@
         "jacketFileName": "ba1cf709de84af438c6697c1587528b3.png"
     },
     {
-        "title": "팔랑크스 \"RS2018 edit\"",
+        "title": "터키 행진곡 -미니멀튠즈-",
         "level": 13,
-        "artist": "Cranky",
+        "artist": "반야 프로덕션",
         "chartType": "DOUBLE",
-        "jacketFileName": "67d5f6eb534fb64e4488c0be06321192.png"
+        "jacketFileName": "86929efcc575a3267f8a9a1a100bce41.png"
+    },
+    {
+        "title": "리펜턴스",
+        "level": 13,
+        "artist": "Abel",
+        "chartType": "DOUBLE",
+        "jacketFileName": "93d5647e7b2b3cdb2b3a04d06f996851.png"
     },
     {
         "title": "배니쉬",
@@ -133,11 +140,25 @@
         "jacketFileName": "f0fb91b69e6f6e88bd53b7a7a3826932.png"
     },
     {
+        "title": "트로피카닉",
+        "level": 13,
+        "artist": "SHK",
+        "chartType": "DOUBLE",
+        "jacketFileName": "7599c6b45fc18dacacbd7fa710e1fbbe.png"
+    },
+    {
         "title": "BS파워 익스플로전",
         "level": 13,
         "artist": "맴매",
         "chartType": "DOUBLE",
         "jacketFileName": "cc1bd7cd214a4171cf6fc4d8613cefff.png"
+    },
+    {
+        "title": "킵 온!",
+        "level": 13,
+        "artist": "아마모리P",
+        "chartType": "DOUBLE",
+        "jacketFileName": "b659ce406e801cbc6f5fd42933eadb06.png"
     },
     {
         "title": "라이크 미",
@@ -154,39 +175,11 @@
         "jacketFileName": "cb4ad7cf62655b7d2907ade4d781873f.png"
     },
     {
-        "title": "터키 행진곡 -미니멀튠즈-",
+        "title": "고딕 레조넌스",
         "level": 13,
-        "artist": "반야 프로덕션",
+        "artist": "P4Koo",
         "chartType": "DOUBLE",
-        "jacketFileName": "86929efcc575a3267f8a9a1a100bce41.png"
-    },
-    {
-        "title": "킵 온!",
-        "level": 13,
-        "artist": "아마모리P",
-        "chartType": "DOUBLE",
-        "jacketFileName": "b659ce406e801cbc6f5fd42933eadb06.png"
-    },
-    {
-        "title": "바로크 바이러스",
-        "level": 13,
-        "artist": "Zircon",
-        "chartType": "DOUBLE",
-        "jacketFileName": "03117abfba4446abc16998e2a564c2d2.png"
-    },
-    {
-        "title": "스타더스트 오버드라이브",
-        "level": 13,
-        "artist": "typeMARS",
-        "chartType": "DOUBLE",
-        "jacketFileName": "b9be99d658d2ab83f12a236a1b3246bb.png"
-    },
-    {
-        "title": "아발란치",
-        "level": 13,
-        "artist": "맴매",
-        "chartType": "DOUBLE",
-        "jacketFileName": "c55b5035aa594ffa59dd1a99aef918c8.png"
+        "jacketFileName": "4b41820a1ce03c6b9ef1c6942772f649.png"
     },
     {
         "title": "브로큰 카르마 (PIU EDIT)",
@@ -196,11 +189,18 @@
         "jacketFileName": "183930ddd25cd0fd1da322d1584a6291.png"
     },
     {
-        "title": "하트 래빗 코스터",
+        "title": "클레마티스 랩소디아",
         "level": 13,
-        "artist": "나토",
+        "artist": "Jehezukiel",
         "chartType": "DOUBLE",
-        "jacketFileName": "21f8ea50ea39ae9649ef630448e5a2d4.png"
+        "jacketFileName": "bacaf08069b985635db3eebb443d133e.png"
+    },
+    {
+        "title": "바로크 바이러스",
+        "level": 13,
+        "artist": "Zircon",
+        "chartType": "DOUBLE",
+        "jacketFileName": "03117abfba4446abc16998e2a564c2d2.png"
     },
     {
         "title": "아마겟돈",
@@ -210,34 +210,6 @@
         "jacketFileName": "18c413bbfa40cc13fdc9ea1e3b2aa3c6.png"
     },
     {
-        "title": "듀얼 레이싱 <레드 vs 블루>",
-        "level": 13,
-        "artist": "나토 & r300k",
-        "chartType": "DOUBLE",
-        "jacketFileName": "1d812ea69df93cf3d64758b5d6fb7cb3.png"
-    },
-    {
-        "title": "테이크 아웃",
-        "level": 13,
-        "artist": "SHK",
-        "chartType": "DOUBLE",
-        "jacketFileName": "8eb6a7d9798400553892511bf913409a.png"
-    },
-    {
-        "title": "리펜턴스",
-        "level": 13,
-        "artist": "Abel",
-        "chartType": "DOUBLE",
-        "jacketFileName": "93d5647e7b2b3cdb2b3a04d06f996851.png"
-    },
-    {
-        "title": "클레마티스 랩소디아",
-        "level": 13,
-        "artist": "Jehezukiel",
-        "chartType": "DOUBLE",
-        "jacketFileName": "bacaf08069b985635db3eebb443d133e.png"
-    },
-    {
         "title": "캉-캉 ~Orpheus in The Party Mix~ - SHORT CUT -",
         "level": 13,
         "artist": "Sr. Lan Belmont",
@@ -245,46 +217,18 @@
         "jacketFileName": "c664995fa9793c4b659d8f813360df72.png"
     },
     {
-        "title": "라그나로크",
+        "title": "아발란치",
         "level": 13,
-        "artist": "SynthWulf",
+        "artist": "맴매",
         "chartType": "DOUBLE",
-        "jacketFileName": "8f68503d1f4d0a971f1878657386936f.png"
+        "jacketFileName": "c55b5035aa594ffa59dd1a99aef918c8.png"
     },
     {
-        "title": "고딕 레조넌스",
+        "title": "하트 래빗 코스터",
         "level": 13,
-        "artist": "P4Koo",
+        "artist": "나토",
         "chartType": "DOUBLE",
-        "jacketFileName": "4b41820a1ce03c6b9ef1c6942772f649.png"
-    },
-    {
-        "title": "까르멘 버스",
-        "level": 13,
-        "artist": "스태틱스피어 & 복어수산",
-        "chartType": "DOUBLE",
-        "jacketFileName": "b5116f40bd20cdd585b9a565cfac71a5.png"
-    },
-    {
-        "title": "엑시던트",
-        "level": 13,
-        "artist": "맥스",
-        "chartType": "DOUBLE",
-        "jacketFileName": "93ba37833bdfc219d57c11f2ed277a16.png"
-    },
-    {
-        "title": "HTTP",
-        "level": 13,
-        "artist": "Quree",
-        "chartType": "DOUBLE",
-        "jacketFileName": "a33e5f54f2789ce8eacfab76da16e2fd.png"
-    },
-    {
-        "title": "슬랩스틱 파르페",
-        "level": 13,
-        "artist": "t+pazolite",
-        "chartType": "DOUBLE",
-        "jacketFileName": "82967750fa217abeeea65af61e86b44d.png"
+        "jacketFileName": "21f8ea50ea39ae9649ef630448e5a2d4.png"
     },
     {
         "title": "퍼센트 엑스",
@@ -294,11 +238,39 @@
         "jacketFileName": "8f26809e182d6eb9719a61749baec84e.png"
     },
     {
-        "title": "텔링 포츈 플라워",
+        "title": "트래블 투 퓨처",
         "level": 13,
-        "artist": "Koharu feat. Renyata",
+        "artist": "뉴트럴 문",
         "chartType": "DOUBLE",
-        "jacketFileName": "212d24f35ebb3de53f5deb6cd6625d31.png"
+        "jacketFileName": "57f487c23ba8dffe5a54db83e550e041.png"
+    },
+    {
+        "title": "까르멘 버스",
+        "level": 13,
+        "artist": "스태틱스피어 & 복어수산",
+        "chartType": "DOUBLE",
+        "jacketFileName": "b5116f40bd20cdd585b9a565cfac71a5.png"
+    },
+    {
+        "title": "테이크 아웃",
+        "level": 13,
+        "artist": "SHK",
+        "chartType": "DOUBLE",
+        "jacketFileName": "8eb6a7d9798400553892511bf913409a.png"
+    },
+    {
+        "title": "HTTP",
+        "level": 13,
+        "artist": "Quree",
+        "chartType": "DOUBLE",
+        "jacketFileName": "a33e5f54f2789ce8eacfab76da16e2fd.png"
+    },
+    {
+        "title": "듀얼 레이싱 <레드 vs 블루>",
+        "level": 13,
+        "artist": "나토 & r300k",
+        "chartType": "DOUBLE",
+        "jacketFileName": "1d812ea69df93cf3d64758b5d6fb7cb3.png"
     },
     {
         "title": "팝 시퀀스",
@@ -308,13 +280,6 @@
         "jacketFileName": "517829f70e7dfddf25a974289134e8e5.png"
     },
     {
-        "title": "트래블 투 퓨처",
-        "level": 13,
-        "artist": "뉴트럴 문",
-        "chartType": "DOUBLE",
-        "jacketFileName": "57f487c23ba8dffe5a54db83e550e041.png"
-    },
-    {
         "title": "트란사칼리아",
         "level": 13,
         "artist": "ATAS ",
@@ -322,18 +287,18 @@
         "jacketFileName": "6ab64a47eb8f394982c46a09a416c160.png"
     },
     {
-        "title": "금혼식",
+        "title": "텔링 포츈 플라워",
         "level": 13,
-        "artist": "포리",
+        "artist": "Koharu feat. Renyata",
         "chartType": "DOUBLE",
-        "jacketFileName": "d988b4007f854cb5291f4a92473f913b.png"
+        "jacketFileName": "212d24f35ebb3de53f5deb6cd6625d31.png"
     },
     {
-        "title": "레드 스노우",
+        "title": "스타더스트 오버드라이브",
         "level": 13,
-        "artist": "Cashew",
+        "artist": "typeMARS",
         "chartType": "DOUBLE",
-        "jacketFileName": "c985f90bafd86a343799244bd18aa7dc.png"
+        "jacketFileName": "b9be99d658d2ab83f12a236a1b3246bb.png"
     },
     {
         "title": "갓 모드 2.0 feat. Skizzo",
@@ -350,74 +315,18 @@
         "jacketFileName": "d4bb20e7de499f9e5c8f10e491d3d618.png"
     },
     {
-        "title": "조나단의 꿈",
+        "title": "라그나로크",
         "level": 13,
-        "artist": "MAX&Seorryang\n(시드사운드)",
+        "artist": "SynthWulf",
         "chartType": "DOUBLE",
-        "jacketFileName": "ce8898e456b78ee4e1fd7ec6001f80a1.png"
+        "jacketFileName": "8f68503d1f4d0a971f1878657386936f.png"
     },
     {
-        "title": "유토피아",
+        "title": "슬랩스틱 파르페",
         "level": 13,
-        "artist": "Smiley",
+        "artist": "t+pazolite",
         "chartType": "DOUBLE",
-        "jacketFileName": "00843a3856bebbb34316d9c8368e23a1.png"
-    },
-    {
-        "title": "암피트리온",
-        "level": 13,
-        "artist": "잰틀 스틱",
-        "chartType": "DOUBLE",
-        "jacketFileName": "ea4a9955ef2ed1d32563b13d6e8bb9ec.png"
-    },
-    {
-        "title": "실버 비트 feat. ChisaUezono",
-        "level": 13,
-        "artist": "Tatsh",
-        "chartType": "DOUBLE",
-        "jacketFileName": "c4b69bc29223fecd215299e13986bb08.png"
-    },
-    {
-        "title": "실루엣 이펙트",
-        "level": 13,
-        "artist": "나토",
-        "chartType": "DOUBLE",
-        "jacketFileName": "58172b80e511a4f0a773426c18fb4024.png"
-    },
-    {
-        "title": "롤링 크리스마스",
-        "level": 13,
-        "artist": "반야",
-        "chartType": "DOUBLE",
-        "jacketFileName": "744e973eeccd43765eb616bb0cad04e6.png"
-    },
-    {
-        "title": "프라임",
-        "level": 13,
-        "artist": "Tatsh",
-        "chartType": "DOUBLE",
-        "jacketFileName": "b884420c531d98a83a9746e76cd31fa2.png"
-    },
-    {
-        "title": "스타트 온 레드",
-        "level": 13,
-        "artist": "나토",
-        "chartType": "DOUBLE",
-        "jacketFileName": "b0f85d845e869d6613f2c08147cea3e6.png"
-    },
-    {
-        "title": "일 더하기 일은 귀요미",
-        "level": 13,
-        "artist": "맴매",
-        "chartType": "DOUBLE",
-        "jacketFileName": "407e597c70954fc0925b41cd905ca913.png"
-    },
-    {
-        "title": "라티노 바이러스",
-        "level": 13,
-        "artist": "와락",
-        "chartType": "DOUBLE",
-        "jacketFileName": "82b8851ec236ce7f02f70b6ead1d66d9.png"
+        "jacketFileName": "82967750fa217abeeea65af61e86b44d.png"
     },
     {
         "title": "어웨이크닝",
@@ -427,25 +336,67 @@
         "jacketFileName": "4fd85c9ac5726a4dda88c2a75d1f548f.png"
     },
     {
+        "title": "조나단의 꿈",
+        "level": 13,
+        "artist": "MAX&Seorryang\n(시드사운드)",
+        "chartType": "DOUBLE",
+        "jacketFileName": "ce8898e456b78ee4e1fd7ec6001f80a1.png"
+    },
+    {
+        "title": "암피트리온",
+        "level": 13,
+        "artist": "잰틀 스틱",
+        "chartType": "DOUBLE",
+        "jacketFileName": "ea4a9955ef2ed1d32563b13d6e8bb9ec.png"
+    },
+    {
+        "title": "레드 스노우",
+        "level": 13,
+        "artist": "Cashew",
+        "chartType": "DOUBLE",
+        "jacketFileName": "c985f90bafd86a343799244bd18aa7dc.png"
+    },
+    {
+        "title": "롤링 크리스마스",
+        "level": 13,
+        "artist": "반야",
+        "chartType": "DOUBLE",
+        "jacketFileName": "744e973eeccd43765eb616bb0cad04e6.png"
+    },
+    {
+        "title": "유토피아",
+        "level": 13,
+        "artist": "Smiley",
+        "chartType": "DOUBLE",
+        "jacketFileName": "00843a3856bebbb34316d9c8368e23a1.png"
+    },
+    {
+        "title": "금혼식",
+        "level": 13,
+        "artist": "포리",
+        "chartType": "DOUBLE",
+        "jacketFileName": "d988b4007f854cb5291f4a92473f913b.png"
+    },
+    {
+        "title": "일 더하기 일은 귀요미",
+        "level": 13,
+        "artist": "맴매",
+        "chartType": "DOUBLE",
+        "jacketFileName": "407e597c70954fc0925b41cd905ca913.png"
+    },
+    {
+        "title": "스타트 온 레드",
+        "level": 13,
+        "artist": "나토",
+        "chartType": "DOUBLE",
+        "jacketFileName": "b0f85d845e869d6613f2c08147cea3e6.png"
+    },
+    {
         "title": "윈터 - SHORT CUT -",
         "level": 13,
         "artist": "반야",
         "chartType": "DOUBLE",
         "jacketFileName": "c2fbab1440c3502c8426cf95bafc4a31.png"
-    },
-    {
-        "title": "마카롱 데이",
-        "level": 13,
-        "artist": "HyuN",
-        "chartType": "DOUBLE",
-        "jacketFileName": "e58e8e7f757dd4ca7acaf7bc61116aee.png"
-    },
-    {
-        "title": "브레이크 잇 다운",
-        "level": 13,
-        "artist": "MAZO",
-        "chartType": "DOUBLE",
-        "jacketFileName": "f4690ef2656e96e8f37386b19177e115.png"
     },
     {
         "title": "매지컬 베케이션",
@@ -455,6 +406,34 @@
         "jacketFileName": "fe8814659b155fa6a9d534fceee56b2c.png"
     },
     {
+        "title": "라티노 바이러스",
+        "level": 13,
+        "artist": "와락",
+        "chartType": "DOUBLE",
+        "jacketFileName": "82b8851ec236ce7f02f70b6ead1d66d9.png"
+    },
+    {
+        "title": "엑시던트",
+        "level": 13,
+        "artist": "맥스",
+        "chartType": "DOUBLE",
+        "jacketFileName": "93ba37833bdfc219d57c11f2ed277a16.png"
+    },
+    {
+        "title": "프라임",
+        "level": 13,
+        "artist": "Tatsh",
+        "chartType": "DOUBLE",
+        "jacketFileName": "b884420c531d98a83a9746e76cd31fa2.png"
+    },
+    {
+        "title": "실루엣 이펙트",
+        "level": 13,
+        "artist": "나토",
+        "chartType": "DOUBLE",
+        "jacketFileName": "58172b80e511a4f0a773426c18fb4024.png"
+    },
+    {
         "title": "인터퍼런스",
         "level": 13,
         "artist": "도인",
@@ -462,25 +441,11 @@
         "jacketFileName": "445271f28c01b02fcffac895764c8343.png"
     },
     {
-        "title": "웨딩 크래셔 - SHORT CUT -",
+        "title": "브레이크 잇 다운",
         "level": 13,
-        "artist": "SHK",
+        "artist": "MAZO",
         "chartType": "DOUBLE",
-        "jacketFileName": "69082c45f8bed5d3bc6a8ce0623f3f19.png"
-    },
-    {
-        "title": "엑스 레이브",
-        "level": 13,
-        "artist": "DM Ashura",
-        "chartType": "DOUBLE",
-        "jacketFileName": "8494a140a5d0651b691651c094035683.png"
-    },
-    {
-        "title": "밀키 웨이 갤럭시",
-        "level": 13,
-        "artist": "3R2",
-        "chartType": "DOUBLE",
-        "jacketFileName": "5d47efb1d9b683b3f9c8c34c0af66ef1.png"
+        "jacketFileName": "f4690ef2656e96e8f37386b19177e115.png"
     },
     {
         "title": "제네시스",
@@ -490,11 +455,46 @@
         "jacketFileName": "e8310f71e1b97f5a7ffba97c2405e6eb.png"
     },
     {
+        "title": "밀키 웨이 갤럭시",
+        "level": 13,
+        "artist": "3R2",
+        "chartType": "DOUBLE",
+        "jacketFileName": "5d47efb1d9b683b3f9c8c34c0af66ef1.png"
+    },
+    {
+        "title": "실버 비트 feat. ChisaUezono",
+        "level": 13,
+        "artist": "Tatsh",
+        "chartType": "DOUBLE",
+        "jacketFileName": "c4b69bc29223fecd215299e13986bb08.png"
+    },
+    {
+        "title": "엑스 레이브",
+        "level": 13,
+        "artist": "DM Ashura",
+        "chartType": "DOUBLE",
+        "jacketFileName": "8494a140a5d0651b691651c094035683.png"
+    },
+    {
+        "title": "마카롱 데이",
+        "level": 13,
+        "artist": "HyuN",
+        "chartType": "DOUBLE",
+        "jacketFileName": "e58e8e7f757dd4ca7acaf7bc61116aee.png"
+    },
+    {
         "title": "오이 오이 오이",
         "level": 13,
         "artist": "반야",
         "chartType": "DOUBLE",
         "jacketFileName": "60c5799f17e8e3a1cd91174926174a61.png"
+    },
+    {
+        "title": "웨딩 크래셔 - SHORT CUT -",
+        "level": 13,
+        "artist": "SHK",
+        "chartType": "DOUBLE",
+        "jacketFileName": "69082c45f8bed5d3bc6a8ce0623f3f19.png"
     },
     {
         "title": "B2",

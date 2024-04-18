@@ -7,11 +7,11 @@
         "jacketFileName": "9dd85a37a95d4e05f0c2c86e4471d8af.png"
     },
     {
-        "title": "스타더스트 오버드라이브",
+        "title": "유 갓 미 락킹",
         "level": 5,
-        "artist": "typeMARS",
+        "artist": "맥스",
         "chartType": "DOUBLE",
-        "jacketFileName": "b9be99d658d2ab83f12a236a1b3246bb.png"
+        "jacketFileName": "91fa9215b387af5e20b5384200c591b5.png"
     },
     {
         "title": "포가튼 뱀파이어",
@@ -21,11 +21,11 @@
         "jacketFileName": "07eef7f1a5338abedaeb031a0d8ee876.png"
     },
     {
-        "title": "유 갓 미 락킹",
+        "title": "스타더스트 오버드라이브",
         "level": 5,
-        "artist": "맥스",
+        "artist": "typeMARS",
         "chartType": "DOUBLE",
-        "jacketFileName": "91fa9215b387af5e20b5384200c591b5.png"
+        "jacketFileName": "b9be99d658d2ab83f12a236a1b3246bb.png"
     },
     {
         "title": "요로피쿠 피쿠요로 !",
@@ -35,18 +35,18 @@
         "jacketFileName": "a3f59503b1c4eae7f27fe2ba8ca405af.png"
     },
     {
-        "title": "롤링 크리스마스",
-        "level": 5,
-        "artist": "반야",
-        "chartType": "DOUBLE",
-        "jacketFileName": "744e973eeccd43765eb616bb0cad04e6.png"
-    },
-    {
         "title": "유 갓 미 크레이지",
         "level": 5,
         "artist": "맥스",
         "chartType": "DOUBLE",
         "jacketFileName": "e8badaf7cb0e179bb555c5db98dc5abb.png"
+    },
+    {
+        "title": "롤링 크리스마스",
+        "level": 5,
+        "artist": "반야",
+        "chartType": "DOUBLE",
+        "jacketFileName": "744e973eeccd43765eb616bb0cad04e6.png"
     },
     {
         "title": "브레이크 잇 다운",

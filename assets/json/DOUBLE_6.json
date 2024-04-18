@@ -49,13 +49,6 @@
         "jacketFileName": "7599c6b45fc18dacacbd7fa710e1fbbe.png"
     },
     {
-        "title": "리얼리티",
-        "level": 6,
-        "artist": "SHK",
-        "chartType": "DOUBLE",
-        "jacketFileName": "a2c8a74650ac15de9f85570e013cff72.png"
-    },
-    {
         "title": "필 마이 해피니스",
         "level": 6,
         "artist": "3R2",
@@ -63,11 +56,11 @@
         "jacketFileName": "70863cab2c4dde4b17a9efe9c124cc30.png"
     },
     {
-        "title": "아이 원트 유",
+        "title": "리얼리티",
         "level": 6,
-        "artist": "맥스",
+        "artist": "SHK",
         "chartType": "DOUBLE",
-        "jacketFileName": "d56f4754be78f6287098ec4f3c71f593.png"
+        "jacketFileName": "a2c8a74650ac15de9f85570e013cff72.png"
     },
     {
         "title": "유 어게인 마이 러브",
@@ -75,6 +68,13 @@
         "artist": "CYO Style & Henohenomoheji",
         "chartType": "DOUBLE",
         "jacketFileName": "9ce34fa1e500db4be8577c4f445a7843.png"
+    },
+    {
+        "title": "아이 원트 유",
+        "level": 6,
+        "artist": "맥스",
+        "chartType": "DOUBLE",
+        "jacketFileName": "d56f4754be78f6287098ec4f3c71f593.png"
     },
     {
         "title": "리무버블 디스코",

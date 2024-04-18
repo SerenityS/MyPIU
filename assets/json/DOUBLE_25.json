@@ -7,11 +7,11 @@
         "jacketFileName": "584749a3cecd3f4b5714df28cd502d14.png"
     },
     {
-        "title": "트릭크래쉬 220",
+        "title": "가고일 - FULL SONG -",
         "level": 25,
-        "artist": "Lite Show Magic",
+        "artist": "Sanxion7",
         "chartType": "DOUBLE",
-        "jacketFileName": "81c807da9ac1fd29e74ab8a510976789.png"
+        "jacketFileName": "9e54f9ac19a9725e63a85bad034b662d.png"
     },
     {
         "title": "모페모페",
@@ -28,11 +28,18 @@
         "jacketFileName": "dde154d8a721c5d510b71c788d0b8673.png"
     },
     {
-        "title": "가고일 - FULL SONG -",
+        "title": "얼티메이텀",
         "level": 25,
-        "artist": "Sanxion7",
+        "artist": "코스모그래프",
         "chartType": "DOUBLE",
-        "jacketFileName": "9e54f9ac19a9725e63a85bad034b662d.png"
+        "jacketFileName": "54a6474ee494e9b1748e1edd3affee0b.png"
+    },
+    {
+        "title": "트릭크래쉬 220",
+        "level": 25,
+        "artist": "Lite Show Magic",
+        "chartType": "DOUBLE",
+        "jacketFileName": "81c807da9ac1fd29e74ab8a510976789.png"
     },
     {
         "title": "꼭두각시",
@@ -42,11 +49,18 @@
         "jacketFileName": "6b61fae3e35139975deb1199f1ad550a.png"
     },
     {
-        "title": "얼티메이텀",
+        "title": "진공",
         "level": 25,
-        "artist": "코스모그래프",
+        "artist": "도인",
         "chartType": "DOUBLE",
-        "jacketFileName": "54a6474ee494e9b1748e1edd3affee0b.png"
+        "jacketFileName": "fe92678270d73a1a7aa2c68fc058ba3f.png"
+    },
+    {
+        "title": "쥬핀",
+        "level": 25,
+        "artist": "Sobrem",
+        "chartType": "DOUBLE",
+        "jacketFileName": "9f561790e1f3df1f1174b87f0d78b9d6.png"
     },
     {
         "title": "푸파",
@@ -63,39 +77,11 @@
         "jacketFileName": "711e60a1b06997e72dde2024731aebdf.png"
     },
     {
-        "title": "쥬핀",
-        "level": 25,
-        "artist": "Sobrem",
-        "chartType": "DOUBLE",
-        "jacketFileName": "9f561790e1f3df1f1174b87f0d78b9d6.png"
-    },
-    {
-        "title": "프렌드",
-        "level": 25,
-        "artist": "D_AAN",
-        "chartType": "DOUBLE",
-        "jacketFileName": "341db42d98d602ee2e3da10c068cacda.png"
-    },
-    {
-        "title": "진공",
-        "level": 25,
-        "artist": "도인",
-        "chartType": "DOUBLE",
-        "jacketFileName": "fe92678270d73a1a7aa2c68fc058ba3f.png"
-    },
-    {
         "title": "글로리아",
         "level": 25,
         "artist": "Croire",
         "chartType": "DOUBLE",
         "jacketFileName": "582c4b074703ed2e43d6e53030bdb8e6.png"
-    },
-    {
-        "title": "스켑틱",
-        "level": 25,
-        "artist": "도인",
-        "chartType": "DOUBLE",
-        "jacketFileName": "cfd902c46c5004527c92d5e229edcc42.png"
     },
     {
         "title": "Re：엔드 오브 어 드림",
@@ -105,67 +91,11 @@
         "jacketFileName": "cc5d57d60b17c46dee91b575faecd855.png"
     },
     {
-        "title": "이그니스 패터스(DM Ashura 믹스)",
+        "title": "프렌드",
         "level": 25,
-        "artist": "반야 & DM Ashura",
+        "artist": "D_AAN",
         "chartType": "DOUBLE",
-        "jacketFileName": "eceb8a4cdce908dd6ef8851eb74883bf.png"
-    },
-    {
-        "title": "데사파레세르",
-        "level": 25,
-        "artist": "애플소다 vs 맥스",
-        "chartType": "DOUBLE",
-        "jacketFileName": "c177544632f0d6d1f18bb4ccb672df2c.png"
-    },
-    {
-        "title": "아발란치",
-        "level": 25,
-        "artist": "맴매",
-        "chartType": "DOUBLE",
-        "jacketFileName": "c55b5035aa594ffa59dd1a99aef918c8.png"
-    },
-    {
-        "title": "1950",
-        "level": 25,
-        "artist": "슬램",
-        "chartType": "DOUBLE",
-        "jacketFileName": "fba81856a34b5447cd12dc4aaf87d37a.png"
-    },
-    {
-        "title": "하트 래빗 코스터",
-        "level": 25,
-        "artist": "나토",
-        "chartType": "DOUBLE",
-        "jacketFileName": "21f8ea50ea39ae9649ef630448e5a2d4.png"
-    },
-    {
-        "title": "퍼더",
-        "level": 25,
-        "artist": "도인",
-        "chartType": "DOUBLE",
-        "jacketFileName": "1f171915dd8d2dabd558f070fa77f419.png"
-    },
-    {
-        "title": "저스트 홀드 온 (To All Fighters)",
-        "level": 25,
-        "artist": "void",
-        "chartType": "DOUBLE",
-        "jacketFileName": "a5cdeb1b546d6bbd592dd202c3a79345.png"
-    },
-    {
-        "title": "제로아이즈",
-        "level": 25,
-        "artist": "FE",
-        "chartType": "DOUBLE",
-        "jacketFileName": "50c4cc1811cead8b175df061b10e6307.png"
-    },
-    {
-        "title": "요그 소토스",
-        "level": 25,
-        "artist": "나토",
-        "chartType": "DOUBLE",
-        "jacketFileName": "bc54e47a51c88d61e1132c40cce0f714.png"
+        "jacketFileName": "341db42d98d602ee2e3da10c068cacda.png"
     },
     {
         "title": "인디스트럭터블",
@@ -175,25 +105,32 @@
         "jacketFileName": "ae21644e1e271575dfd9a423bb808eef.png"
     },
     {
-        "title": "니알라토텝",
-        "level": 25,
-        "artist": "나토",
-        "chartType": "DOUBLE",
-        "jacketFileName": "3f02cf4ddbf100d3656ce0d334f63e6f.png"
-    },
-    {
-        "title": "캉-캉 ~Orpheus in The Party Mix~ - SHORT CUT -",
-        "level": 25,
-        "artist": "Sr. Lan Belmont",
-        "chartType": "DOUBLE",
-        "jacketFileName": "c664995fa9793c4b659d8f813360df72.png"
-    },
-    {
-        "title": "클리너",
+        "title": "스켑틱",
         "level": 25,
         "artist": "도인",
         "chartType": "DOUBLE",
-        "jacketFileName": "e6ac757c38d1d589c25b3461bb8438d5.png"
+        "jacketFileName": "cfd902c46c5004527c92d5e229edcc42.png"
+    },
+    {
+        "title": "제로아이즈",
+        "level": 25,
+        "artist": "FE",
+        "chartType": "DOUBLE",
+        "jacketFileName": "50c4cc1811cead8b175df061b10e6307.png"
+    },
+    {
+        "title": "1950",
+        "level": 25,
+        "artist": "슬램",
+        "chartType": "DOUBLE",
+        "jacketFileName": "fba81856a34b5447cd12dc4aaf87d37a.png"
+    },
+    {
+        "title": "퍼더",
+        "level": 25,
+        "artist": "도인",
+        "chartType": "DOUBLE",
+        "jacketFileName": "1f171915dd8d2dabd558f070fa77f419.png"
     },
     {
         "title": "패러독스",
@@ -203,11 +140,67 @@
         "jacketFileName": "2da8be03841200479a4c23e8b60aeb70.png"
     },
     {
-        "title": "윌 오 더 위스프",
+        "title": "캉-캉 ~Orpheus in The Party Mix~ - SHORT CUT -",
         "level": 25,
-        "artist": "반야",
+        "artist": "Sr. Lan Belmont",
         "chartType": "DOUBLE",
-        "jacketFileName": "409db0768e50412b588b23311f0b7cb4.png"
+        "jacketFileName": "c664995fa9793c4b659d8f813360df72.png"
+    },
+    {
+        "title": "니알라토텝",
+        "level": 25,
+        "artist": "나토",
+        "chartType": "DOUBLE",
+        "jacketFileName": "3f02cf4ddbf100d3656ce0d334f63e6f.png"
+    },
+    {
+        "title": "아발란치",
+        "level": 25,
+        "artist": "맴매",
+        "chartType": "DOUBLE",
+        "jacketFileName": "c55b5035aa594ffa59dd1a99aef918c8.png"
+    },
+    {
+        "title": "데사파레세르",
+        "level": 25,
+        "artist": "애플소다 vs 맥스",
+        "chartType": "DOUBLE",
+        "jacketFileName": "c177544632f0d6d1f18bb4ccb672df2c.png"
+    },
+    {
+        "title": "하트 래빗 코스터",
+        "level": 25,
+        "artist": "나토",
+        "chartType": "DOUBLE",
+        "jacketFileName": "21f8ea50ea39ae9649ef630448e5a2d4.png"
+    },
+    {
+        "title": "요그 소토스",
+        "level": 25,
+        "artist": "나토",
+        "chartType": "DOUBLE",
+        "jacketFileName": "bc54e47a51c88d61e1132c40cce0f714.png"
+    },
+    {
+        "title": "클리너",
+        "level": 25,
+        "artist": "도인",
+        "chartType": "DOUBLE",
+        "jacketFileName": "e6ac757c38d1d589c25b3461bb8438d5.png"
+    },
+    {
+        "title": "저스트 홀드 온 (To All Fighters)",
+        "level": 25,
+        "artist": "void",
+        "chartType": "DOUBLE",
+        "jacketFileName": "a5cdeb1b546d6bbd592dd202c3a79345.png"
+    },
+    {
+        "title": "이그니스 패터스(DM Ashura 믹스)",
+        "level": 25,
+        "artist": "반야 & DM Ashura",
+        "chartType": "DOUBLE",
+        "jacketFileName": "eceb8a4cdce908dd6ef8851eb74883bf.png"
     },
     {
         "title": "알레그로 콘 뿌오코 - FULL SONG -",
@@ -217,11 +210,11 @@
         "jacketFileName": "ecf5b60d92bfd65eb7ad32d69bfa7bdc.png"
     },
     {
-        "title": "파이어 누들 챌린지",
+        "title": "윌 오 더 위스프",
         "level": 25,
-        "artist": "맴매",
+        "artist": "반야",
         "chartType": "DOUBLE",
-        "jacketFileName": "8fbb4702a5c6be65e7dfb7635af4ec6d.png"
+        "jacketFileName": "409db0768e50412b588b23311f0b7cb4.png"
     },
     {
         "title": "아발란퀴엠",
@@ -229,6 +222,13 @@
         "artist": "맥스 & 맴매",
         "chartType": "DOUBLE",
         "jacketFileName": "9684b814e944dad64b6f07c81300820c.png"
+    },
+    {
+        "title": "파이어 누들 챌린지",
+        "level": 25,
+        "artist": "맴매",
+        "chartType": "DOUBLE",
+        "jacketFileName": "8fbb4702a5c6be65e7dfb7635af4ec6d.png"
     },
     {
         "title": "체이스 미 - FULL SONG -",
@@ -243,5 +243,12 @@
         "artist": "반야 프로덕션",
         "chartType": "DOUBLE",
         "jacketFileName": "2f1b7f10374f115180df7d41f2fe0971.png"
+    },
+    {
+        "title": "솔페지에토",
+        "level": 25,
+        "artist": "Fiverwater",
+        "chartType": "DOUBLE",
+        "jacketFileName": "89ad08817eede5a099583987e96d64b3.png"
     }
 ]

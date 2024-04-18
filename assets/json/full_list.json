@@ -18706,5 +18706,192 @@
                 "type": "DOUBLE"
             }
         ]
+    },
+    "루시드 드림": {
+        "jacketFileName": "bd82e2ff6db9c6e4ba585760cb5a94f7.png",
+        "title": "루시드 드림",
+        "artist": "Cosmograph",
+        "stepList": [
+            {
+                "level": 8,
+                "type": "SINGLE"
+            },
+            {
+                "level": 13,
+                "type": "SINGLE"
+            },
+            {
+                "level": 19,
+                "type": "SINGLE"
+            },
+            {
+                "level": 21,
+                "type": "SINGLE"
+            },
+            {
+                "level": 14,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 20,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 22,
+                "type": "DOUBLE"
+            }
+        ]
+    },
+    "솔페지에토": {
+        "jacketFileName": "89ad08817eede5a099583987e96d64b3.png",
+        "title": "솔페지에토",
+        "artist": "Fiverwater",
+        "stepList": [
+            {
+                "level": 9,
+                "type": "SINGLE"
+            },
+            {
+                "level": 15,
+                "type": "SINGLE"
+            },
+            {
+                "level": 19,
+                "type": "SINGLE"
+            },
+            {
+                "level": 21,
+                "type": "SINGLE"
+            },
+            {
+                "level": 22,
+                "type": "SINGLE"
+            },
+            {
+                "level": 11,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 16,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 20,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 23,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 25,
+                "type": "DOUBLE"
+            }
+        ]
+    },
+    "피가로의 결혼 ~Celebrazione Remix~": {
+        "jacketFileName": "8d28848f0527248cbfc7456233242c92.png",
+        "title": "피가로의 결혼 ~Celebrazione Remix~",
+        "artist": "Sr. Lan Belmont",
+        "stepList": [
+            {
+                "level": 9,
+                "type": "SINGLE"
+            },
+            {
+                "level": 13,
+                "type": "SINGLE"
+            },
+            {
+                "level": 17,
+                "type": "SINGLE"
+            },
+            {
+                "level": 20,
+                "type": "SINGLE"
+            },
+            {
+                "level": 14,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 18,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 21,
+                "type": "DOUBLE"
+            }
+        ]
+    },
+    "프ㄹi마 마테ㄹi아": {
+        "jacketFileName": "d9ca9ba14be1f8d7bc007bfcae6f19a1.png",
+        "title": "프ㄹi마 마테ㄹi아",
+        "artist": "xi",
+        "stepList": [
+            {
+                "level": 14,
+                "type": "SINGLE"
+            },
+            {
+                "level": 18,
+                "type": "SINGLE"
+            },
+            {
+                "level": 21,
+                "type": "SINGLE"
+            },
+            {
+                "level": 24,
+                "type": "SINGLE"
+            },
+            {
+                "level": 17,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 24,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 26,
+                "type": "DOUBLE"
+            }
+        ]
+    },
+    "디스트로0ㅣ어": {
+        "jacketFileName": "1cdf3c4a70abd903f51f0f9e969830ee.png",
+        "title": "디스트로0ㅣ어",
+        "artist": "sakuzyo",
+        "stepList": [
+            {
+                "level": 7,
+                "type": "SINGLE"
+            },
+            {
+                "level": 13,
+                "type": "SINGLE"
+            },
+            {
+                "level": 18,
+                "type": "SINGLE"
+            },
+            {
+                "level": 22,
+                "type": "SINGLE"
+            },
+            {
+                "level": 15,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 20,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 24,
+                "type": "DOUBLE"
+            }
+        ]
     }
 }

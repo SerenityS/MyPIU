@@ -7,18 +7,18 @@
         "jacketFileName": "14cd5d7a3df1f12b82bccec2faea2705.png"
     },
     {
-        "title": "꼭두각시",
-        "level": 25,
-        "artist": "onoken",
-        "chartType": "SINGLE",
-        "jacketFileName": "6b61fae3e35139975deb1199f1ad550a.png"
-    },
-    {
         "title": "얼티메이텀",
         "level": 25,
         "artist": "코스모그래프",
         "chartType": "SINGLE",
         "jacketFileName": "54a6474ee494e9b1748e1edd3affee0b.png"
+    },
+    {
+        "title": "꼭두각시",
+        "level": 25,
+        "artist": "onoken",
+        "chartType": "SINGLE",
+        "jacketFileName": "6b61fae3e35139975deb1199f1ad550a.png"
     },
     {
         "title": "1950",
@@ -42,17 +42,17 @@
         "jacketFileName": "8228790cbf25eafb814aa724adabd93e.png"
     },
     {
-        "title": "진공 청소기",
-        "level": 25,
-        "artist": "도인",
-        "chartType": "SINGLE",
-        "jacketFileName": "5bd3e6508c6ef691a52d8e12149c4b93.png"
-    },
-    {
         "title": "하늘다람쥐",
         "level": 25,
         "artist": "도인",
         "chartType": "SINGLE",
         "jacketFileName": "7abbf7a6be02f94ec16598a3b841a139.png"
+    },
+    {
+        "title": "진공 청소기",
+        "level": 25,
+        "artist": "도인",
+        "chartType": "SINGLE",
+        "jacketFileName": "5bd3e6508c6ef691a52d8e12149c4b93.png"
     }
 ]

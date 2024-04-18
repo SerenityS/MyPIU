@@ -7,6 +7,13 @@
         "jacketFileName": "21f8ea50ea39ae9649ef630448e5a2d4.png"
     },
     {
+        "title": "멘탈 라이더",
+        "level": 4,
+        "artist": "SQUAR",
+        "chartType": "CO-OP",
+        "jacketFileName": "1ebb047f3cf0901df3bdf4731a8db7d4.png"
+    },
+    {
         "title": "배드 애플!! feat. Nomico - FULL SONG -",
         "level": 4,
         "artist": "Masayoshi Minoshima",
@@ -19,12 +26,5 @@
         "artist": "Hi-G",
         "chartType": "CO-OP",
         "jacketFileName": "4669bfb9682c12e24b3b7ad032166b69.png"
-    },
-    {
-        "title": "멘탈 라이더",
-        "level": 4,
-        "artist": "SQUAR",
-        "chartType": "CO-OP",
-        "jacketFileName": "1ebb047f3cf0901df3bdf4731a8db7d4.png"
     }
 ]

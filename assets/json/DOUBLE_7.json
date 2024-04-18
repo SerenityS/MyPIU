@@ -49,11 +49,11 @@
         "jacketFileName": "2ac7c8a9c0c3f4d9039c5389a5909f1a.png"
     },
     {
-        "title": "마타도르",
+        "title": "트란사칼리아",
         "level": 7,
-        "artist": "Cranky",
+        "artist": "ATAS ",
         "chartType": "DOUBLE",
-        "jacketFileName": "2e57f224899a9644cda9632c7795f915.png"
+        "jacketFileName": "6ab64a47eb8f394982c46a09a416c160.png"
     },
     {
         "title": "사월",
@@ -63,18 +63,11 @@
         "jacketFileName": "96f3949597bf4514833e1408efed0ad5.png"
     },
     {
-        "title": "트란사칼리아",
+        "title": "마타도르",
         "level": 7,
-        "artist": "ATAS ",
+        "artist": "Cranky",
         "chartType": "DOUBLE",
-        "jacketFileName": "6ab64a47eb8f394982c46a09a416c160.png"
-    },
-    {
-        "title": "까랴위사따",
-        "level": 7,
-        "artist": "Vesuvia x REDSHiFT",
-        "chartType": "DOUBLE",
-        "jacketFileName": "f947459c1bbe1598870853502bf147d6.png"
+        "jacketFileName": "2e57f224899a9644cda9632c7795f915.png"
     },
     {
         "title": "매지컬 베케이션",
@@ -89,6 +82,13 @@
         "artist": "맥스",
         "chartType": "DOUBLE",
         "jacketFileName": "0b75dc7c2243277815afefc46a62a135.png"
+    },
+    {
+        "title": "까랴위사따",
+        "level": 7,
+        "artist": "Vesuvia x REDSHiFT",
+        "chartType": "DOUBLE",
+        "jacketFileName": "f947459c1bbe1598870853502bf147d6.png"
     },
     {
         "title": "허쉬",
