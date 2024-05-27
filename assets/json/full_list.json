@@ -18893,5 +18893,498 @@
                 "type": "DOUBLE"
             }
         ]
+    },
+    "크러쉬": {
+        "jacketFileName": "9bc09f5b3630ecbfdb72ae72460e4d40.png",
+        "title": "크러쉬",
+        "artist": "제로베이스원",
+        "stepList": [
+            {
+                "level": 2,
+                "type": "SINGLE"
+            },
+            {
+                "level": 4,
+                "type": "SINGLE"
+            },
+            {
+                "level": 7,
+                "type": "SINGLE"
+            },
+            {
+                "level": 10,
+                "type": "SINGLE"
+            },
+            {
+                "level": 14,
+                "type": "SINGLE"
+            },
+            {
+                "level": 17,
+                "type": "SINGLE"
+            },
+            {
+                "level": 20,
+                "type": "SINGLE"
+            },
+            {
+                "level": 12,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 16,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 19,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 22,
+                "type": "DOUBLE"
+            }
+        ]
+    },
+    "버블": {
+        "jacketFileName": "9b71130dbd5410cfb920d6a7fa4e0615.png",
+        "title": "버블",
+        "artist": "스테이씨",
+        "stepList": [
+            {
+                "level": 2,
+                "type": "SINGLE"
+            },
+            {
+                "level": 4,
+                "type": "SINGLE"
+            },
+            {
+                "level": 6,
+                "type": "SINGLE"
+            },
+            {
+                "level": 9,
+                "type": "SINGLE"
+            },
+            {
+                "level": 13,
+                "type": "SINGLE"
+            },
+            {
+                "level": 16,
+                "type": "SINGLE"
+            },
+            {
+                "level": 19,
+                "type": "SINGLE"
+            },
+            {
+                "level": 21,
+                "type": "SINGLE"
+            },
+            {
+                "level": 10,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 14,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 17,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 20,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 22,
+                "type": "DOUBLE"
+            }
+        ]
+    },
+    "퀸카": {
+        "jacketFileName": "eb729c74a7b424a6598e6a18b5025346.png",
+        "title": "퀸카",
+        "artist": "(여자)아이들",
+        "stepList": [
+            {
+                "level": 3,
+                "type": "SINGLE"
+            },
+            {
+                "level": 5,
+                "type": "SINGLE"
+            },
+            {
+                "level": 9,
+                "type": "SINGLE"
+            },
+            {
+                "level": 15,
+                "type": "SINGLE"
+            },
+            {
+                "level": 18,
+                "type": "SINGLE"
+            },
+            {
+                "level": 20,
+                "type": "SINGLE"
+            },
+            {
+                "level": 16,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 18,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 20,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 22,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 2,
+                "type": "CO-OP"
+            }
+        ]
+    },
+    "임페리움": {
+        "jacketFileName": "b874f35ca304ff22c3ed2ed6c5a9f8ba.png",
+        "title": "임페리움",
+        "artist": "sakuzyo",
+        "stepList": [
+            {
+                "level": 10,
+                "type": "SINGLE"
+            },
+            {
+                "level": 14,
+                "type": "SINGLE"
+            },
+            {
+                "level": 18,
+                "type": "SINGLE"
+            },
+            {
+                "level": 22,
+                "type": "SINGLE"
+            },
+            {
+                "level": 16,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 20,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 23,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 25,
+                "type": "DOUBLE"
+            }
+        ]
+    },
+    "헤라클레스": {
+        "jacketFileName": "81ffa563de8fddbafbaf8f84afa94263.png",
+        "title": "헤라클레스",
+        "artist": "Abel",
+        "stepList": [
+            {
+                "level": 14,
+                "type": "SINGLE"
+            },
+            {
+                "level": 19,
+                "type": "SINGLE"
+            },
+            {
+                "level": 22,
+                "type": "SINGLE"
+            },
+            {
+                "level": 24,
+                "type": "SINGLE"
+            },
+            {
+                "level": 15,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 20,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 24,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 26,
+                "type": "DOUBLE"
+            }
+        ]
+    },
+    "위더가든": {
+        "jacketFileName": "a65ed99146745b6bb879e92af66517fb.png",
+        "title": "위더 가든",
+        "artist": "uma feat. Kanon Tachibana",
+        "stepList": [
+            {
+                "level": 4,
+                "type": "SINGLE"
+            },
+            {
+                "level": 7,
+                "type": "SINGLE"
+            },
+            {
+                "level": 11,
+                "type": "SINGLE"
+            },
+            {
+                "level": 14,
+                "type": "SINGLE"
+            },
+            {
+                "level": 17,
+                "type": "SINGLE"
+            },
+            {
+                "level": 20,
+                "type": "SINGLE"
+            },
+            {
+                "level": 13,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 18,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 22,
+                "type": "DOUBLE"
+            }
+        ]
+    },
+    "팝핀 샤워": {
+        "jacketFileName": "431c7a7f2602972ebb99569a64f05c2b.png",
+        "title": "팝핀 샤워",
+        "artist": "P*Light",
+        "stepList": [
+            {
+                "level": 12,
+                "type": "SINGLE"
+            },
+            {
+                "level": 15,
+                "type": "SINGLE"
+            },
+            {
+                "level": 18,
+                "type": "SINGLE"
+            },
+            {
+                "level": 21,
+                "type": "SINGLE"
+            },
+            {
+                "level": 15,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 19,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 22,
+                "type": "DOUBLE"
+            }
+        ]
+    },
+    "지젤": {
+        "jacketFileName": "e75b6128293b5d17ca73a45d243d0a27.png",
+        "title": "지젤",
+        "artist": "Sobrem a.k.a. Widowmaker",
+        "stepList": [
+            {
+                "level": 12,
+                "type": "SINGLE"
+            },
+            {
+                "level": 16,
+                "type": "SINGLE"
+            },
+            {
+                "level": 18,
+                "type": "SINGLE"
+            },
+            {
+                "level": 20,
+                "type": "SINGLE"
+            },
+            {
+                "level": 22,
+                "type": "SINGLE"
+            },
+            {
+                "level": 14,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 20,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 22,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 24,
+                "type": "DOUBLE"
+            }
+        ]
+    },
+    "빅대디": {
+        "jacketFileName": "3e3f713ed842b5e1efb9bb8e7c0d1a4d.png",
+        "title": "빅 대디",
+        "artist": "USAO",
+        "stepList": [
+            {
+                "level": 11,
+                "type": "SINGLE"
+            },
+            {
+                "level": 14,
+                "type": "SINGLE"
+            },
+            {
+                "level": 16,
+                "type": "SINGLE"
+            },
+            {
+                "level": 19,
+                "type": "SINGLE"
+            },
+            {
+                "level": 21,
+                "type": "SINGLE"
+            },
+            {
+                "level": 17,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 20,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 23,
+                "type": "DOUBLE"
+            }
+        ]
+    },
+    "호랑풍류가": {
+        "jacketFileName": "ff5e51e70c41cfb7d92c5ee7a7f4dd9c.png",
+        "title": "호랑풍류가",
+        "artist": "상록수 feat. 하나나",
+        "stepList": [
+            {
+                "level": 4,
+                "type": "SINGLE"
+            },
+            {
+                "level": 7,
+                "type": "SINGLE"
+            },
+            {
+                "level": 12,
+                "type": "SINGLE"
+            },
+            {
+                "level": 16,
+                "type": "SINGLE"
+            },
+            {
+                "level": 19,
+                "type": "SINGLE"
+            },
+            {
+                "level": 21,
+                "type": "SINGLE"
+            },
+            {
+                "level": 12,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 16,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 21,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 24,
+                "type": "DOUBLE"
+            }
+        ]
+    },
+    "컨플릭트": {
+        "jacketFileName": "9cfb61d5d762f490df901dc25a06db3f.png",
+        "title": "컨플릭트",
+        "artist": "Siromaru + Cranky",
+        "stepList": [
+            {
+                "level": 6,
+                "type": "SINGLE"
+            },
+            {
+                "level": 11,
+                "type": "SINGLE"
+            },
+            {
+                "level": 15,
+                "type": "SINGLE"
+            },
+            {
+                "level": 17,
+                "type": "SINGLE"
+            },
+            {
+                "level": 19,
+                "type": "SINGLE"
+            },
+            {
+                "level": 22,
+                "type": "SINGLE"
+            },
+            {
+                "level": 12,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 21,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 25,
+                "type": "DOUBLE"
+            },
+            {
+                "level": 2,
+                "type": "CO-OP"
+            }
+        ]
     }
 }

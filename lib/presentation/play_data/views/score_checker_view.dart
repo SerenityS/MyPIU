@@ -85,11 +85,12 @@ class _FilterHeader extends GetView<ScoreCheckerViewModel> {
                   contentPadding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 8.w),
                   filled: true,
                   fillColor: AppColor.input,
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(8.r), borderSide: const BorderSide(color: AppColor.error)),
+                  border:
+                      OutlineInputBorder(borderRadius: BorderRadius.circular(8.r), borderSide: const BorderSide(color: Colors.lightBlue)),
                   enabledBorder:
-                      OutlineInputBorder(borderRadius: BorderRadius.circular(8.r), borderSide: const BorderSide(color: AppColor.error)),
+                      OutlineInputBorder(borderRadius: BorderRadius.circular(8.r), borderSide: const BorderSide(color: Colors.lightBlue)),
                   focusedBorder:
-                      OutlineInputBorder(borderRadius: BorderRadius.circular(8.r), borderSide: const BorderSide(color: AppColor.error)),
+                      OutlineInputBorder(borderRadius: BorderRadius.circular(8.r), borderSide: const BorderSide(color: Colors.lightBlue)),
                   hintText: "0",
                   hintStyle: const TextStyle(fontSize: 15, color: Colors.grey),
                   prefix: Text("Lv. ", style: TextStyle(fontSize: 14.sp, fontFamily: 'Oxanium')),

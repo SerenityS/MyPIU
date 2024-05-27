@@ -1,5 +1,12 @@
 [
     {
+        "title": "프ㄹi마 마테ㄹi아",
+        "level": 26,
+        "artist": "xi",
+        "chartType": "DOUBLE",
+        "jacketFileName": "d9ca9ba14be1f8d7bc007bfcae6f19a1.png"
+    },
+    {
         "title": "이렐리아",
         "level": 26,
         "artist": "HyuN",
@@ -21,18 +28,18 @@
         "jacketFileName": "268d0e5526dc475ccf8ca90a60fcae68.png"
     },
     {
-        "title": "디멘트 ~에프터 레전드~",
-        "level": 26,
-        "artist": "루나틱 사운즈",
-        "chartType": "DOUBLE",
-        "jacketFileName": "fd482baf3748bc4b5e74b4d5cd800819.png"
-    },
-    {
         "title": "키메라",
         "level": 26,
         "artist": "이 얍",
         "chartType": "DOUBLE",
         "jacketFileName": "29515cbcd2bb2db30c23ed5228cdf93d.png"
+    },
+    {
+        "title": "디멘트 ~에프터 레전드~",
+        "level": 26,
+        "artist": "루나틱 사운즈",
+        "chartType": "DOUBLE",
+        "jacketFileName": "fd482baf3748bc4b5e74b4d5cd800819.png"
     },
     {
         "title": "이스케이프",
@@ -49,13 +56,6 @@
         "jacketFileName": "e6f6dc0021c7ff7a8a5bfbbf1d1795f6.png"
     },
     {
-        "title": "카오스 어게인",
-        "level": 26,
-        "artist": "NAOKI underground -Ω-",
-        "chartType": "DOUBLE",
-        "jacketFileName": "df2bb22858f58b4cf088ce1866854f2d.png"
-    },
-    {
         "title": "아클루오이아스",
         "level": 26,
         "artist": "D_AAN",
@@ -63,11 +63,11 @@
         "jacketFileName": "08b06c0759e9193b9cb7cfb9ee2a67a6.png"
     },
     {
-        "title": "리펜턴스",
+        "title": "카오스 어게인",
         "level": 26,
-        "artist": "Abel",
+        "artist": "NAOKI underground -Ω-",
         "chartType": "DOUBLE",
-        "jacketFileName": "93d5647e7b2b3cdb2b3a04d06f996851.png"
+        "jacketFileName": "df2bb22858f58b4cf088ce1866854f2d.png"
     },
     {
         "title": "1949",
@@ -82,6 +82,13 @@
         "artist": "나토",
         "chartType": "DOUBLE",
         "jacketFileName": "1f724c66b21c31dd9c8999b2cdd04f6d.png"
+    },
+    {
+        "title": "리펜턴스",
+        "level": 26,
+        "artist": "Abel",
+        "chartType": "DOUBLE",
+        "jacketFileName": "93d5647e7b2b3cdb2b3a04d06f996851.png"
     },
     {
         "title": "클리너",
@@ -105,13 +112,6 @@
         "jacketFileName": "2975834a1fbb299395252e9f1691851c.png"
     },
     {
-        "title": "텔링 포츈 플라워",
-        "level": 26,
-        "artist": "Koharu feat. Renyata",
-        "chartType": "DOUBLE",
-        "jacketFileName": "212d24f35ebb3de53f5deb6cd6625d31.png"
-    },
-    {
         "title": "프라임 타임",
         "level": 26,
         "artist": "Cashew",
@@ -119,11 +119,25 @@
         "jacketFileName": "6a9b52dad811828ecba1f4f5d3e6abfe.png"
     },
     {
+        "title": "텔링 포츈 플라워",
+        "level": 26,
+        "artist": "Koharu feat. Renyata",
+        "chartType": "DOUBLE",
+        "jacketFileName": "212d24f35ebb3de53f5deb6cd6625d31.png"
+    },
+    {
         "title": "비메라",
         "level": 26,
         "artist": "이 얍",
         "chartType": "DOUBLE",
         "jacketFileName": "d47a7126d4fdb1969c576f377b8fb480.png"
+    },
+    {
+        "title": "진공 청소기",
+        "level": 26,
+        "artist": "도인",
+        "chartType": "DOUBLE",
+        "jacketFileName": "5bd3e6508c6ef691a52d8e12149c4b93.png"
     },
     {
         "title": "리더",
@@ -140,17 +154,10 @@
         "jacketFileName": "7abbf7a6be02f94ec16598a3b841a139.png"
     },
     {
-        "title": "진공 청소기",
+        "title": "헤라클레스",
         "level": 26,
-        "artist": "도인",
+        "artist": "Abel",
         "chartType": "DOUBLE",
-        "jacketFileName": "5bd3e6508c6ef691a52d8e12149c4b93.png"
-    },
-    {
-        "title": "프ㄹi마 마테ㄹi아",
-        "level": 26,
-        "artist": "xi",
-        "chartType": "DOUBLE",
-        "jacketFileName": "d9ca9ba14be1f8d7bc007bfcae6f19a1.png"
+        "jacketFileName": "81ffa563de8fddbafbaf8f84afa94263.png"
     }
 ]

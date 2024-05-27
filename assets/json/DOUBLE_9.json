@@ -35,18 +35,11 @@
         "jacketFileName": "b89582358750bf456ece55c8d917a5d2.png"
     },
     {
-        "title": "퍼센트 엑스",
+        "title": "스마일 다이어리",
         "level": 9,
-        "artist": "포리",
+        "artist": "you",
         "chartType": "DOUBLE",
-        "jacketFileName": "8f26809e182d6eb9719a61749baec84e.png"
-    },
-    {
-        "title": "크리스마스의 기억",
-        "level": 9,
-        "artist": "와락",
-        "chartType": "DOUBLE",
-        "jacketFileName": "1792bd555efbbbfcb14088f2208d0428.png"
+        "jacketFileName": "e53ffebb889fba8647191794136e24a9.png"
     },
     {
         "title": "서든 로맨스 [PIU Edit]",
@@ -56,32 +49,25 @@
         "jacketFileName": "86d39cb7c937642663fccd5aec0877c2.png"
     },
     {
+        "title": "크리스마스의 기억",
+        "level": 9,
+        "artist": "와락",
+        "chartType": "DOUBLE",
+        "jacketFileName": "1792bd555efbbbfcb14088f2208d0428.png"
+    },
+    {
+        "title": "퍼센트 엑스",
+        "level": 9,
+        "artist": "포리",
+        "chartType": "DOUBLE",
+        "jacketFileName": "8f26809e182d6eb9719a61749baec84e.png"
+    },
+    {
         "title": "갓 모드 feat. Skizzo",
         "level": 9,
         "artist": "나토",
         "chartType": "DOUBLE",
         "jacketFileName": "b38900d06ba8d8e1d203691c9ada94d8.png"
-    },
-    {
-        "title": "스마일 다이어리",
-        "level": 9,
-        "artist": "you",
-        "chartType": "DOUBLE",
-        "jacketFileName": "e53ffebb889fba8647191794136e24a9.png"
-    },
-    {
-        "title": "라그나로크",
-        "level": 9,
-        "artist": "SynthWulf",
-        "chartType": "DOUBLE",
-        "jacketFileName": "8f68503d1f4d0a971f1878657386936f.png"
-    },
-    {
-        "title": "어웨이크닝",
-        "level": 9,
-        "artist": "typeMARS",
-        "chartType": "DOUBLE",
-        "jacketFileName": "4fd85c9ac5726a4dda88c2a75d1f548f.png"
     },
     {
         "title": "탑 시티",
@@ -98,6 +84,20 @@
         "jacketFileName": "a99628699414126f01156a2eff9c4509.png"
     },
     {
+        "title": "라그나로크",
+        "level": 9,
+        "artist": "SynthWulf",
+        "chartType": "DOUBLE",
+        "jacketFileName": "8f68503d1f4d0a971f1878657386936f.png"
+    },
+    {
+        "title": "어웨이크닝",
+        "level": 9,
+        "artist": "typeMARS",
+        "chartType": "DOUBLE",
+        "jacketFileName": "4fd85c9ac5726a4dda88c2a75d1f548f.png"
+    },
+    {
         "title": "브링 백 더 비트",
         "level": 9,
         "artist": "루나틱 사운즈",
@@ -112,17 +112,17 @@
         "jacketFileName": "5cbd47e5e110c4e51d13c0cfd3d730ed.png"
     },
     {
-        "title": "메테오라이즈",
-        "level": 9,
-        "artist": "폴 바주카",
-        "chartType": "DOUBLE",
-        "jacketFileName": "3e8b43107e33ed1f14d0f9a5cd0a67d8.png"
-    },
-    {
         "title": "펌핑 점핑",
         "level": 9,
         "artist": "반야 프로덕션",
         "chartType": "DOUBLE",
         "jacketFileName": "c8dd5ba64a3a6459a77086155f1780be.png"
+    },
+    {
+        "title": "메테오라이즈",
+        "level": 9,
+        "artist": "폴 바주카",
+        "chartType": "DOUBLE",
+        "jacketFileName": "3e8b43107e33ed1f14d0f9a5cd0a67d8.png"
     }
 ]

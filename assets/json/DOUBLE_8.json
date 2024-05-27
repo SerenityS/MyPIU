@@ -63,18 +63,18 @@
         "jacketFileName": "de96638880924993fd3617fc5b5d2d8a.png"
     },
     {
-        "title": "사람들은 몰랐다네",
-        "level": 8,
-        "artist": "반야 프로덕션",
-        "chartType": "DOUBLE",
-        "jacketFileName": "b5beafaf692bb3cd6049f491b0a65038.png"
-    },
-    {
         "title": "하우스플랜",
         "level": 8,
         "artist": "하우스플랜",
         "chartType": "DOUBLE",
         "jacketFileName": "ae87cac425d722b861faa8cf8ab2eefd.png"
+    },
+    {
+        "title": "사람들은 몰랐다네",
+        "level": 8,
+        "artist": "반야 프로덕션",
+        "chartType": "DOUBLE",
+        "jacketFileName": "b5beafaf692bb3cd6049f491b0a65038.png"
     },
     {
         "title": "아스테리오스 -리엔트리-",
@@ -105,18 +105,18 @@
         "jacketFileName": "c4b69bc29223fecd215299e13986bb08.png"
     },
     {
-        "title": "히글디 피글디",
-        "level": 8,
-        "artist": "반야 프로덕션",
-        "chartType": "DOUBLE",
-        "jacketFileName": "3eda55e20c4c47e4f52bbaa001de7dcd.png"
-    },
-    {
         "title": "오버블로우2",
         "level": 8,
         "artist": "맥스",
         "chartType": "DOUBLE",
         "jacketFileName": "74f9476994a46831b01fe5f541a09ae3.png"
+    },
+    {
+        "title": "히글디 피글디",
+        "level": 8,
+        "artist": "반야 프로덕션",
+        "chartType": "DOUBLE",
+        "jacketFileName": "3eda55e20c4c47e4f52bbaa001de7dcd.png"
     },
     {
         "title": "몽키 핑거즈 2",
