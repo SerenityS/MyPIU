@@ -35,20 +35,6 @@
         "jacketFileName": "50c4cc1811cead8b175df061b10e6307.png"
     },
     {
-        "title": "클레마티스 랩소디아",
-        "level": 3,
-        "artist": "Jehezukiel",
-        "chartType": "CO-OP",
-        "jacketFileName": "bacaf08069b985635db3eebb443d133e.png"
-    },
-    {
-        "title": "아발란치",
-        "level": 3,
-        "artist": "맴매",
-        "chartType": "CO-OP",
-        "jacketFileName": "c55b5035aa594ffa59dd1a99aef918c8.png"
-    },
-    {
         "title": "요그 소토스",
         "level": 3,
         "artist": "나토",
@@ -56,11 +42,25 @@
         "jacketFileName": "bc54e47a51c88d61e1132c40cce0f714.png"
     },
     {
+        "title": "클레마티스 랩소디아",
+        "level": 3,
+        "artist": "Jehezukiel",
+        "chartType": "CO-OP",
+        "jacketFileName": "bacaf08069b985635db3eebb443d133e.png"
+    },
+    {
         "title": "알레그로 퓨리오소",
         "level": 3,
         "artist": "DM ashura",
         "chartType": "CO-OP",
         "jacketFileName": "e8c609ca4151ca2df88a1d78a762db84.png"
+    },
+    {
+        "title": "아발란치",
+        "level": 3,
+        "artist": "맴매",
+        "chartType": "CO-OP",
+        "jacketFileName": "c55b5035aa594ffa59dd1a99aef918c8.png"
     },
     {
         "title": "테이크 아웃",
@@ -91,18 +91,18 @@
         "jacketFileName": "e4b9307656a5ecd491868c2d9eef1a42.png"
     },
     {
-        "title": "일 더하기 일은 귀요미",
-        "level": 3,
-        "artist": "맴매",
-        "chartType": "CO-OP",
-        "jacketFileName": "407e597c70954fc0925b41cd905ca913.png"
-    },
-    {
         "title": "에프 에프 에프",
         "level": 3,
         "artist": "도인",
         "chartType": "CO-OP",
         "jacketFileName": "bc8046f59a10309e3fba7b77672cf2d2.png"
+    },
+    {
+        "title": "일 더하기 일은 귀요미",
+        "level": 3,
+        "artist": "맴매",
+        "chartType": "CO-OP",
+        "jacketFileName": "407e597c70954fc0925b41cd905ca913.png"
     },
     {
         "title": "위 갓 투 노우",

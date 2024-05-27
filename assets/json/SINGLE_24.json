@@ -1,5 +1,12 @@
 [
     {
+        "title": "프ㄹi마 마테ㄹi아",
+        "level": 24,
+        "artist": "xi",
+        "chartType": "SINGLE",
+        "jacketFileName": "d9ca9ba14be1f8d7bc007bfcae6f19a1.png"
+    },
+    {
         "title": "이렐리아",
         "level": 24,
         "artist": "HyuN",
@@ -21,13 +28,6 @@
         "jacketFileName": "057e2df0bf02e2fcb287bb24644d0cb4.png"
     },
     {
-        "title": "카오스 어게인",
-        "level": 24,
-        "artist": "NAOKI underground -Ω-",
-        "chartType": "SINGLE",
-        "jacketFileName": "df2bb22858f58b4cf088ce1866854f2d.png"
-    },
-    {
         "title": "아클루오이아스",
         "level": 24,
         "artist": "D_AAN",
@@ -35,11 +35,11 @@
         "jacketFileName": "08b06c0759e9193b9cb7cfb9ee2a67a6.png"
     },
     {
-        "title": "스켑틱",
+        "title": "카오스 어게인",
         "level": 24,
-        "artist": "도인",
+        "artist": "NAOKI underground -Ω-",
         "chartType": "SINGLE",
-        "jacketFileName": "cfd902c46c5004527c92d5e229edcc42.png"
+        "jacketFileName": "df2bb22858f58b4cf088ce1866854f2d.png"
     },
     {
         "title": "제로아이즈",
@@ -47,6 +47,13 @@
         "artist": "FE",
         "chartType": "SINGLE",
         "jacketFileName": "50c4cc1811cead8b175df061b10e6307.png"
+    },
+    {
+        "title": "스켑틱",
+        "level": 24,
+        "artist": "도인",
+        "chartType": "SINGLE",
+        "jacketFileName": "cfd902c46c5004527c92d5e229edcc42.png"
     },
     {
         "title": "슈브 니구라스",
@@ -91,10 +98,10 @@
         "jacketFileName": "7a7a1b221de07d92d694b1ccd2bb69e0.png"
     },
     {
-        "title": "프ㄹi마 마테ㄹi아",
+        "title": "헤라클레스",
         "level": 24,
-        "artist": "xi",
+        "artist": "Abel",
         "chartType": "SINGLE",
-        "jacketFileName": "d9ca9ba14be1f8d7bc007bfcae6f19a1.png"
+        "jacketFileName": "81ffa563de8fddbafbaf8f84afa94263.png"
     }
 ]

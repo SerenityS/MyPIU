@@ -56,18 +56,18 @@
         "jacketFileName": "6ab64a47eb8f394982c46a09a416c160.png"
     },
     {
-        "title": "사월",
-        "level": 7,
-        "artist": "SHK",
-        "chartType": "DOUBLE",
-        "jacketFileName": "96f3949597bf4514833e1408efed0ad5.png"
-    },
-    {
         "title": "마타도르",
         "level": 7,
         "artist": "Cranky",
         "chartType": "DOUBLE",
         "jacketFileName": "2e57f224899a9644cda9632c7795f915.png"
+    },
+    {
+        "title": "사월",
+        "level": 7,
+        "artist": "SHK",
+        "chartType": "DOUBLE",
+        "jacketFileName": "96f3949597bf4514833e1408efed0ad5.png"
     },
     {
         "title": "매지컬 베케이션",

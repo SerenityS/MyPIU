@@ -42,7 +42,7 @@ class MainApp extends StatelessWidget {
               surfaceTintColor: AppColor.bg,
               titleTextStyle: TextStyle(fontSize: 20.sp, color: Colors.white, fontWeight: FontWeight.w600),
             ),
-            colorSchemeSeed: Colors.redAccent,
+            colorSchemeSeed: Colors.blue,
             drawerTheme: const DrawerThemeData(
               backgroundColor: AppColor.bg,
               surfaceTintColor: AppColor.bg,

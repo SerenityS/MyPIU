@@ -14,18 +14,18 @@
         "jacketFileName": "231cc165b79c0638db39210af649467c.png"
     },
     {
-        "title": "가고일 - FULL SONG -",
-        "level": 23,
-        "artist": "Sanxion7",
-        "chartType": "SINGLE",
-        "jacketFileName": "9e54f9ac19a9725e63a85bad034b662d.png"
-    },
-    {
         "title": "모페모페",
         "level": 23,
         "artist": "LeaF",
         "chartType": "SINGLE",
         "jacketFileName": "f720e52b1bb6625bd869df634102c20b.png"
+    },
+    {
+        "title": "가고일 - FULL SONG -",
+        "level": 23,
+        "artist": "Sanxion7",
+        "chartType": "SINGLE",
+        "jacketFileName": "9e54f9ac19a9725e63a85bad034b662d.png"
     },
     {
         "title": "비옐라의 악몽",
@@ -35,18 +35,18 @@
         "jacketFileName": "dde154d8a721c5d510b71c788d0b8673.png"
     },
     {
-        "title": "얼티메이텀",
-        "level": 23,
-        "artist": "코스모그래프",
-        "chartType": "SINGLE",
-        "jacketFileName": "54a6474ee494e9b1748e1edd3affee0b.png"
-    },
-    {
         "title": "트릭크래쉬 220",
         "level": 23,
         "artist": "Lite Show Magic",
         "chartType": "SINGLE",
         "jacketFileName": "81c807da9ac1fd29e74ab8a510976789.png"
+    },
+    {
+        "title": "얼티메이텀",
+        "level": 23,
+        "artist": "코스모그래프",
+        "chartType": "SINGLE",
+        "jacketFileName": "54a6474ee494e9b1748e1edd3affee0b.png"
     },
     {
         "title": "꼭두각시",
@@ -63,18 +63,18 @@
         "jacketFileName": "fe92678270d73a1a7aa2c68fc058ba3f.png"
     },
     {
+        "title": "푸파",
+        "level": 23,
+        "artist": "Morimori Atsushi",
+        "chartType": "SINGLE",
+        "jacketFileName": "adf1054211294efcbfb92ac97a37ec75.png"
+    },
+    {
         "title": "쥬핀",
         "level": 23,
         "artist": "Sobrem",
         "chartType": "SINGLE",
         "jacketFileName": "9f561790e1f3df1f1174b87f0d78b9d6.png"
-    },
-    {
-        "title": "디멘트 ~에프터 레전드~",
-        "level": 23,
-        "artist": "루나틱 사운즈",
-        "chartType": "SINGLE",
-        "jacketFileName": "fd482baf3748bc4b5e74b4d5cd800819.png"
     },
     {
         "title": "키메라",
@@ -84,11 +84,11 @@
         "jacketFileName": "29515cbcd2bb2db30c23ed5228cdf93d.png"
     },
     {
-        "title": "푸파",
+        "title": "디멘트 ~에프터 레전드~",
         "level": 23,
-        "artist": "Morimori Atsushi",
+        "artist": "루나틱 사운즈",
         "chartType": "SINGLE",
-        "jacketFileName": "adf1054211294efcbfb92ac97a37ec75.png"
+        "jacketFileName": "fd482baf3748bc4b5e74b4d5cd800819.png"
     },
     {
         "title": "그로스",
@@ -98,18 +98,18 @@
         "jacketFileName": "711e60a1b06997e72dde2024731aebdf.png"
     },
     {
-        "title": "글로리아",
-        "level": 23,
-        "artist": "Croire",
-        "chartType": "SINGLE",
-        "jacketFileName": "582c4b074703ed2e43d6e53030bdb8e6.png"
-    },
-    {
         "title": "시간의 회랑 라비린스",
         "level": 23,
         "artist": "A:llha (ANE + 2riA)",
         "chartType": "SINGLE",
         "jacketFileName": "e6f6dc0021c7ff7a8a5bfbbf1d1795f6.png"
+    },
+    {
+        "title": "글로리아",
+        "level": 23,
+        "artist": "Croire",
+        "chartType": "SINGLE",
+        "jacketFileName": "582c4b074703ed2e43d6e53030bdb8e6.png"
     },
     {
         "title": "Re：엔드 오브 어 드림",
@@ -119,18 +119,18 @@
         "jacketFileName": "cc5d57d60b17c46dee91b575faecd855.png"
     },
     {
-        "title": "프렌드",
-        "level": 23,
-        "artist": "D_AAN",
-        "chartType": "SINGLE",
-        "jacketFileName": "341db42d98d602ee2e3da10c068cacda.png"
-    },
-    {
         "title": "다람쥐 헌 쳇바퀴에 타고파",
         "level": 23,
         "artist": "도인",
         "chartType": "SINGLE",
         "jacketFileName": "13ee583d7eb125353c9594c54e8af8ee.png"
+    },
+    {
+        "title": "프렌드",
+        "level": 23,
+        "artist": "D_AAN",
+        "chartType": "SINGLE",
+        "jacketFileName": "341db42d98d602ee2e3da10c068cacda.png"
     },
     {
         "title": "1949",
@@ -140,18 +140,25 @@
         "jacketFileName": "27b9c3cc4f8d3c476205f2d4e6bbd9a5.png"
     },
     {
-        "title": "1950",
-        "level": 23,
-        "artist": "슬램",
-        "chartType": "SINGLE",
-        "jacketFileName": "fba81856a34b5447cd12dc4aaf87d37a.png"
-    },
-    {
         "title": "패러독스",
         "level": 23,
         "artist": "슬램 & 나토",
         "chartType": "SINGLE",
         "jacketFileName": "2da8be03841200479a4c23e8b60aeb70.png"
+    },
+    {
+        "title": "요그 소토스",
+        "level": 23,
+        "artist": "나토",
+        "chartType": "SINGLE",
+        "jacketFileName": "bc54e47a51c88d61e1132c40cce0f714.png"
+    },
+    {
+        "title": "1950",
+        "level": 23,
+        "artist": "슬램",
+        "chartType": "SINGLE",
+        "jacketFileName": "fba81856a34b5447cd12dc4aaf87d37a.png"
     },
     {
         "title": "니알라토텝",
@@ -168,11 +175,11 @@
         "jacketFileName": "21f8ea50ea39ae9649ef630448e5a2d4.png"
     },
     {
-        "title": "요그 소토스",
+        "title": "어나이얼레이터 메소드",
         "level": 23,
-        "artist": "나토",
+        "artist": "DM Ashura",
         "chartType": "SINGLE",
-        "jacketFileName": "bc54e47a51c88d61e1132c40cce0f714.png"
+        "jacketFileName": "3e793e858d8ccd6adc2e5302d13efb8f.png"
     },
     {
         "title": "클리너",
@@ -180,13 +187,6 @@
         "artist": "도인",
         "chartType": "SINGLE",
         "jacketFileName": "e6ac757c38d1d589c25b3461bb8438d5.png"
-    },
-    {
-        "title": "어나이얼레이터 메소드",
-        "level": 23,
-        "artist": "DM Ashura",
-        "chartType": "SINGLE",
-        "jacketFileName": "3e793e858d8ccd6adc2e5302d13efb8f.png"
     },
     {
         "title": "파이널 오디션 에피소드 2-X",
@@ -210,11 +210,11 @@
         "jacketFileName": "3f951d73d3c1c32c7d238b2ce184459d.png"
     },
     {
-        "title": "알레그로 콘 뿌오코 - FULL SONG -",
+        "title": "프라임 타임",
         "level": 23,
-        "artist": "DM Ashura",
+        "artist": "Cashew",
         "chartType": "SINGLE",
-        "jacketFileName": "ecf5b60d92bfd65eb7ad32d69bfa7bdc.png"
+        "jacketFileName": "6a9b52dad811828ecba1f4f5d3e6abfe.png"
     },
     {
         "title": "텔링 포츈 플라워",
@@ -224,18 +224,11 @@
         "jacketFileName": "212d24f35ebb3de53f5deb6cd6625d31.png"
     },
     {
-        "title": "프라임 타임",
+        "title": "알레그로 콘 뿌오코 - FULL SONG -",
         "level": 23,
-        "artist": "Cashew",
+        "artist": "DM Ashura",
         "chartType": "SINGLE",
-        "jacketFileName": "6a9b52dad811828ecba1f4f5d3e6abfe.png"
-    },
-    {
-        "title": "아발란퀴엠",
-        "level": 23,
-        "artist": "맥스 & 맴매",
-        "chartType": "SINGLE",
-        "jacketFileName": "9684b814e944dad64b6f07c81300820c.png"
+        "jacketFileName": "ecf5b60d92bfd65eb7ad32d69bfa7bdc.png"
     },
     {
         "title": "파이어 누들 챌린지",
@@ -243,5 +236,12 @@
         "artist": "맴매",
         "chartType": "SINGLE",
         "jacketFileName": "8fbb4702a5c6be65e7dfb7635af4ec6d.png"
+    },
+    {
+        "title": "아발란퀴엠",
+        "level": 23,
+        "artist": "맥스 & 맴매",
+        "chartType": "SINGLE",
+        "jacketFileName": "9684b814e944dad64b6f07c81300820c.png"
     }
 ]

@@ -56,6 +56,13 @@
         "jacketFileName": "70863cab2c4dde4b17a9efe9c124cc30.png"
     },
     {
+        "title": "아이 원트 유",
+        "level": 6,
+        "artist": "맥스",
+        "chartType": "DOUBLE",
+        "jacketFileName": "d56f4754be78f6287098ec4f3c71f593.png"
+    },
+    {
         "title": "리얼리티",
         "level": 6,
         "artist": "SHK",
@@ -70,11 +77,11 @@
         "jacketFileName": "9ce34fa1e500db4be8577c4f445a7843.png"
     },
     {
-        "title": "아이 원트 유",
+        "title": "돌리 키스",
         "level": 6,
-        "artist": "맥스",
+        "artist": "시드사운드",
         "chartType": "DOUBLE",
-        "jacketFileName": "d56f4754be78f6287098ec4f3c71f593.png"
+        "jacketFileName": "67f1a29eee0674f3bbae81bc83574cb3.png"
     },
     {
         "title": "리무버블 디스코",
@@ -82,13 +89,6 @@
         "artist": "도인",
         "chartType": "DOUBLE",
         "jacketFileName": "6a1c65426df892f8e33f80b22756c313.png"
-    },
-    {
-        "title": "돌리 키스",
-        "level": 6,
-        "artist": "시드사운드",
-        "chartType": "DOUBLE",
-        "jacketFileName": "67f1a29eee0674f3bbae81bc83574cb3.png"
     },
     {
         "title": "아마이 유우와쿠 데인저러스",

@@ -35,18 +35,18 @@
         "jacketFileName": "a3f59503b1c4eae7f27fe2ba8ca405af.png"
     },
     {
-        "title": "유 갓 미 크레이지",
-        "level": 5,
-        "artist": "맥스",
-        "chartType": "DOUBLE",
-        "jacketFileName": "e8badaf7cb0e179bb555c5db98dc5abb.png"
-    },
-    {
         "title": "롤링 크리스마스",
         "level": 5,
         "artist": "반야",
         "chartType": "DOUBLE",
         "jacketFileName": "744e973eeccd43765eb616bb0cad04e6.png"
+    },
+    {
+        "title": "유 갓 미 크레이지",
+        "level": 5,
+        "artist": "맥스",
+        "chartType": "DOUBLE",
+        "jacketFileName": "e8badaf7cb0e179bb555c5db98dc5abb.png"
     },
     {
         "title": "브레이크 잇 다운",

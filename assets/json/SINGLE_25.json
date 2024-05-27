@@ -42,17 +42,17 @@
         "jacketFileName": "8228790cbf25eafb814aa724adabd93e.png"
     },
     {
-        "title": "하늘다람쥐",
-        "level": 25,
-        "artist": "도인",
-        "chartType": "SINGLE",
-        "jacketFileName": "7abbf7a6be02f94ec16598a3b841a139.png"
-    },
-    {
         "title": "진공 청소기",
         "level": 25,
         "artist": "도인",
         "chartType": "SINGLE",
         "jacketFileName": "5bd3e6508c6ef691a52d8e12149c4b93.png"
+    },
+    {
+        "title": "하늘다람쥐",
+        "level": 25,
+        "artist": "도인",
+        "chartType": "SINGLE",
+        "jacketFileName": "7abbf7a6be02f94ec16598a3b841a139.png"
     }
 ]

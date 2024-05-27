@@ -133,13 +133,6 @@
         "jacketFileName": "4fae4c49e72904be375f6e913a15a003.png"
     },
     {
-        "title": "오벨리스크",
-        "level": 2,
-        "artist": "ESTi x M2U",
-        "chartType": "SINGLE",
-        "jacketFileName": "96350a76494dedadae7e60dbfcc422a1.png"
-    },
-    {
         "title": "엠페러",
         "level": 2,
         "artist": "반야",
@@ -147,11 +140,18 @@
         "jacketFileName": "ec32e893a0030fc132608a1f1e9fbb99.png"
     },
     {
-        "title": "유 갓 투 노우",
+        "title": "오벨리스크",
         "level": 2,
-        "artist": "맥스",
+        "artist": "ESTi x M2U",
         "chartType": "SINGLE",
-        "jacketFileName": "8075ad3bc1d71a6a2d42313eff1ecd98.png"
+        "jacketFileName": "96350a76494dedadae7e60dbfcc422a1.png"
+    },
+    {
+        "title": "테프리스",
+        "level": 2,
+        "artist": "도인",
+        "chartType": "SINGLE",
+        "jacketFileName": "fbb495de710207040ce185bd2ad7424c.png"
     },
     {
         "title": "윌 오 더 위스프",
@@ -161,11 +161,11 @@
         "jacketFileName": "409db0768e50412b588b23311f0b7cb4.png"
     },
     {
-        "title": "테프리스",
+        "title": "유 갓 투 노우",
         "level": 2,
-        "artist": "도인",
+        "artist": "맥스",
         "chartType": "SINGLE",
-        "jacketFileName": "fbb495de710207040ce185bd2ad7424c.png"
+        "jacketFileName": "8075ad3bc1d71a6a2d42313eff1ecd98.png"
     },
     {
         "title": "엑스트리",
@@ -189,32 +189,11 @@
         "jacketFileName": "5a58adbb4d29f6999bbe4baefd3d225b.png"
     },
     {
-        "title": "파이널 오디션 3",
-        "level": 2,
-        "artist": "반야",
-        "chartType": "SINGLE",
-        "jacketFileName": "9ea79a55ca907426a0f27737b7da4d4d.png"
-    },
-    {
         "title": "위치 닥터 #1",
         "level": 2,
         "artist": "이 얍",
         "chartType": "SINGLE",
         "jacketFileName": "9e6a42eeefc9181183b71a982b0d6a0c.png"
-    },
-    {
-        "title": "아이디얼라이즈드 로맨스 ",
-        "level": 2,
-        "artist": "void",
-        "chartType": "SINGLE",
-        "jacketFileName": "93502de99273144f0d65d4ac1ba513ff.png"
-    },
-    {
-        "title": "히글디 피글디",
-        "level": 2,
-        "artist": "반야 프로덕션",
-        "chartType": "SINGLE",
-        "jacketFileName": "3eda55e20c4c47e4f52bbaa001de7dcd.png"
     },
     {
         "title": "무혼",
@@ -224,6 +203,20 @@
         "jacketFileName": "c07fdf7ae417843cacfde0fca25ed157.png"
     },
     {
+        "title": "아이디얼라이즈드 로맨스 ",
+        "level": 2,
+        "artist": "void",
+        "chartType": "SINGLE",
+        "jacketFileName": "93502de99273144f0d65d4ac1ba513ff.png"
+    },
+    {
+        "title": "파이널 오디션 3",
+        "level": 2,
+        "artist": "반야",
+        "chartType": "SINGLE",
+        "jacketFileName": "9ea79a55ca907426a0f27737b7da4d4d.png"
+    },
+    {
         "title": "아크 오브 다크니스",
         "level": 2,
         "artist": "이 얍",
@@ -231,18 +224,11 @@
         "jacketFileName": "2ca0c1cad9e5429ecfa1f87e35b56cf4.png"
     },
     {
-        "title": "블레이즈 이모션",
-        "level": 2,
-        "artist": "이 얍",
-        "chartType": "SINGLE",
-        "jacketFileName": "93555d69ef2703fcc846dc9f8608a930.png"
-    },
-    {
-        "title": "펌핑 점핑",
+        "title": "히글디 피글디",
         "level": 2,
         "artist": "반야 프로덕션",
         "chartType": "SINGLE",
-        "jacketFileName": "c8dd5ba64a3a6459a77086155f1780be.png"
+        "jacketFileName": "3eda55e20c4c47e4f52bbaa001de7dcd.png"
     },
     {
         "title": "셋 미 업",
@@ -252,10 +238,38 @@
         "jacketFileName": "6f79c5acaa69b968c429463fcb6d14e1.png"
     },
     {
+        "title": "펌핑 점핑",
+        "level": 2,
+        "artist": "반야 프로덕션",
+        "chartType": "SINGLE",
+        "jacketFileName": "c8dd5ba64a3a6459a77086155f1780be.png"
+    },
+    {
+        "title": "블레이즈 이모션",
+        "level": 2,
+        "artist": "이 얍",
+        "chartType": "SINGLE",
+        "jacketFileName": "93555d69ef2703fcc846dc9f8608a930.png"
+    },
+    {
         "title": "블레이즈 이모션 (Band version)",
         "level": 2,
         "artist": "이 얍",
         "chartType": "SINGLE",
         "jacketFileName": "784f0386b87ff0d1e1f6fc80fd8c98c1.png"
+    },
+    {
+        "title": "크러쉬",
+        "level": 2,
+        "artist": "제로베이스원",
+        "chartType": "SINGLE",
+        "jacketFileName": "9bc09f5b3630ecbfdb72ae72460e4d40.png"
+    },
+    {
+        "title": "버블",
+        "level": 2,
+        "artist": "스테이씨",
+        "chartType": "SINGLE",
+        "jacketFileName": "9b71130dbd5410cfb920d6a7fa4e0615.png"
     }
 ]
