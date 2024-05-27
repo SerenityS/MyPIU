@@ -66,7 +66,7 @@ class _TitleFilter extends GetView<TitleViewModel> {
               child: Obx(() => PIUTextField(
                     isEnable: !controller.isLoading.value,
                     controller: controller.searchController,
-                    onChanged: (value) => controller.filteredTitleDataList,
+                    onChanged: (value) => controller.filterTitleData(),
                     hintText: "칭호명을 입력해주세요.",
                   )),
             ),
