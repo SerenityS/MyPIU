@@ -15,7 +15,7 @@ class MyDataRepositoryImpl extends MyDataRepository {
 
   @override
   Future<List<MyData>> getMyData() async {
-    await _dio.post(AppUrl.setLanguageUrl, data: {"language": "kr"});
+    await _dio.post(AppUrl.setLanguageUrl, data: {"lang": "kr"});
     var response = await _dio.get(AppUrl.playDataUrl);
 
     return parseMyData(response.data);
