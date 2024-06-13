@@ -27,15 +27,6 @@ class MyDataViewModel extends GetxController {
     if (clearDataList.isEmpty) {
       // Get Clear Data from RemoteDataSource
       await getClearDataFromRemote();
-    } else {
-      // Check if there is new clear data
-      // when the user's total clear count is different from the local data
-      int totalClearCount = clearDataList.where((element) => element.level >= 10).length;
-
-      if (totalClearCount != MyDataService.to.myData.totalClear) {
-        Fluttertoast.showToast(msg: "새로운 클리어 정보가 있습니다.\n클리어 정보를 갱신합니다.");
-        await getClearDataFromRemote();
-      }
     }
   }
 
